@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android" xmlns:tools="http://schemas.android.com/tools">
+    <data>
+        <variable name="messagesRowModel" type="com.collagepoem.app.modules.communitypagemessages.data.model.MessagesRowModel"/>
+    </data>
+    <LinearLayout android:id="@+id/linearMessagecard"
+        android:layout_height="wrap_content"
+        android:layout_width="match_parent"
+        android:orientation="horizontal" style="@style/groupStylecornerRadius_1">
+        <ImageView android:id="@+id/imageProfilepic"
+            android:layout_height="@dimen/_44pxh"
+            android:layout_width="@dimen/_44pxh"
+            android:scaleType="fitXY"
+            android:src="@drawable/img_profilepic_44x44"
+            tools:ignore="ContentDescription" tools:src="@drawable/img_profilepic_44x44"/>
+        <LinearLayout android:gravity="start"
+            android:id="@+id/linearColumnusername"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="@dimen/_1pxv"
+            android:layout_marginStart="@dimen/_8pxh"
+            android:layout_marginTop="@dimen/_6pxv"
+            android:layout_weight="0.75" android:layout_width="0dp" android:orientation="vertical">
+            <TextView android:ellipsize="end"
+                android:id="@+id/txtUsername"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="@dimen/_10pxh"
+                android:layout_width="wrap_content"
+                android:singleLine="true"
+                android:text="@{messagesRowModel.txtUsername}"
+                style="@style/txtArialmt14_1" tools:text="@string/lbl_admin"/>
+            <TextView android:ellipsize="end"
+                android:id="@+id/txtMessagecontent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_8pxv"
+                android:layout_width="match_parent"
+                android:singleLine="true"
+                android:text="@{messagesRowModel.txtMessagecontent}"
+                style="@style/txtArialmt12_2" tools:text="@string/msg_thank_you_for_y"/>
+        </LinearLayout>
+    </LinearLayout>
+</layout>

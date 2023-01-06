@@ -1,0 +1,139 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto" xmlns:tools="http://schemas.android.com/tools">
+    <data>
+        <variable name="driftcutspageoneVM" type="com.collagepoem.app.modules.driftcutspageone.data.viewmodel.DriftcutspageoneVM"/>
+    </data>
+    <LinearLayout android:gravity="start"
+        android:id="@+id/linearColumnback"
+        android:layout_height="match_parent"
+        android:layout_width="match_parent"
+        android:orientation="vertical" style="@style/groupStylegray_200">
+        <androidx.appcompat.widget.Toolbar
+            android:id="@+id/toolbarToolbar"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="@dimen/_24pxh"
+            android:layout_marginStart="@dimen/_24pxh"
+            android:layout_marginTop="@dimen/_71pxv"
+            android:layout_width="match_parent" app:contentInsetStart="0dp">
+            <LinearLayout android:id="@+id/linearRowback"
+                android:layout_height="wrap_content"
+                android:layout_width="match_parent" android:orientation="horizontal">
+                <ImageView android:id="@+id/imageBack"
+                    android:layout_height="@dimen/_18pxh"
+                    android:layout_width="@dimen/_10pxh"
+                    android:scaleType="fitXY"
+                    android:src="@drawable/img_imageback"
+                    tools:ignore="ContentDescription" tools:src="@drawable/img_imageback"/>
+                <TextView android:ellipsize="end"
+                    android:id="@+id/txtTextholder"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="@dimen/_1pxv"
+                    android:layout_marginStart="@dimen/_138pxh"
+                    android:layout_marginTop="@dimen/_1pxv"
+                    android:layout_weight="0.87"
+                    android:layout_width="0dp" android:singleLine="true"
+                    android:text="@{driftcutspageoneVM.driftcutspageoneModel.txtTextholder}"
+                    style="@style/txtArialmt14_1" tools:text="@string/lbl_flow_away"/>
+            </LinearLayout>
+        </androidx.appcompat.widget.Toolbar>
+        <TextView android:id="@+id/txtDescription"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="@dimen/_24pxh"
+            android:layout_marginStart="@dimen/_24pxh"
+            android:layout_marginTop="@dimen/_52pxv"
+            android:layout_width="match_parent"
+            android:text="@{driftcutspageoneVM.driftcutspageoneModel.txtDescription}"
+            style="@style/txtSTZhongsong14" tools:text="@string/msg_thanks_your_sha"/>
+        <FrameLayout android:id="@+id/frameStackpieces"
+            android:layout_gravity="center_horizontal"
+            android:layout_height="@dimen/_77pxv"
+            android:layout_marginEnd="@dimen/_23pxh"
+            android:layout_marginStart="@dimen/_24pxh"
+            android:layout_marginTop="@dimen/_47pxv" android:layout_width="@dimen/_357pxh">
+            <ImageView android:id="@+id/imagePieces"
+                android:layout_gravity="top|end"
+                android:layout_height="@dimen/_72pxh"
+                android:layout_marginBottom="@dimen/_10pxv"
+                android:layout_marginStart="@dimen/_10pxh"
+                android:layout_width="@dimen/_342pxh"
+                android:scaleType="fitXY"
+                imageRes="@{@drawable/img_pieces}"
+                tools:ignore="ContentDescription" tools:src="@drawable/img_pieces"/>
+            <ImageView android:id="@+id/imagePiecesOne"
+                android:layout_gravity="bottom|center"
+                android:layout_height="@dimen/_71pxh"
+                android:layout_marginEnd="@dimen/_9pxh"
+                android:layout_marginTop="@dimen/_10pxv"
+                android:layout_width="@dimen/_348pxh"
+                android:scaleType="fitXY"
+                imageRes="@{@drawable/img_pieces_71x348}"
+                tools:ignore="ContentDescription" tools:src="@drawable/img_pieces_71x348"/>
+        </FrameLayout>
+        <LinearLayout android:gravity="center_horizontal"
+            android:id="@+id/linearColumnuseduser"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="@dimen/_24pxh"
+            android:layout_marginStart="@dimen/_24pxh"
+            android:layout_marginTop="@dimen/_77pxv"
+            android:layout_width="wrap_content" android:orientation="vertical">
+            <TextView android:ellipsize="end"
+                android:id="@+id/txtUsedUser"
+                android:layout_gravity="center_horizontal"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="@dimen/_37pxh"
+                android:layout_marginStart="@dimen/_38pxh"
+                android:layout_width="wrap_content"
+                android:singleLine="true"
+                android:text="@{driftcutspageoneVM.driftcutspageoneModel.txtUsedUser}"
+                style="@style/txtArialmt14_1" tools:text="@string/lbl_used_user"/>
+            <LinearLayout android:id="@+id/linearRowphoto"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_14pxv"
+                android:layout_width="wrap_content" android:orientation="horizontal">
+                <ImageView android:id="@+id/imagePhoto"
+                    android:layout_height="@dimen/_41pxh"
+                    android:layout_width="@dimen/_41pxh"
+                    android:scaleType="centerCrop" circular="@{true}"
+                    imageRes="@{@drawable/img_profilepic}"
+                    tools:ignore="ContentDescription" tools:src="@drawable/img_profilepic"/>
+                <ImageView android:id="@+id/imagePhotoOne"
+                    android:layout_height="@dimen/_41pxh"
+                    android:layout_marginStart="@dimen/_9pxh"
+                    android:layout_width="@dimen/_41pxh"
+                    android:scaleType="centerCrop" circular="@{true}"
+                    imageRes="@{@drawable/img_photo}"
+                    tools:ignore="ContentDescription" tools:src="@drawable/img_photo"/>
+                <ImageView android:id="@+id/imagePhotoTwo"
+                    android:layout_height="@dimen/_41pxh"
+                    android:layout_marginStart="@dimen/_9pxh"
+                    android:layout_width="@dimen/_41pxh"
+                    android:scaleType="centerCrop" circular="@{true}"
+                    imageRes="@{@drawable/img_profilepic_44x44}"
+                    tools:ignore="ContentDescription" tools:src="@drawable/img_profilepic_44x44"/>
+            </LinearLayout>
+        </LinearLayout>
+        <TextView android:ellipsize="end" android:id="@+id/txtPushed"
+            android:layout_gravity="center_horizontal"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="@dimen/_24pxh"
+            android:layout_marginStart="@dimen/_24pxh"
+            android:layout_marginTop="@dimen/_50pxv"
+            android:layout_width="wrap_content"
+            android:singleLine="true"
+            android:text="@{driftcutspageoneVM.driftcutspageoneModel.txtPushed}"
+            style="@style/txtArialmt14_1" tools:text="@string/lbl_pushed2"/>
+        <androidx.recyclerview.widget.RecyclerView
+            android:gravity="center_horizontal"
+            android:id="@+id/recyclerWorks"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="@dimen/_136pxv"
+            android:layout_marginEnd="@dimen/_24pxh"
+            android:layout_marginStart="@dimen/_24pxh"
+            android:layout_marginTop="@dimen/_10pxv"
+            android:layout_width="match_parent"
+            app:layoutManager="androidx.recyclerview.widget.GridLayoutManager"
+            app:spanCount="2" itemSpace="@{@dimen/_7pxh}"
+            tools:itemCount="2" tools:listitem="@layout/row_works3"/>
+    </LinearLayout>
+</layout>

@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android" xmlns:tools="http://schemas.android.com/tools">
+    <data>
+        <variable name="workRowModel" type="com.collagepoem.app.modules.profilepagemyportfolio.data.model.WorkRowModel"/>
+    </data>
+    <ImageView android:id="@+id/imageWorks"
+        android:layout_height="@dimen/_111pxv"
+        android:layout_width="match_parent" android:scaleType="fitXY"
+        imageRes="@{@drawable/img_works}"
+        tools:ignore="ContentDescription" tools:src="@drawable/img_works"/>
+</layout>

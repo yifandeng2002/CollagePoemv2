@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto" xmlns:tools="http://schemas.android.com/tools">
+    <data>
+        <variable name="canvasEditoneVM" type="com.collagepoem.app.modules.canvaseditone.data.viewmodel.CanvasEditoneVM"/>
+    </data>
+    <FrameLayout android:id="@+id/frameStackimgbackground"
+        android:layout_height="match_parent"
+        android:layout_width="match_parent" style="@style/groupStylegray_200">
+        <ImageView android:id="@+id/imageImgbackground"
+            android:layout_gravity="start"
+            android:layout_height="match_parent"
+            android:layout_width="match_parent"
+            android:scaleType="fitXY"
+            imageRes="@{@drawable/img_imgbackground_914x411}"
+            tools:ignore="ContentDescription" tools:src="@drawable/img_imgbackground_914x411"/>
+        <LinearLayout android:id="@+id/linearColumnvector725"
+            android:layout_gravity="top|start"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="@dimen/_67pxv"
+            android:layout_marginEnd="@dimen/_10pxh"
+            android:layout_marginTop="@dimen/_67pxv"
+            android:layout_width="wrap_content" android:orientation="vertical">
+            <androidx.appcompat.widget.Toolbar android:gravity="start"
+                android:id="@+id/toolbarToolbar"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="@dimen/_24pxh"
+                android:layout_marginStart="@dimen/_24pxh"
+                android:layout_width="match_parent" app:contentInsetStart="0dp">
+                <ImageView android:id="@+id/imageVectortwo"
+                    android:layout_height="wrap_content"
+                    android:layout_width="match_parent"
+                    android:scaleType="fitXY"
+                    android:src="@drawable/img_vector725"
+                    tools:ignore="ContentDescription" tools:src="@drawable/img_vector725"/>
+            </androidx.appcompat.widget.Toolbar>
+            <ImageView android:id="@+id/imageImgcircle"
+                android:layout_gravity="end"
+                android:layout_height="@dimen/_69pxh"
+                android:layout_marginStart="@dimen/_10pxh"
+                android:layout_marginTop="@dimen/_317pxv"
+                android:layout_width="@dimen/_120pxh"
+                android:scaleType="fitXY"
+                android:src="@drawable/img_imgcircle"
+                tools:ignore="ContentDescription" tools:src="@drawable/img_imgcircle"/>
+            <ImageView android:id="@+id/imageScissors"
+                android:layout_gravity="start"
+                android:layout_height="@dimen/_135pxh"
+                android:layout_marginEnd="@dimen/_10pxh"
+                android:layout_marginTop="@dimen/_45pxv"
+                android:layout_width="@dimen/_129pxh"
+                android:scaleType="fitXY"
+                imageRes="@{@drawable/img_scissors}"
+                tools:ignore="ContentDescription" tools:src="@drawable/img_scissors"/>
+        </LinearLayout>
+    </FrameLayout>
+</layout>

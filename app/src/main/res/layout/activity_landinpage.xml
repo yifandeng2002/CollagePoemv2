@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android" xmlns:tools="http://schemas.android.com/tools">
+    <data>
+        <variable name="landinpageVM" type="com.collagepoem.app.modules.landinpage.data.viewmodel.LandinpageVM"/>
+    </data>
+    <FrameLayout android:id="@+id/frameLandinpage"
+        android:layout_height="match_parent"
+        android:layout_width="match_parent" style="@style/groupStylegray_50">
+        <ImageView android:id="@+id/imageBackground"
+            android:layout_gravity="start"
+            android:layout_height="match_parent"
+            android:layout_width="match_parent"
+            android:scaleType="fitXY"
+            android:src="@drawable/img_background"
+            tools:ignore="ContentDescription" tools:src="@drawable/img_background"/>
+        <LinearLayout android:id="@+id/linearColumncalendar"
+            android:layout_gravity="center"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="@dimen/_40pxv"
+            android:layout_marginEnd="@dimen/_31pxh"
+            android:layout_marginStart="@dimen/_32pxh"
+            android:layout_marginTop="@dimen/_40pxv"
+            android:layout_width="match_parent" android:orientation="vertical">
+            <ImageView android:gravity="start"
+                android:id="@+id/imageCalendar"
+                android:layout_height="@dimen/_428pxh"
+                android:layout_width="match_parent"
+                android:scaleType="fitXY"
+                imageRes="@{@drawable/img_calendar}"
+                tools:ignore="ContentDescription" tools:src="@drawable/img_calendar"/>
+            <ImageView android:id="@+id/imageVolume"
+                android:layout_gravity="center_horizontal"
+                android:layout_height="@dimen/_42pxh"
+                android:layout_marginEnd="@dimen/_128pxh"
+                android:layout_marginStart="@dimen/_128pxh"
+                android:layout_marginTop="@dimen/_97pxv"
+                android:layout_width="@dimen/_89pxh"
+                android:scaleType="fitXY"
+                android:src="@drawable/img_volume"
+                tools:ignore="ContentDescription" tools:src="@drawable/img_volume"/>
+            <ImageView android:id="@+id/imageGlobe"
+                android:layout_gravity="center_horizontal"
+                android:layout_height="@dimen/_13pxh"
+                android:layout_marginEnd="@dimen/_128pxh"
+                android:layout_marginStart="@dimen/_128pxh"
+                android:layout_marginTop="@dimen/_13pxv"
+                android:layout_width="@dimen/_91pxh"
+                android:scaleType="fitXY"
+                android:src="@drawable/img_globe"
+                tools:ignore="ContentDescription" tools:src="@drawable/img_globe"/>
+        </LinearLayout>
+    </FrameLayout>
+</layout>

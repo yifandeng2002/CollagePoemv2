@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android" xmlns:tools="http://schemas.android.com/tools">
+    <data>
+        <variable name="loadingworkpageVM" type="com.collagepoem.app.modules.loadingworkpage.data.viewmodel.LoadingworkpageVM"/>
+    </data>
+    <FrameLayout android:id="@+id/frameStackbackground"
+        android:layout_height="match_parent"
+        android:layout_width="match_parent" style="@style/groupStylegray_200">
+        <ImageView android:id="@+id/imageBackground"
+            android:layout_gravity="start"
+            android:layout_height="match_parent"
+            android:layout_width="match_parent"
+            android:scaleType="fitXY"
+            android:src="@drawable/img_background_3"
+            tools:ignore="ContentDescription" tools:src="@drawable/img_background_3"/>
+        <LinearLayout android:id="@+id/linearColumnbackbtn"
+            android:layout_gravity="start"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="@dimen/_60pxv"
+            android:layout_marginEnd="@dimen/_11pxh"
+            android:layout_marginStart="@dimen/_11pxh"
+            android:layout_marginTop="@dimen/_60pxv"
+            android:layout_width="match_parent" android:orientation="vertical">
+            <ImageView android:id="@+id/imageBackbtn"
+                android:layout_gravity="start"
+                android:layout_height="@dimen/_20pxh"
+                android:layout_marginEnd="@dimen/_10pxh"
+                android:layout_marginStart="@dimen/_9pxh"
+                android:layout_width="@dimen/_20pxh"
+                android:scaleType="fitXY"
+                android:src="@drawable/img_backbtn"
+                tools:ignore="ContentDescription" tools:src="@drawable/img_backbtn"/>
+            <TextView android:gravity="end"
+                android:id="@+id/txtDescription"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/_10pxh"
+                android:layout_marginTop="@dimen/_106pxv"
+                android:layout_width="match_parent"
+                android:text="@{loadingworkpageVM.loadingworkpageModel.txtDescription}"
+                style="@style/txtArialmt24" tools:text="@string/msg_in_preparation"/>
+            <FrameLayout android:id="@+id/frameStackpoemtwo"
+                android:layout_gravity="end"
+                android:layout_height="@dimen/_128pxv"
+                android:layout_marginEnd="@dimen/_106pxh"
+                android:layout_marginStart="@dimen/_106pxh"
+                android:layout_marginTop="@dimen/_123pxv" android:layout_width="@dimen/_130pxh">
+                <ImageView android:id="@+id/imagePoemTwo"
+                    android:layout_gravity="bottom|start"
+                    android:layout_height="@dimen/_83pxv"
+                    android:layout_marginTop="@dimen/_10pxv"
+                    android:layout_width="match_parent"
+                    android:scaleType="fitXY"
+                    imageRes="@{@drawable/img_poem2}"
+                    tools:ignore="ContentDescription" tools:src="@drawable/img_poem2"/>
+                <ImageView android:id="@+id/imagePoemOne"
+                    android:layout_gravity="top|end"
+                    android:layout_height="@dimen/_67pxh"
+                    android:layout_marginBottom="@dimen/_10pxv"
+                    android:layout_marginStart="@dimen/_10pxh"
+                    android:layout_width="@dimen/_88pxh"
+                    android:scaleType="fitXY"
+                    imageRes="@{@drawable/img_poem1}"
+                    tools:ignore="ContentDescription" tools:src="@drawable/img_poem1"/>
+            </FrameLayout>
+            <ImageView android:id="@+id/imageDriftbottle"
+                android:layout_gravity="start"
+                android:layout_height="@dimen/_182pxh"
+                android:layout_marginEnd="@dimen/_10pxh"
+                android:layout_marginTop="@dimen/_31pxv"
+                android:layout_width="@dimen/_157pxh"
+                android:scaleType="fitXY"
+                android:src="@drawable/img_driftbottle"
+                tools:ignore="ContentDescription" tools:src="@drawable/img_driftbottle"/>
+            <ImageView android:id="@+id/imageFinish"
+                android:layout_gravity="end"
+                android:layout_height="@dimen/_46pxh"
+                android:layout_marginEnd="@dimen/_78pxh"
+                android:layout_marginStart="@dimen/_78pxh"
+                android:layout_marginTop="@dimen/_37pxv"
+                android:layout_width="@dimen/_171pxh"
+                android:scaleType="fitXY"
+                android:src="@drawable/img_finish_46x171"
+                tools:ignore="ContentDescription" tools:src="@drawable/img_finish_46x171"/>
+        </LinearLayout>
+    </FrameLayout>
+</layout>
