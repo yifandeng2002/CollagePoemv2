@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto" xmlns:tools="http://schemas.android.com/tools">
+    <data>
+        <variable name="floatwindowMycutsVtwoVM" type="com.collagepoem.app.modules.floatwindowmycutsvtwo.data.viewmodel.FloatwindowMycutsVtwoVM"/>
+    </data>
+    <LinearLayout android:gravity="center_horizontal"
+        android:id="@+id/linearFloatwindowmyc"
+        android:layout_height="match_parent"
+        android:layout_width="match_parent"
+        android:orientation="vertical" style="@style/groupStylegray_800_7f">
+        <LinearLayout android:gravity="start"
+            android:id="@+id/linearColumnsearch"
+            android:layout_height="match_parent"
+            android:layout_marginTop="@dimen/_141pxv"
+            android:layout_width="match_parent"
+            android:orientation="vertical" style="@style/groupStylegray_200">
+            <ImageView android:id="@+id/imageImageBack"
+                android:layout_height="@dimen/_18pxh"
+                android:layout_marginEnd="@dimen/_22pxh"
+                android:layout_marginStart="@dimen/_22pxh"
+                android:layout_marginTop="@dimen/_26pxv"
+                android:layout_width="@dimen/_10pxh"
+                android:scaleType="fitXY"
+                android:src="@drawable/img_imageback"
+                tools:ignore="ContentDescription" tools:src="@drawable/img_imageback"/>
+            <EditText
+                android:background="@drawable/rectangle_bg_gray_50"
+                android:drawablePadding="@dimen/_12pxh"
+                android:ellipsize="end"
+                android:hint="@string/lbl_search_a_paper"
+                android:id="@+id/etSearch" android:inputType="text"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="@dimen/_22pxh"
+                android:layout_marginStart="@dimen/_22pxh"
+                android:layout_marginTop="@dimen/_27pxv"
+                android:layout_width="match_parent"
+                android:paddingBottom="@dimen/_10pxv"
+                android:paddingEnd="@dimen/_30pxh"
+                android:paddingStart="@dimen/_9pxh"
+                android:paddingTop="@dimen/_12pxv"
+                android:singleLine="true"
+                android:text="@={floatwindowMycutsVtwoVM.floatwindowMycutsVtwoModel.etSearchValue}"
+                android:textColorHint="@color/gray_700_8c"
+                style="@style/etSolid" tools:ignore="Autofill"/>
+            <androidx.recyclerview.widget.RecyclerView
+                android:gravity="end" android:id="@+id/recyclerStick"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="@dimen/_5pxh"
+                android:layout_marginStart="@dimen/_27pxh"
+                android:layout_marginTop="@dimen/_33pxv"
+                android:layout_width="match_parent"
+                android:orientation="vertical"
+                app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                tools:itemCount="2" tools:listitem="@layout/row_stick"/>
+        </LinearLayout>
+    </LinearLayout>
+</layout>

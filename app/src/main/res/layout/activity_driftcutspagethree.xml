@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto" xmlns:tools="http://schemas.android.com/tools">
+    <data>
+        <variable name="driftcutspagethreeVM" type="com.collagepoem.app.modules.driftcutspagethree.data.viewmodel.DriftcutspagethreeVM"/>
+    </data>
+    <LinearLayout android:id="@+id/linearColumnback"
+        android:layout_height="match_parent"
+        android:layout_width="match_parent"
+        android:orientation="vertical" style="@style/groupStylegray_200">
+        <androidx.appcompat.widget.Toolbar android:gravity="start"
+            android:id="@+id/toolbarToolbar"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="@dimen/_25pxh"
+            android:layout_marginStart="@dimen/_25pxh"
+            android:layout_marginTop="@dimen/_71pxv"
+            android:layout_width="match_parent" app:contentInsetStart="0dp">
+            <LinearLayout android:id="@+id/linearRowback"
+                android:layout_height="wrap_content"
+                android:layout_width="match_parent" android:orientation="horizontal">
+                <ImageView android:id="@+id/imageBack"
+                    android:layout_height="@dimen/_18pxh"
+                    android:layout_width="@dimen/_10pxh"
+                    android:scaleType="fitXY"
+                    android:src="@drawable/img_imageback"
+                    tools:ignore="ContentDescription" tools:src="@drawable/img_imageback"/>
+                <TextView android:ellipsize="end"
+                    android:id="@+id/txtTextholder"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="@dimen/_1pxv"
+                    android:layout_marginStart="@dimen/_138pxh"
+                    android:layout_marginTop="@dimen/_1pxv"
+                    android:layout_weight="0.87"
+                    android:layout_width="0dp" android:singleLine="true"
+                    android:text="@{driftcutspagethreeVM.driftcutspagethreeModel.txtTextholder}"
+                    style="@style/txtArialmt14_1" tools:text="@string/lbl_flow_away"/>
+            </LinearLayout>
+        </androidx.appcompat.widget.Toolbar>
+        <ImageView android:id="@+id/imageStickwithbg"
+            android:layout_gravity="end"
+            android:layout_height="@dimen/_99pxh"
+            android:layout_marginEnd="@dimen/_41pxh"
+            android:layout_marginStart="@dimen/_41pxh"
+            android:layout_marginTop="@dimen/_61pxv"
+            android:layout_width="@dimen/_312pxh"
+            android:scaleType="fitXY"
+            imageRes="@{@drawable/img_stickwithbg}"
+            tools:ignore="ContentDescription" tools:src="@drawable/img_stickwithbg"/>
+        <TextView android:gravity="start" android:id="@+id/txtThank"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="@dimen/_80pxh"
+            android:layout_marginStart="@dimen/_80pxh"
+            android:layout_marginTop="@dimen/_162pxv"
+            android:layout_width="match_parent"
+            android:text="@{driftcutspagethreeVM.driftcutspagethreeModel.txtThank}"
+            style="@style/txtArialmt21" tools:text="@string/msg_thank_you_for_y2"/>
+        <ImageView android:id="@+id/imageBottonOne"
+            android:layout_gravity="end"
+            android:layout_height="@dimen/_32pxh"
+            android:layout_marginEnd="@dimen/_115pxh"
+            android:layout_marginStart="@dimen/_115pxh"
+            android:layout_marginTop="@dimen/_38pxv"
+            android:layout_width="@dimen/_28pxh"
+            android:scaleType="fitXY"
+            android:src="@drawable/img_botton1"
+            tools:ignore="ContentDescription" tools:src="@drawable/img_botton1"/>
+        <ImageView android:id="@+id/imageBottonTwo"
+            android:layout_gravity="end"
+            android:layout_height="@dimen/_166pxh"
+            android:layout_marginStart="@dimen/_10pxh"
+            android:layout_width="@dimen/_129pxh"
+            android:scaleType="fitXY"
+            imageRes="@{@drawable/img_botton2}"
+            tools:ignore="ContentDescription" tools:src="@drawable/img_botton2"/>
+        <ImageView android:id="@+id/imageBacktoholder"
+            android:layout_gravity="center_horizontal"
+            android:layout_height="@dimen/_46pxh"
+            android:layout_marginBottom="@dimen/_20pxv"
+            android:layout_marginEnd="@dimen/_10pxh"
+            android:layout_marginStart="@dimen/_10pxh"
+            android:layout_marginTop="@dimen/_32pxv"
+            android:layout_width="@dimen/_174pxh"
+            android:scaleType="fitXY"
+            android:src="@drawable/img_backtoholder"
+            tools:ignore="ContentDescription" tools:src="@drawable/img_backtoholder"/>
+    </LinearLayout>
+</layout>

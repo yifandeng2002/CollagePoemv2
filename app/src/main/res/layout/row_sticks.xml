@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android" xmlns:tools="http://schemas.android.com/tools">
+    <data>
+        <variable name="sticksRowModel" type="com.collagepoem.app.modules.mycutspagebelongings.data.model.SticksRowModel"/>
+    </data>
+    <ImageView android:id="@+id/imageStick"
+        android:layout_height="@dimen/_48pxv"
+        android:layout_width="match_parent" android:scaleType="fitXY"
+        android:src="@drawable/img_stick_48x347"
+        tools:ignore="ContentDescription" tools:src="@drawable/img_stick_48x347"/>
+</layout>

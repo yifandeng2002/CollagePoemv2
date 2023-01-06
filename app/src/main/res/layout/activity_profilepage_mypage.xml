@@ -1,0 +1,316 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto" xmlns:tools="http://schemas.android.com/tools">
+    <data>
+        <variable name="profilepageMypageVM" type="com.collagepoem.app.modules.profilepagemypage.data.viewmodel.ProfilepageMypageVM"/>
+    </data>
+    <LinearLayout android:gravity="start"
+        android:id="@+id/linearProfilepagemyp"
+        android:layout_height="match_parent"
+        android:layout_marginBottom="@dimen/_1pxv"
+        android:layout_width="match_parent"
+        android:orientation="vertical" style="@style/groupStylegray_200">
+        <LinearLayout android:id="@+id/linearColumnown"
+            android:layout_height="0dp" android:layout_weight="1.0"
+            android:layout_width="match_parent" android:orientation="vertical">
+            <LinearLayout android:gravity="end"
+                android:id="@+id/linearColumnsetbtn"
+                android:layout_height="wrap_content"
+                android:layout_width="match_parent"
+                android:orientation="vertical" style="@style/groupStylegray_700">
+                <ImageView android:id="@+id/imageSetbtn"
+                    android:layout_height="@dimen/_30pxh"
+                    android:layout_marginEnd="@dimen/_25pxh"
+                    android:layout_marginStart="@dimen/_25pxh"
+                    android:layout_marginTop="@dimen/_54pxv"
+                    android:layout_width="@dimen/_30pxh"
+                    android:scaleType="fitXY"
+                    android:src="@drawable/img_setbtn"
+                    tools:ignore="ContentDescription" tools:src="@drawable/img_setbtn"/>
+                <LinearLayout android:gravity="start"
+                    android:id="@+id/linearUserinfo"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="@dimen/_25pxh"
+                    android:layout_marginStart="@dimen/_25pxh"
+                    android:layout_marginTop="@dimen/_16pxv"
+                    android:layout_width="match_parent" android:orientation="horizontal">
+                    <ImageView android:id="@+id/imagePhoto"
+                        android:layout_height="@dimen/_62pxh"
+                        android:layout_width="@dimen/_62pxh"
+                        android:scaleType="fitXY"
+                        imageRes="@{@drawable/img_imageprofilepi}"
+                        tools:ignore="ContentDescription" tools:src="@drawable/img_imageprofilepi"/>
+                    <androidx.appcompat.widget.Toolbar
+                        android:id="@+id/toolbarToolbar"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="@dimen/_16pxv"
+                        android:layout_marginStart="@dimen/_13pxh"
+                        android:layout_marginTop="@dimen/_9pxv"
+                        android:layout_weight="0.59"
+                        android:layout_width="0dp" app:contentInsetStart="0dp">
+                        <LinearLayout android:gravity="start"
+                            android:id="@+id/linearColumnname"
+                            android:layout_height="wrap_content"
+                            android:layout_width="match_parent" android:orientation="vertical">
+                            <TextView android:ellipsize="end"
+                                android:id="@+id/txtName"
+                                android:layout_height="wrap_content"
+                                android:layout_width="wrap_content"
+                                android:singleLine="true"
+                                android:text="@{profilepageMypageVM.profilepageMypageModel.txtName}"
+                                style="@style/txtArialboldmt14_2" tools:text="@string/msg_littlemonster_s"/>
+                            <TextView android:ellipsize="end"
+                                android:id="@+id/txtSlogan"
+                                android:layout_height="wrap_content"
+                                android:layout_marginEnd="@dimen/_10pxh"
+                                android:layout_marginStart="@dimen/_1pxh"
+                                android:layout_marginTop="@dimen/_6pxv"
+                                android:layout_width="wrap_content"
+                                android:singleLine="true"
+                                android:text="@{profilepageMypageVM.profilepageMypageModel.txtSlogan}"
+                                style="@style/txtArialmt12_3" tools:text="@string/msg_lalalalalalalal"/>
+                        </LinearLayout>
+                    </androidx.appcompat.widget.Toolbar>
+                    <TextView android:ellipsize="end"
+                        android:id="@+id/txtTextpersonalh"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="@dimen/_24pxv"
+                        android:layout_marginStart="@dimen/_20pxh"
+                        android:layout_marginTop="@dimen/_21pxv"
+                        android:layout_weight="0.17"
+                        android:layout_width="0dp"
+                        android:singleLine="true"
+                        android:text="@{profilepageMypageVM.profilepageMypageModel.txtTextpersonalh}"
+                        style="@style/txtArialmt14_5" tools:text="@string/lbl_personal"/>
+                    <ImageView android:id="@+id/imageRightbtn"
+                        android:layout_height="@dimen/_11pxh"
+                        android:layout_marginBottom="@dimen/_25pxv"
+                        android:layout_marginStart="@dimen/_1pxh"
+                        android:layout_marginTop="@dimen/_25pxv"
+                        android:layout_width="@dimen/_10pxh"
+                        android:scaleType="fitXY"
+                        android:src="@drawable/img_rightbtn"
+                        tools:ignore="ContentDescription" tools:src="@drawable/img_rightbtn"/>
+                </LinearLayout>
+                <LinearLayout android:gravity="end"
+                    android:id="@+id/linearCounts"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="@dimen/_25pxv"
+                    android:layout_marginEnd="@dimen/_47pxh"
+                    android:layout_marginStart="@dimen/_47pxh"
+                    android:layout_marginTop="@dimen/_26pxv"
+                    android:layout_width="match_parent" android:orientation="horizontal">
+                    <LinearLayout android:gravity="center_horizontal"
+                        android:id="@+id/linearWorks"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="@dimen/_2pxv"
+                        android:layout_marginTop="@dimen/_1pxv"
+                        android:layout_weight="0.49"
+                        android:layout_width="0dp" android:orientation="vertical">
+                        <TextView android:ellipsize="end"
+                            android:id="@+id/txtWorknumber"
+                            android:layout_gravity="start"
+                            android:layout_height="wrap_content"
+                            android:layout_marginEnd="@dimen/_10pxh"
+                            android:layout_marginStart="@dimen/_10pxh"
+                            android:layout_width="wrap_content"
+                            android:singleLine="true"
+                            android:text="@{profilepageMypageVM.profilepageMypageModel.txtWorknumber}"
+                            style="@style/txtArialboldmt14_3" tools:text="@string/lbl_9"/>
+                        <TextView android:ellipsize="end"
+                            android:id="@+id/txtWorks"
+                            android:layout_gravity="start"
+                            android:layout_height="wrap_content"
+                            android:layout_marginEnd="@dimen/_10pxh"
+                            android:layout_marginTop="@dimen/_13pxv"
+                            android:layout_width="wrap_content"
+                            android:singleLine="true"
+                            android:text="@{profilepageMypageVM.profilepageMypageModel.txtWorks}"
+                            style="@style/txtArialmt12_4" tools:text="@string/lbl_works"/>
+                    </LinearLayout>
+                    <View android:background="@color/gray_400_84"
+                        android:id="@+id/lineDivision"
+                        android:layout_height="@dimen/_48pxv"
+                        android:layout_weight="0.01" android:layout_width="0dp"/>
+                    <LinearLayout android:gravity="start"
+                        android:id="@+id/linearFlips"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="@dimen/_2pxv"
+                        android:layout_marginStart="@dimen/_48pxh"
+                        android:layout_marginTop="@dimen/_1pxv"
+                        android:layout_weight="0.18"
+                        android:layout_width="0dp" android:orientation="vertical">
+                        <TextView android:ellipsize="end"
+                            android:id="@+id/txtFlipnumber"
+                            android:layout_height="wrap_content"
+                            android:layout_marginEnd="@dimen/_10pxh"
+                            android:layout_marginStart="@dimen/_3pxh"
+                            android:layout_width="match_parent"
+                            android:singleLine="true"
+                            android:text="@{profilepageMypageVM.profilepageMypageModel.txtFlipnumber}"
+                            style="@style/txtArialboldmt14_3" tools:text="@string/lbl_20"/>
+                        <TextView android:ellipsize="end"
+                            android:id="@+id/txtFlips"
+                            android:layout_height="wrap_content"
+                            android:layout_marginEnd="@dimen/_7pxh"
+                            android:layout_marginTop="@dimen/_14pxv"
+                            android:layout_width="match_parent"
+                            android:singleLine="true"
+                            android:text="@{profilepageMypageVM.profilepageMypageModel.txtFlips}"
+                            style="@style/txtArialmt12_4" tools:text="@string/lbl_filps"/>
+                    </LinearLayout>
+                    <View android:background="@color/gray_400_84"
+                        android:id="@+id/lineDivisionOne"
+                        android:layout_height="@dimen/_48pxv"
+                        android:layout_marginStart="@dimen/_48pxh"
+                        android:layout_weight="0.01" android:layout_width="0dp"/>
+                    <LinearLayout android:gravity="center_horizontal"
+                        android:id="@+id/linearCollect"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="@dimen/_2pxv"
+                        android:layout_marginStart="@dimen/_38pxh"
+                        android:layout_marginTop="@dimen/_1pxv"
+                        android:layout_weight="0.32"
+                        android:layout_width="0dp" android:orientation="vertical">
+                        <TextView android:ellipsize="end"
+                            android:id="@+id/txtCollectnumber"
+                            android:layout_gravity="center_horizontal"
+                            android:layout_height="wrap_content"
+                            android:layout_marginEnd="@dimen/_16pxh"
+                            android:layout_marginStart="@dimen/_16pxh"
+                            android:layout_width="wrap_content"
+                            android:singleLine="true"
+                            android:text="@{profilepageMypageVM.profilepageMypageModel.txtCollectnumber}"
+                            style="@style/txtArialboldmt14_3" tools:text="@string/lbl_12"/>
+                        <TextView android:ellipsize="end"
+                            android:gravity="start"
+                            android:id="@+id/txtCollect"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="@dimen/_16pxv"
+                            android:layout_width="match_parent"
+                            android:singleLine="true"
+                            android:text="@{profilepageMypageVM.profilepageMypageModel.txtCollect}"
+                            style="@style/txtArialmt12_4" tools:text="@string/lbl_collection"/>
+                    </LinearLayout>
+                </LinearLayout>
+            </LinearLayout>
+            <LinearLayout android:gravity="center_vertical"
+                android:id="@+id/linearRowown"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="@dimen/_38pxh"
+                android:layout_marginStart="@dimen/_38pxh"
+                android:layout_marginTop="@dimen/_13pxv"
+                android:layout_width="wrap_content" android:orientation="horizontal">
+                <TextView android:ellipsize="end"
+                    android:id="@+id/txtOwn"
+                    android:layout_height="wrap_content"
+                    android:layout_width="wrap_content"
+                    android:singleLine="true"
+                    android:text="@{profilepageMypageVM.profilepageMypageModel.txtOwn}"
+                    style="@style/txtArialboldmt14" tools:text="@string/lbl_works"/>
+                <TextView android:ellipsize="end"
+                    android:id="@+id/txtSkartch"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/_73pxh"
+                    android:layout_width="wrap_content"
+                    android:singleLine="true"
+                    android:text="@{profilepageMypageVM.profilepageMypageModel.txtSkartch}"
+                    style="@style/txtArialmt14_1" tools:text="@string/lbl_skartch"/>
+            </LinearLayout>
+            <View android:background="@color/gray_500"
+                android:id="@+id/viewDrift"
+                android:layout_gravity="start"
+                android:layout_height="@dimen/_3pxv"
+                android:layout_marginEnd="@dimen/_129pxh"
+                android:layout_marginStart="@dimen/_129pxh"
+                android:layout_marginTop="@dimen/_6pxv" android:layout_width="@dimen/_46pxh"/>
+            <androidx.recyclerview.widget.RecyclerView
+                android:gravity="start" android:id="@+id/recyclerWorks"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="@dimen/_38pxh"
+                android:layout_marginStart="@dimen/_38pxh"
+                android:layout_marginTop="@dimen/_14pxv"
+                android:layout_width="match_parent"
+                app:layoutManager="androidx.recyclerview.widget.GridLayoutManager"
+                app:spanCount="2" itemSpace="@{@dimen/_11pxh}"
+                tools:itemCount="2" tools:listitem="@layout/row_works1"/>
+        </LinearLayout>
+        <FrameLayout android:id="@+id/frameBottombar"
+            android:layout_height="wrap_content"
+            android:layout_width="match_parent" style="@style/groupStylegray_50">
+            <LinearLayout android:id="@+id/linearBtns"
+                android:layout_height="match_parent"
+                android:layout_marginBottom="@dimen/_24pxv"
+                android:layout_marginTop="@dimen/_10pxv"
+                android:layout_width="match_parent" android:orientation="horizontal">
+                <LinearLayout android:id="@+id/linearHome"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_1pxv"
+                    android:layout_weight="1" android:layout_width="0dp" android:orientation="vertical">
+                    <ImageView android:id="@+id/imageHome"
+                        android:layout_gravity="center"
+                        android:layout_height="@dimen/_28pxh"
+                        android:layout_width="@dimen/_30pxh"
+                        android:scaleType="fitXY"
+                        android:src="@drawable/img_home_28x30"
+                        tools:ignore="ContentDescription" tools:src="@drawable/img_home_28x30"/>
+                    <TextView android:ellipsize="end"
+                        android:gravity="center_horizontal"
+                        android:id="@+id/txtHomeOne"
+                        android:layout_height="wrap_content"
+                        android:layout_marginEnd="@dimen/_2pxh"
+                        android:layout_marginStart="@dimen/_2pxh"
+                        android:layout_marginTop="@dimen/_1pxv"
+                        android:layout_width="match_parent"
+                        android:singleLine="true"
+                        android:text="@{profilepageMypageVM.profilepageMypageModel.txtHomeOne}"
+                        style="@style/txtArialmt10_3" tools:text="@string/lbl_poems"/>
+                </LinearLayout>
+                <LinearLayout android:id="@+id/linearCommunity"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1" android:layout_width="0dp" android:orientation="vertical">
+                    <ImageView android:id="@+id/imageEye"
+                        android:layout_gravity="center"
+                        android:layout_height="@dimen/_30pxh"
+                        android:layout_width="@dimen/_31pxh"
+                        android:scaleType="fitXY"
+                        android:src="@drawable/img_eye"
+                        tools:ignore="ContentDescription" tools:src="@drawable/img_eye"/>
+                    <TextView android:ellipsize="end"
+                        android:gravity="center_horizontal"
+                        android:id="@+id/txtCommunity"
+                        android:layout_height="wrap_content"
+                        android:layout_marginEnd="@dimen/_2pxh"
+                        android:layout_marginStart="@dimen/_2pxh"
+                        android:layout_marginTop="@dimen/_1pxv"
+                        android:layout_width="match_parent"
+                        android:singleLine="true"
+                        android:text="@{profilepageMypageVM.profilepageMypageModel.txtCommunity}"
+                        style="@style/txtArialmt10_3" tools:text="@string/lbl_community"/>
+                </LinearLayout>
+                <LinearLayout android:id="@+id/linearMy"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1" android:layout_width="0dp" android:orientation="vertical">
+                    <ImageView android:id="@+id/imageUser"
+                        android:layout_gravity="center"
+                        android:layout_height="@dimen/_29pxh"
+                        android:layout_width="@dimen/_25pxh"
+                        android:scaleType="fitXY"
+                        android:src="@drawable/img_user_29x25"
+                        tools:ignore="ContentDescription" tools:src="@drawable/img_user_29x25"/>
+                    <TextView android:ellipsize="end"
+                        android:gravity="center_horizontal"
+                        android:id="@+id/txtMy"
+                        android:layout_height="wrap_content"
+                        android:layout_marginEnd="@dimen/_2pxh"
+                        android:layout_marginStart="@dimen/_2pxh"
+                        android:layout_marginTop="@dimen/_1pxv"
+                        android:layout_width="match_parent"
+                        android:singleLine="true"
+                        android:text="@{profilepageMypageVM.profilepageMypageModel.txtMy}"
+                        style="@style/txtArialmt10_2" tools:text="@string/lbl_my"/>
+                </LinearLayout>
+            </LinearLayout>
+        </FrameLayout>
+    </LinearLayout>
+</layout>

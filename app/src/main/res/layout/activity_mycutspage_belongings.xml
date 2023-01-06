@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto" xmlns:tools="http://schemas.android.com/tools">
+    <data>
+        <variable name="mycutspageBelongingsVM" type="com.collagepoem.app.modules.mycutspagebelongings.data.viewmodel.MycutspageBelongingsVM"/>
+    </data>
+    <LinearLayout android:gravity="end"
+        android:id="@+id/linearMycutspagebelo"
+        android:layout_height="match_parent"
+        android:layout_width="match_parent"
+        android:orientation="vertical" style="@style/groupStylegray_200">
+        <androidx.appcompat.widget.Toolbar
+            android:gravity="center_horizontal"
+            android:id="@+id/toolbarToolbar"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="@dimen/_21pxh"
+            android:layout_marginStart="@dimen/_24pxh"
+            android:layout_marginTop="@dimen/_68pxv"
+            android:layout_width="match_parent" app:contentInsetStart="0dp">
+            <LinearLayout android:id="@+id/linearRowback"
+                android:layout_height="wrap_content"
+                android:layout_width="match_parent" android:orientation="horizontal">
+                <ImageView android:id="@+id/imageBack"
+                    android:layout_height="@dimen/_18pxh"
+                    android:layout_marginBottom="@dimen/_5pxv"
+                    android:layout_marginTop="@dimen/_3pxv"
+                    android:layout_width="@dimen/_10pxh"
+                    android:scaleType="fitXY"
+                    android:src="@drawable/img_imageback"
+                    tools:ignore="ContentDescription" tools:src="@drawable/img_imageback"/>
+                <TextView android:ellipsize="end"
+                    android:id="@+id/txtTextholder"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="@dimen/_4pxv"
+                    android:layout_marginStart="@dimen/_156pxh"
+                    android:layout_marginTop="@dimen/_7pxv"
+                    android:layout_weight="0.45"
+                    android:layout_width="0dp" android:singleLine="true"
+                    android:text="@{mycutspageBelongingsVM.mycutspageBelongingsModel.txtTextholder}"
+                    style="@style/txtArialmt14_1" tools:text="@string/lbl_clips"/>
+                <ImageView android:id="@+id/imageEdit"
+                    android:layout_height="@dimen/_26pxh"
+                    android:layout_marginStart="@dimen/_142pxh"
+                    android:layout_width="@dimen/_27pxh"
+                    android:scaleType="fitXY"
+                    android:src="@drawable/img_edit"
+                    tools:ignore="ContentDescription" tools:src="@drawable/img_edit"/>
+            </LinearLayout>
+        </androidx.appcompat.widget.Toolbar>
+        <LinearLayout android:gravity="end"
+            android:id="@+id/linearRowhad"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="@dimen/_102pxh"
+            android:layout_marginStart="@dimen/_102pxh"
+            android:layout_marginTop="@dimen/_14pxv"
+            android:layout_width="wrap_content" android:orientation="horizontal">
+            <TextView android:ellipsize="end" android:id="@+id/txtHad"
+                android:layout_height="wrap_content"
+                android:layout_weight="0.29" android:layout_width="0dp"
+                android:singleLine="true"
+                android:text="@{mycutspageBelongingsVM.mycutspageBelongingsModel.txtHad}"
+                style="@style/txtArialboldmt14" tools:text="@string/lbl_had"/>
+            <TextView android:ellipsize="end"
+                android:id="@+id/txtFlowaway"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/_82pxh"
+                android:layout_weight="0.71" android:layout_width="0dp"
+                android:singleLine="true"
+                android:text="@{mycutspageBelongingsVM.mycutspageBelongingsModel.txtFlowaway}"
+                style="@style/txtArialmt14_1" tools:text="@string/lbl_flow_away"/>
+        </LinearLayout>
+        <View android:background="@color/gray_500"
+            android:id="@+id/viewDrift" android:layout_gravity="start"
+            android:layout_height="@dimen/_3pxv"
+            android:layout_marginEnd="@dimen/_240pxh"
+            android:layout_marginStart="@dimen/_124pxh"
+            android:layout_marginTop="@dimen/_6pxv" android:layout_width="@dimen/_46pxh"/>
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/recyclerSticks"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="@dimen/_18pxh"
+            android:layout_marginStart="@dimen/_18pxh"
+            android:layout_marginTop="@dimen/_43pxv"
+            android:layout_width="match_parent"
+            app:layoutManager="androidx.recyclerview.widget.GridLayoutManager"
+            app:spanCount="1" itemSpace="@{@dimen/_1pxh}"
+            tools:itemCount="2" tools:listitem="@layout/row_sticks"/>
+    </LinearLayout>
+</layout>

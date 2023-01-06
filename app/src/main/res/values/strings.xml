@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<resources>
+    <string name="app_name">collage_poem</string>
+    <string name="loading">Loading…</string>
+    <string name="no_internet_connection">No internet connection!</string>
+<string name="lbl_pushed">pushed</string>
+<string name="lbl_tianchai">tianchai</string>
+<string name="msg_stick_would_pas">stick would past，
+it can put into bottle to flow 
+away
+make them be use</string>
+<string name="msg_start_off_your">Start off your journey with poem</string>
+<string name="lbl_flow_away">Flow away</string>
+<string name="lbl_20">20</string>
+<string name="msg_liked_by_many_o">liked by many others, made with many poems</string>
+<string name="msg_start_in_instan">Start in instance</string>
+<string name="msg_content_here_co">Content here
+Content hereContent hereContent hereContent hereContent hereContent hereContent hereContent hereContent hereContent hereContent hereContent hereContent hereContent hereContent hereContent hereContent hereContent hereContent hereContent hereContent hereContent hereContent hereContent hereContent</string>
+<string name="lbl_taigeer_india">Taigeer（india）</string>
+<string name="lbl_1day">1DAY</string>
+<string name="lbl_message">Message</string>
+<string name="lbl_2022_1_3">2022.1.3</string>
+<string name="lbl_poems">Poems</string>
+<string name="lbl_select_a_photo">Select a photo</string>
+<string name="lbl_recommand">Recommand</string>
+<string name="msg_thank_you_for_y">Thank you for your likes.</string>
+<string name="lbl_used_user">Used User</string>
+<string name="lbl_collect_time">collect-time</string>
+<string name="msg_this_is_a_signa">this is a signature</string>
+<string name="lbl_filps">filps</string>
+<string name="msg_lalalalalalalal">lalalalalalalalal</string>
+<string name="lbl_follow">Follow</string>
+<string name="lbl_blablabla">blablabla</string>
+<string name="lbl_me">\@Me</string>
+<string name="lbl_edit">Edit</string>
+<string name="lbl_followed">Followed</string>
+<string name="lbl_foward_2">Foward 2</string>
+<string name="lbl_one">One</string>
+<string name="lbl_12">12</string>
+<string name="lbl_works">works</string>
+<string name="msg_in_preparation">In preparation......
+You have some notes left over&#13;
+You can drag them into a drift bottle and give them to others ~</string>
+<string name="lbl_left">left</string>
+<string name="lbl_send">Send</string>
+<string name="lbl_brid_collect">brid-collect
+</string>
+<string name="msg_log_in_sign_u">Log in / Sign Up</string>
+<string name="lbl_clips">Clips</string>
+<string name="lbl_01_05">01/05</string>
+<string name="lbl_skartch">skartch</string>
+<string name="msg_thanks_your_sha2">Thanks your sharing
+</string>
+<string name="msg_littlemonster_s">LittleMonster\u2019s stupid Qing</string>
+<string name="lbl_my">My</string>
+<string name="lbl_search_a_paper">Search a paper</string>
+<string name="lbl_add_a_comment">Add a comment</string>
+<string name="msg_congratulations"> Congratulations!
+You have completed a collage poem!&#13;
+Come and share your work with us!</string>
+<string name="msg_brid_collect_ta">brid-collect
+Taigeer（india）</string>
+<string name="msg_left1daystick_w">left1DAYstick would past，
+it can put into bottle to flow 
+away
+make them be use</string>
+<string name="lbl_2_days_ago">2 days ago</string>
+<string name="lbl_from">From</string>
+<string name="lbl_latest">Latest</string>
+<string name="lbl_lalalalalaalal">lalalalalaalal</string>
+<string name="lbl_2">2</string>
+<string name="lbl_follow2">follow</string>
+<string name="lbl_87">87</string>
+<string name="lbl_comment_35">Comment 35</string>
+<string name="lbl_3">3</string>
+<string name="msg_welcome_back_st">Welcome Back
+Start off your journey with poem</string>
+<string name="lbl_9">9</string>
+<string name="lbl_287">287</string>
+<string name="lbl_admin">admin</string>
+<string name="lbl_like">Like</string>
+<string name="msg_whats_up_come">Whats up! Come and watch...</string>
+<string name="msg_had_something_i">Had something in my mind.</string>
+<string name="msg_thank_you_for_y2">Thank you for your generous sharing of The notes dropped into the drift bottle will form the poem that belongs to it</string>
+<string name="lbl_username1">Username1</string>
+<string name="lbl_personal">personal</string>
+<string name="msg_2022_10_12_1day">2022/10/12
+1days to out</string>
+<string name="lbl_notification">Notification</string>
+<string name="lbl_welcome_back">Welcome Back
+</string>
+<string name="lbl_community">Community</string>
+<string name="lbl_password">Password</string>
+<string name="lbl_collection">collection</string>
+<string name="lbl_had">Had</string>
+<string name="msg_content_here_co2">Content here
+Content hereContent hereContent hereContent hereContent hereContent hereContent hereContent hereContent hereContent hereContent hereContent hereContent hereContent hereContent hereContent hereContent hereContent hereContent hereContent hereContent hereContent hereContent hereContent hereContent hereContent hereContent hereContent hereContent hereContent here</string>
+<string name="lbl_comment">Comment</string>
+<string name="msg_thanks_your_sha">Thanks your sharing
+liked by many others, made with many poems</string>
+<string name="lbl_pushed2">Pushed</string>
+<string name="lbl_account">Account</string>
+<string name="lbl_fans">fans</string>
+<string name="msg_please_enter_valid_pa">Please enter valid password</string>
+</resources>

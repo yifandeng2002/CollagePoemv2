@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto" xmlns:tools="http://schemas.android.com/tools">
+    <data>
+        <variable name="communitypageMessagesVM" type="com.collagepoem.app.modules.communitypagemessages.data.viewmodel.CommunitypageMessagesVM"/>
+    </data>
+    <LinearLayout android:id="@+id/linearCommunitypagem"
+        android:layout_height="match_parent"
+        android:layout_width="match_parent"
+        android:orientation="vertical" style="@style/groupStylegray_200">
+        <androidx.appcompat.widget.Toolbar android:gravity="start"
+            android:id="@+id/toolbarToolbar"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="@dimen/_20pxh"
+            android:layout_marginStart="@dimen/_20pxh"
+            android:layout_marginTop="@dimen/_72pxv"
+            android:layout_width="match_parent" app:contentInsetStart="0dp">
+            <LinearLayout android:id="@+id/linearRowbackbtn"
+                android:layout_height="wrap_content"
+                android:layout_width="match_parent" android:orientation="horizontal">
+                <ImageView android:id="@+id/imageBackbtn"
+                    android:layout_height="@dimen/_20pxh"
+                    android:layout_width="@dimen/_20pxh"
+                    android:scaleType="fitXY"
+                    android:src="@drawable/img_backbtn"
+                    tools:ignore="ContentDescription" tools:src="@drawable/img_backbtn"/>
+                <TextView android:ellipsize="end"
+                    android:id="@+id/txtTxtmessage"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="@dimen/_2pxv"
+                    android:layout_marginStart="@dimen/_132pxh"
+                    android:layout_marginTop="@dimen/_2pxv"
+                    android:layout_weight="0.77"
+                    android:layout_width="0dp" android:singleLine="true"
+                    android:text="@{communitypageMessagesVM.communitypageMessagesModel.txtTxtmessage}"
+                    style="@style/txtArialmt14_1" tools:text="@string/lbl_notification"/>
+            </LinearLayout>
+        </androidx.appcompat.widget.Toolbar>
+        <LinearLayout android:id="@+id/linearSelectbar"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="@dimen/_20pxh"
+            android:layout_marginStart="@dimen/_20pxh"
+            android:layout_marginTop="@dimen/_9pxv"
+            android:layout_width="match_parent" android:orientation="horizontal">
+            <TextView android:ellipsize="end"
+                android:id="@+id/txtTxtmessageOne"
+                android:layout_height="wrap_content"
+                android:layout_weight="0.33" android:layout_width="0dp"
+                android:singleLine="true"
+                android:text="@{communitypageMessagesVM.communitypageMessagesModel.txtTxtmessageOne}"
+                style="@style/txtArialboldmt14" tools:text="@string/lbl_message"/>
+            <TextView android:ellipsize="end"
+                android:id="@+id/txtTxtcomment"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/_47pxh"
+                android:layout_weight="0.34" android:layout_width="0dp"
+                android:singleLine="true"
+                android:text="@{communitypageMessagesVM.communitypageMessagesModel.txtTxtcomment}"
+                style="@style/txtArialmt14_1" tools:text="@string/lbl_comment"/>
+            <TextView android:ellipsize="end"
+                android:id="@+id/txtTxtatme"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/_47pxh"
+                android:layout_weight="0.19" android:layout_width="0dp"
+                android:singleLine="true"
+                android:text="@{communitypageMessagesVM.communitypageMessagesModel.txtTxtatme}"
+                style="@style/txtArialmt14_1" tools:text="@string/lbl_me"/>
+            <TextView android:ellipsize="end"
+                android:id="@+id/txtTxtlike"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/_47pxh"
+                android:layout_weight="0.14" android:layout_width="0dp"
+                android:singleLine="true"
+                android:text="@{communitypageMessagesVM.communitypageMessagesModel.txtTxtlike}"
+                style="@style/txtArialmt14_1" tools:text="@string/lbl_like"/>
+        </LinearLayout>
+        <View android:background="@color/gray_500"
+            android:id="@+id/viewImgselected"
+            android:layout_gravity="start"
+            android:layout_height="@dimen/_3pxv"
+            android:layout_marginEnd="@dimen/_90pxh"
+            android:layout_marginStart="@dimen/_90pxh"
+            android:layout_marginTop="@dimen/_4pxv" android:layout_width="@dimen/_28pxh"/>
+        <androidx.recyclerview.widget.RecyclerView
+            android:gravity="center_horizontal"
+            android:id="@+id/recyclerMessages"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="@dimen/_650pxv"
+            android:layout_marginEnd="@dimen/_20pxh"
+            android:layout_marginStart="@dimen/_20pxh"
+            android:layout_marginTop="@dimen/_26pxv"
+            android:layout_width="match_parent"
+            android:orientation="vertical"
+            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+            tools:itemCount="2" tools:listitem="@layout/row_messages"/>
+    </LinearLayout>
+</layout>
