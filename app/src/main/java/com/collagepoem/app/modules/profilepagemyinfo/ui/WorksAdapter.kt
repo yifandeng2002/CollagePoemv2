@@ -53,5 +53,11 @@ class WorksAdapter(
     view: View
   ) : RecyclerView.ViewHolder(view) {
     val binding: RowWorksBinding = RowWorksBinding.bind(itemView)
+    init {
+      binding.linearWorkcard.setOnClickListener {
+        // TODO replace with value from datasource
+        clickListener?.onItemClick(it, adapterPosition, WorksRowModel())
+      }
+    }
   }
 }

@@ -81,4 +81,6 @@ dependencies {
     implementation("androidx.security:security-crypto:1.0.0")
     implementation "com.airbnb.android:lottie:3.4.0"
 
+    implementation 'com.vmadalin:easypermissions-ktx:0.1.0'
 }
+

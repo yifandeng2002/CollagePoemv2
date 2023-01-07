@@ -1,5 +1,8 @@
 package com.collagepoem.app.modules.communitypageinfo.ui
 
+import android.content.Context
+import android.content.Intent
+import android.os.Bundle
 import android.view.View
 import androidx.activity.viewModels
 import com.collagepoem.app.R
@@ -47,5 +50,11 @@ class CommunitypageInfoActivity :
   companion object {
     const val TAG: String = "COMMUNITYPAGE_INFO_ACTIVITY"
 
+
+    fun getIntent(context: Context, bundle: Bundle?): Intent {
+      val destIntent = Intent(context, CommunitypageInfoActivity::class.java)
+      destIntent.putExtra("bundle", bundle)
+      return destIntent
+    }
   }
 }

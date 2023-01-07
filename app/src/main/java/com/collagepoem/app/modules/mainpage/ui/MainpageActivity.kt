@@ -7,12 +7,25 @@ import androidx.activity.viewModels
 import com.collagepoem.app.R
 import com.collagepoem.app.appcomponents.base.BaseActivity
 import com.collagepoem.app.databinding.ActivityMainpageBinding
+import com.collagepoem.app.modules.canvaspoem.ui.CanvasPoemActivity
+import com.collagepoem.app.modules.communitypage.ui.CommunitypageActivity
 import com.collagepoem.app.modules.mainpage.`data`.viewmodel.MainpageVM
+import com.collagepoem.app.modules.profilepagemypage.ui.ProfilepageMypageActivity
+import kotlin.Int
 import kotlin.String
 import kotlin.Unit
 
 class MainpageActivity : BaseActivity<ActivityMainpageBinding>(R.layout.activity_mainpage) {
   private val viewModel: MainpageVM by viewModels<MainpageVM>()
+
+  private val REQUEST_CODE_COMMUNITYPAGE_ACTIVITY: Int = 852
+
+
+  private val REQUEST_CODE_PROFILEPAGE_MYPAGE_ACTIVITY: Int = 391
+
+
+  private val REQUEST_CODE_CANVAS_POEM_ACTIVITY: Int = 149
+
 
   override fun onInitialized(): Unit {
     viewModel.navArguments = intent.extras?.getBundle("bundle")
@@ -20,6 +33,26 @@ class MainpageActivity : BaseActivity<ActivityMainpageBinding>(R.layout.activity
   }
 
   override fun setUpClicks(): Unit {
+    binding.imageEye.setOnClickListener {
+      val destIntent = CommunitypageActivity.getIntent(this, null)
+      startActivityForResult(destIntent, REQUEST_CODE_COMMUNITYPAGE_ACTIVITY)
+      this.overridePendingTransition(R.anim.zoom_in ,R.anim.zoom_out )
+    }
+    binding.imageImageprofilepi.setOnClickListener {
+      val destIntent = ProfilepageMypageActivity.getIntent(this, null)
+      startActivityForResult(destIntent, REQUEST_CODE_PROFILEPAGE_MYPAGE_ACTIVITY)
+      this.overridePendingTransition(R.anim.zoom_in ,R.anim.zoom_out )
+    }
+    binding.imageImageAddNew.setOnClickListener {
+      val destIntent = CanvasPoemActivity.getIntent(this, null)
+      startActivityForResult(destIntent, REQUEST_CODE_CANVAS_POEM_ACTIVITY)
+      this.overridePendingTransition(R.anim.zoom_in ,R.anim.zoom_out )
+    }
+    binding.imageUser.setOnClickListener {
+      val destIntent = ProfilepageMypageActivity.getIntent(this, null)
+      startActivityForResult(destIntent, REQUEST_CODE_PROFILEPAGE_MYPAGE_ACTIVITY)
+      this.overridePendingTransition(R.anim.zoom_in ,R.anim.zoom_out )
+    }
   }
 
   companion object {

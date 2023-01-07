@@ -1,5 +1,8 @@
 package com.collagepoem.app.modules.canvas.ui
 
+import android.content.Context
+import android.content.Intent
+import android.os.Bundle
 import androidx.activity.viewModels
 import com.collagepoem.app.R
 import com.collagepoem.app.appcomponents.base.BaseActivity
@@ -22,5 +25,11 @@ class CanvasActivity : BaseActivity<ActivityCanvasBinding>(R.layout.activity_can
   companion object {
     const val TAG: String = "CANVAS_ACTIVITY"
 
+
+    fun getIntent(context: Context, bundle: Bundle?): Intent {
+      val destIntent = Intent(context, CanvasActivity::class.java)
+      destIntent.putExtra("bundle", bundle)
+      return destIntent
+    }
   }
 }

@@ -1,5 +1,8 @@
 package com.collagepoem.app.modules.canvasedittwo.ui
 
+import android.content.Context
+import android.content.Intent
+import android.os.Bundle
 import androidx.activity.viewModels
 import com.collagepoem.app.R
 import com.collagepoem.app.appcomponents.base.BaseActivity
@@ -18,10 +21,19 @@ class CanvasEdittwoActivity :
   }
 
   override fun setUpClicks(): Unit {
+    binding.imageVectorone.setOnClickListener {
+      finish()
+    }
   }
 
   companion object {
     const val TAG: String = "CANVAS_EDITTWO_ACTIVITY"
 
+
+    fun getIntent(context: Context, bundle: Bundle?): Intent {
+      val destIntent = Intent(context, CanvasEdittwoActivity::class.java)
+      destIntent.putExtra("bundle", bundle)
+      return destIntent
+    }
   }
 }

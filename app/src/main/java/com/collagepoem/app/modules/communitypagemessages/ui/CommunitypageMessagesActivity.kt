@@ -1,5 +1,8 @@
 package com.collagepoem.app.modules.communitypagemessages.ui
 
+import android.content.Context
+import android.content.Intent
+import android.os.Bundle
 import android.view.View
 import androidx.activity.viewModels
 import com.collagepoem.app.R
@@ -33,6 +36,9 @@ class CommunitypageMessagesActivity :
   }
 
   override fun setUpClicks(): Unit {
+    binding.imageBackbtn.setOnClickListener {
+      finish()
+    }
   }
 
   fun onClickRecyclerMessages(
@@ -47,5 +53,11 @@ class CommunitypageMessagesActivity :
   companion object {
     const val TAG: String = "COMMUNITYPAGE_MESSAGES_ACTIVITY"
 
+
+    fun getIntent(context: Context, bundle: Bundle?): Intent {
+      val destIntent = Intent(context, CommunitypageMessagesActivity::class.java)
+      destIntent.putExtra("bundle", bundle)
+      return destIntent
+    }
   }
 }
