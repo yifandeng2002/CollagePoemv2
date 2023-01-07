@@ -10,6 +10,7 @@ import com.collagepoem.app.databinding.ActivityLoadingworkpageBinding
 import com.collagepoem.app.modules.loadingworkpage.`data`.viewmodel.LoadingworkpageVM
 import com.collagepoem.app.modules.successpage.ui.SuccesspageActivity
 import kotlin.Int
+import com.jaeger.library.StatusBarUtil
 import kotlin.String
 import kotlin.Unit
 
@@ -18,10 +19,21 @@ class LoadingworkpageActivity :
   private val viewModel: LoadingworkpageVM by viewModels<LoadingworkpageVM>()
 
   private val REQUEST_CODE_SUCCESSPAGE_ACTIVITY: Int = 506
+  
+  //    将StatusBar设置为透明
+  fun setStatusBarTranslucent() {
+    StatusBarUtil.setTranslucentForImageViewInFragment(
+      this,
+      0, null
+    )
+    StatusBarUtil.setLightMode(this)
+  }
+
 
   override fun onInitialized(): Unit {
     viewModel.navArguments = intent.extras?.getBundle("bundle")
     binding.loadingworkpageVM = viewModel
+    setStatusBarTranslucent()
   }
 
   override fun setUpClicks(): Unit {
