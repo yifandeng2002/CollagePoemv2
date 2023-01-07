@@ -53,5 +53,11 @@ class SticksAdapter(
     view: View
   ) : RecyclerView.ViewHolder(view) {
     val binding: RowSticksBinding = RowSticksBinding.bind(itemView)
+    init {
+      binding.imageStick.setOnClickListener {
+        // TODO replace with value from datasource
+        clickListener?.onItemClick(it, adapterPosition, SticksRowModel())
+      }
+    }
   }
 }
