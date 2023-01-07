@@ -82,5 +82,10 @@ dependencies {
     implementation "com.airbnb.android:lottie:3.4.0"
 
     implementation 'com.vmadalin:easypermissions-ktx:0.1.0'
+
+    //添加StatusBarUtil的依赖
+    implementation 'com.jaeger.statusbarutil:library:1.5.1'
+
+
 }
 

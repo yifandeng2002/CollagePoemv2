@@ -14,6 +14,7 @@ import com.collagepoem.app.modules.mycutspagebelongings.ui.MycutspageBelongingsA
 import com.collagepoem.app.modules.profilepagemypage.`data`.model.Works1RowModel
 import com.collagepoem.app.modules.profilepagemypage.`data`.viewmodel.ProfilepageMypageVM
 import com.collagepoem.app.modules.profilepagemyportfolio.ui.ProfilepageMyportfolioActivity
+import com.jaeger.library.StatusBarUtil
 import kotlin.Int
 import kotlin.String
 import kotlin.Unit
@@ -30,6 +31,15 @@ class ProfilepageMypageActivity :
 
   private val REQUEST_CODE_MYCUTSPAGE_BELONGINGS_ACTIVITY: Int = 612
 
+  //    将StatusBar设置为透明
+  fun setStatusBarTranslucent() {
+    StatusBarUtil.setTranslucentForImageViewInFragment(
+      this,
+      0, null
+    )
+    StatusBarUtil.setLightMode(this)
+  }
+
   override fun onInitialized(): Unit {
     viewModel.navArguments = intent.extras?.getBundle("bundle")
     val worksAdapter = WorksAdapter(viewModel.worksList.value?:mutableListOf())
@@ -45,6 +55,7 @@ class ProfilepageMypageActivity :
       worksAdapter.updateData(it)
     }
     binding.profilepageMypageVM = viewModel
+    setStatusBarTranslucent()
   }
 
   override fun setUpClicks(): Unit {

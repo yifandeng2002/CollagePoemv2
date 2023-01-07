@@ -7,6 +7,7 @@ import com.collagepoem.app.appcomponents.base.BaseActivity
 import com.collagepoem.app.databinding.ActivityProfilepageMyinfoOneBinding
 import com.collagepoem.app.modules.profilepagemyinfoone.`data`.model.Works2RowModel
 import com.collagepoem.app.modules.profilepagemyinfoone.`data`.viewmodel.ProfilepageMyinfoOneVM
+import com.jaeger.library.StatusBarUtil
 import kotlin.Int
 import kotlin.String
 import kotlin.Unit
@@ -14,6 +15,15 @@ import kotlin.Unit
 class ProfilepageMyinfoOneActivity :
     BaseActivity<ActivityProfilepageMyinfoOneBinding>(R.layout.activity_profilepage_myinfo_one) {
   private val viewModel: ProfilepageMyinfoOneVM by viewModels<ProfilepageMyinfoOneVM>()
+
+  //    将StatusBar设置为透明
+  fun setStatusBarTranslucent() {
+    StatusBarUtil.setTranslucentForImageViewInFragment(
+      this,
+      0, null
+    )
+    StatusBarUtil.setLightMode(this)
+  }
 
   override fun onInitialized(): Unit {
     viewModel.navArguments = intent.extras?.getBundle("bundle")
@@ -30,6 +40,7 @@ class ProfilepageMyinfoOneActivity :
       worksAdapter.updateData(it)
     }
     binding.profilepageMyinfoOneVM = viewModel
+    setStatusBarTranslucent()
   }
 
   override fun setUpClicks(): Unit {
