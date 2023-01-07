@@ -10,6 +10,7 @@ import com.collagepoem.app.databinding.ActivityCommunitypageBinding
 import com.collagepoem.app.modules.communitypage.`data`.viewmodel.CommunitypageVM
 import com.collagepoem.app.modules.communitypageinfo.ui.CommunitypageInfoActivity
 import com.collagepoem.app.modules.communitypagemessages.ui.CommunitypageMessagesActivity
+import com.collagepoem.app.modules.mainpage.ui.MainpageActivity
 import com.collagepoem.app.modules.profilepagemyinfo.ui.ProfilepageMyinfoActivity
 import com.collagepoem.app.modules.profilepagemypage.ui.ProfilepageMypageActivity
 import kotlin.Int
@@ -20,16 +21,19 @@ class CommunitypageActivity :
     BaseActivity<ActivityCommunitypageBinding>(R.layout.activity_communitypage) {
   private val viewModel: CommunitypageVM by viewModels<CommunitypageVM>()
 
-  private val REQUEST_CODE_COMMUNITYPAGE_INFO_ACTIVITY: Int = 276
+  private val REQUEST_CODE_MAINPAGE_ACTIVITY: Int = 724
 
 
-  private val REQUEST_CODE_PROFILEPAGE_MYPAGE_ACTIVITY: Int = 931
+  private val REQUEST_CODE_COMMUNITYPAGE_INFO_ACTIVITY: Int = 886
 
 
-  private val REQUEST_CODE_PROFILEPAGE_MYINFO_ACTIVITY: Int = 992
+  private val REQUEST_CODE_PROFILEPAGE_MYPAGE_ACTIVITY: Int = 454
 
 
-  private val REQUEST_CODE_COMMUNITYPAGE_MESSAGES_ACTIVITY: Int = 714
+  private val REQUEST_CODE_PROFILEPAGE_MYINFO_ACTIVITY: Int = 941
+
+
+  private val REQUEST_CODE_COMMUNITYPAGE_MESSAGES_ACTIVITY: Int = 332
 
 
   override fun onInitialized(): Unit {
@@ -38,6 +42,11 @@ class CommunitypageActivity :
   }
 
   override fun setUpClicks(): Unit {
+    binding.imageHome.setOnClickListener {
+      val destIntent = MainpageActivity.getIntent(this, null)
+      startActivityForResult(destIntent, REQUEST_CODE_MAINPAGE_ACTIVITY)
+      this.overridePendingTransition(R.anim.left_to_right ,R.anim.right_to_left )
+    }
     binding.linearCard.setOnClickListener {
       val destIntent = CommunitypageInfoActivity.getIntent(this, null)
       startActivityForResult(destIntent, REQUEST_CODE_COMMUNITYPAGE_INFO_ACTIVITY)
@@ -46,7 +55,7 @@ class CommunitypageActivity :
     binding.imageUser.setOnClickListener {
       val destIntent = ProfilepageMypageActivity.getIntent(this, null)
       startActivityForResult(destIntent, REQUEST_CODE_PROFILEPAGE_MYPAGE_ACTIVITY)
-      this.overridePendingTransition(R.anim.zoom_in ,R.anim.zoom_out )
+      this.overridePendingTransition(R.anim.right_to_left ,R.anim.left_to_right )
     }
     binding.btnFollow.setOnClickListener {
       val destIntent = ProfilepageMyinfoActivity.getIntent(this, null)

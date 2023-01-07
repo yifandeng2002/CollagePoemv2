@@ -21,9 +21,9 @@ class ProfilepageMyinfoActivity :
     BaseActivity<ActivityProfilepageMyinfoBinding>(R.layout.activity_profilepage_myinfo) {
   private val viewModel: ProfilepageMyinfoVM by viewModels<ProfilepageMyinfoVM>()
 
-  private val REQUEST_CODE_COMMUNITYPAGE_INFO_ACTIVITY: Int = 652
+  private val REQUEST_CODE_COMMUNITYPAGE_INFO_ACTIVITY: Int = 607
 
-  private val REQUEST_CODE_COMMUNITYPAGE_INFO_ONE_ACTIVITY: Int = 581
+  private val REQUEST_CODE_COMMUNITYPAGE_INFO_ONE_ACTIVITY: Int = 111
 
   //    将StatusBar设置为透明
   fun setStatusBarTranslucent() {

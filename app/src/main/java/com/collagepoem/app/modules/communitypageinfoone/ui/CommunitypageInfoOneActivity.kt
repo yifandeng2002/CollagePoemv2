@@ -19,7 +19,7 @@ class CommunitypageInfoOneActivity :
     BaseActivity<ActivityCommunitypageInfoOneBinding>(R.layout.activity_communitypage_info_one) {
   private val viewModel: CommunitypageInfoOneVM by viewModels<CommunitypageInfoOneVM>()
 
-  private val REQUEST_CODE_PROFILEPAGE_MYINFO_ACTIVITY: Int = 588
+  private val REQUEST_CODE_PROFILEPAGE_MYINFO_ACTIVITY: Int = 399
 
 
   override fun onInitialized(): Unit {
