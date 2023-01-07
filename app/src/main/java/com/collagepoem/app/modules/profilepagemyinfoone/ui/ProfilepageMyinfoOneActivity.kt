@@ -33,6 +33,9 @@ class ProfilepageMyinfoOneActivity :
   }
 
   override fun setUpClicks(): Unit {
+    binding.imageBack.setOnClickListener {
+      finish()
+    }
   }
 
   fun onClickRecyclerWorks(

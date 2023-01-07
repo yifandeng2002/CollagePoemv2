@@ -18,13 +18,13 @@ import kotlin.Unit
 class MainpageActivity : BaseActivity<ActivityMainpageBinding>(R.layout.activity_mainpage) {
   private val viewModel: MainpageVM by viewModels<MainpageVM>()
 
-  private val REQUEST_CODE_COMMUNITYPAGE_ACTIVITY: Int = 852
+  private val REQUEST_CODE_CANVAS_POEM_ACTIVITY: Int = 682
 
 
-  private val REQUEST_CODE_PROFILEPAGE_MYPAGE_ACTIVITY: Int = 391
+  private val REQUEST_CODE_COMMUNITYPAGE_ACTIVITY: Int = 237
 
 
-  private val REQUEST_CODE_CANVAS_POEM_ACTIVITY: Int = 149
+  private val REQUEST_CODE_PROFILEPAGE_MYPAGE_ACTIVITY: Int = 411
 
 
   override fun onInitialized(): Unit {
@@ -33,10 +33,15 @@ class MainpageActivity : BaseActivity<ActivityMainpageBinding>(R.layout.activity
   }
 
   override fun setUpClicks(): Unit {
+    binding.imagePoemcard.setOnClickListener {
+      val destIntent = CanvasPoemActivity.getIntent(this, null)
+      startActivityForResult(destIntent, REQUEST_CODE_CANVAS_POEM_ACTIVITY)
+      this.overridePendingTransition(R.anim.zoom_in ,R.anim.zoom_out )
+    }
     binding.imageEye.setOnClickListener {
       val destIntent = CommunitypageActivity.getIntent(this, null)
       startActivityForResult(destIntent, REQUEST_CODE_COMMUNITYPAGE_ACTIVITY)
-      this.overridePendingTransition(R.anim.zoom_in ,R.anim.zoom_out )
+      this.overridePendingTransition(R.anim.right_to_left ,R.anim.left_to_right )
     }
     binding.imageImageprofilepi.setOnClickListener {
       val destIntent = ProfilepageMypageActivity.getIntent(this, null)
@@ -48,10 +53,15 @@ class MainpageActivity : BaseActivity<ActivityMainpageBinding>(R.layout.activity
       startActivityForResult(destIntent, REQUEST_CODE_CANVAS_POEM_ACTIVITY)
       this.overridePendingTransition(R.anim.zoom_in ,R.anim.zoom_out )
     }
+    binding.imagePoemcardOne.setOnClickListener {
+      val destIntent = CanvasPoemActivity.getIntent(this, null)
+      startActivityForResult(destIntent, REQUEST_CODE_CANVAS_POEM_ACTIVITY)
+      this.overridePendingTransition(R.anim.zoom_in ,R.anim.zoom_out )
+    }
     binding.imageUser.setOnClickListener {
       val destIntent = ProfilepageMypageActivity.getIntent(this, null)
       startActivityForResult(destIntent, REQUEST_CODE_PROFILEPAGE_MYPAGE_ACTIVITY)
-      this.overridePendingTransition(R.anim.zoom_in ,R.anim.zoom_out )
+      this.overridePendingTransition(R.anim.right_to_left ,R.anim.left_to_right )
     }
   }
 

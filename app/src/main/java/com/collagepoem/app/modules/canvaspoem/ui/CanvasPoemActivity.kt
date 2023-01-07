@@ -19,13 +19,13 @@ import kotlin.Unit
 class CanvasPoemActivity : BaseActivity<ActivityCanvasPoemBinding>(R.layout.activity_canvas_poem) {
   private val viewModel: CanvasPoemVM by viewModels<CanvasPoemVM>()
 
-  private val REQUEST_CODE_CANVAS_ACTIVITY: Int = 268
+  private val REQUEST_CODE_CANVAS_ACTIVITY: Int = 974
 
 
-  private val REQUEST_CODE_CANVAS_EDITONE_ACTIVITY: Int = 622
+  private val REQUEST_CODE_MAINPAGE_ACTIVITY: Int = 493
 
 
-  private val REQUEST_CODE_MAINPAGE_ACTIVITY: Int = 336
+  private val REQUEST_CODE_CANVAS_EDITONE_ACTIVITY: Int = 348
 
 
   override fun onInitialized(): Unit {
@@ -37,7 +37,7 @@ class CanvasPoemActivity : BaseActivity<ActivityCanvasPoemBinding>(R.layout.acti
     binding.imageSwitchbtn.setOnClickListener {
       val destIntent = CanvasActivity.getIntent(this, null)
       startActivityForResult(destIntent, REQUEST_CODE_CANVAS_ACTIVITY)
-      this.overridePendingTransition(R.anim.zoom_in ,R.anim.zoom_out )
+      this.overridePendingTransition(R.anim.slide_up ,R.anim.slide_down )
     }
     binding.imageCamerabtn.setOnClickListener {
       ImagePickerFragmentDialog().show(supportFragmentManager)
@@ -46,7 +46,9 @@ class CanvasPoemActivity : BaseActivity<ActivityCanvasPoemBinding>(R.layout.acti
 
     }
     binding.imageImageBack.setOnClickListener {
-      finish()
+      val destIntent = MainpageActivity.getIntent(this, null)
+      startActivityForResult(destIntent, REQUEST_CODE_MAINPAGE_ACTIVITY)
+      this.overridePendingTransition(R.anim.zoom_out ,R.anim.zoom_in )
     }
     binding.imageScissorsbtn.setOnClickListener {
       val destIntent = CanvasEditoneActivity.getIntent(this, null)
@@ -54,9 +56,9 @@ class CanvasPoemActivity : BaseActivity<ActivityCanvasPoemBinding>(R.layout.acti
       this.overridePendingTransition(R.anim.zoom_in ,R.anim.zoom_out )
     }
     binding.imageWihtepic.setOnClickListener {
-      val destIntent = MainpageActivity.getIntent(this, null)
-      startActivityForResult(destIntent, REQUEST_CODE_MAINPAGE_ACTIVITY)
-      this.overridePendingTransition(R.anim.zoom_in ,R.anim.zoom_out )
+      val destIntent = CanvasActivity.getIntent(this, null)
+      startActivityForResult(destIntent, REQUEST_CODE_CANVAS_ACTIVITY)
+      this.overridePendingTransition(R.anim.slide_up ,R.anim.slide_down )
     }
   }
 

@@ -1,5 +1,8 @@
 package com.collagepoem.app.modules.floatwindowmycutsvtwo.ui
 
+import android.content.Context
+import android.content.Intent
+import android.os.Bundle
 import android.view.View
 import androidx.activity.viewModels
 import com.collagepoem.app.R
@@ -33,6 +36,9 @@ class FloatwindowMycutsVtwoActivity :
   }
 
   override fun setUpClicks(): Unit {
+    binding.imageImageBack.setOnClickListener {
+      finish()
+    }
   }
 
   fun onClickRecyclerStick(
@@ -47,5 +53,11 @@ class FloatwindowMycutsVtwoActivity :
   companion object {
     const val TAG: String = "FLOATWINDOW_MYCUTS_VTWO_ACTIVITY"
 
+
+    fun getIntent(context: Context, bundle: Bundle?): Intent {
+      val destIntent = Intent(context, FloatwindowMycutsVtwoActivity::class.java)
+      destIntent.putExtra("bundle", bundle)
+      return destIntent
+    }
   }
 }

@@ -22,13 +22,13 @@ class ProfilepageMypageActivity :
     BaseActivity<ActivityProfilepageMypageBinding>(R.layout.activity_profilepage_mypage) {
   private val viewModel: ProfilepageMypageVM by viewModels<ProfilepageMypageVM>()
 
-  private val REQUEST_CODE_COMMUNITYPAGE_ACTIVITY: Int = 856
+  private val REQUEST_CODE_COMMUNITYPAGE_ACTIVITY: Int = 796
 
-  private val REQUEST_CODE_MAINPAGE_ACTIVITY: Int = 531
+  private val REQUEST_CODE_MAINPAGE_ACTIVITY: Int = 763
 
-  private val REQUEST_CODE_PROFILEPAGE_MYPORTFOLIO_ACTIVITY: Int = 121
+  private val REQUEST_CODE_PROFILEPAGE_MYPORTFOLIO_ACTIVITY: Int = 804
 
-  private val REQUEST_CODE_MYCUTSPAGE_BELONGINGS_ACTIVITY: Int = 612
+  private val REQUEST_CODE_MYCUTSPAGE_BELONGINGS_ACTIVITY: Int = 145
 
   override fun onInitialized(): Unit {
     viewModel.navArguments = intent.extras?.getBundle("bundle")
@@ -51,12 +51,12 @@ class ProfilepageMypageActivity :
     binding.imageEye.setOnClickListener {
       val destIntent = CommunitypageActivity.getIntent(this, null)
       startActivityForResult(destIntent, REQUEST_CODE_COMMUNITYPAGE_ACTIVITY)
-      this.overridePendingTransition(R.anim.zoom_in ,R.anim.zoom_out )
+      this.overridePendingTransition(R.anim.left_to_right ,R.anim.right_to_left )
     }
     binding.imageHome.setOnClickListener {
       val destIntent = MainpageActivity.getIntent(this, null)
       startActivityForResult(destIntent, REQUEST_CODE_MAINPAGE_ACTIVITY)
-      this.overridePendingTransition(R.anim.zoom_in ,R.anim.zoom_out )
+      this.overridePendingTransition(R.anim.left_to_right ,R.anim.right_to_left )
     }
     binding.txtTextpersonalh.setOnClickListener {
       val destIntent = ProfilepageMyportfolioActivity.getIntent(this, null)
