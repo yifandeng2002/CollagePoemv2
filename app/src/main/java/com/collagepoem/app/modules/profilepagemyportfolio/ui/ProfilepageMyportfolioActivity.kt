@@ -1,5 +1,8 @@
 package com.collagepoem.app.modules.profilepagemyportfolio.ui
 
+import android.content.Context
+import android.content.Intent
+import android.os.Bundle
 import android.view.View
 import androidx.activity.viewModels
 import com.collagepoem.app.R
@@ -47,5 +50,11 @@ class ProfilepageMyportfolioActivity :
   companion object {
     const val TAG: String = "PROFILEPAGE_MYPORTFOLIO_ACTIVITY"
 
+
+    fun getIntent(context: Context, bundle: Bundle?): Intent {
+      val destIntent = Intent(context, ProfilepageMyportfolioActivity::class.java)
+      destIntent.putExtra("bundle", bundle)
+      return destIntent
+    }
   }
 }
