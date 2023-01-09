@@ -11,6 +11,7 @@ import com.collagepoem.app.modules.canvaspoem.ui.CanvasPoemActivity
 import com.collagepoem.app.modules.communitypage.ui.CommunitypageActivity
 import com.collagepoem.app.modules.mainpage.`data`.viewmodel.MainpageVM
 import com.collagepoem.app.modules.profilepagemypage.ui.ProfilepageMypageActivity
+import com.jaeger.library.StatusBarUtil
 import kotlin.Int
 import kotlin.String
 import kotlin.Unit
@@ -26,10 +27,19 @@ class MainpageActivity : BaseActivity<ActivityMainpageBinding>(R.layout.activity
 
   private val REQUEST_CODE_PROFILEPAGE_MYPAGE_ACTIVITY: Int = 450
 
+  //    将StatusBar设置为透明
+  fun setStatusBarTranslucent() {
+    StatusBarUtil.setTranslucentForImageViewInFragment(
+      this,
+      0, null
+    )
+    StatusBarUtil.setLightMode(this)
+  }
 
   override fun onInitialized(): Unit {
     viewModel.navArguments = intent.extras?.getBundle("bundle")
     binding.mainpageVM = viewModel
+    setStatusBarTranslucent()
   }
 
   override fun setUpClicks(): Unit {
