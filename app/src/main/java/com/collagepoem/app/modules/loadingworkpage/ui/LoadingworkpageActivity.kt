@@ -32,6 +32,7 @@ class LoadingworkpageActivity :
   }
 
 
+
   override fun onInitialized(): Unit {
     viewModel.navArguments = intent.extras?.getBundle("bundle")
     binding.loadingworkpageVM = viewModel
