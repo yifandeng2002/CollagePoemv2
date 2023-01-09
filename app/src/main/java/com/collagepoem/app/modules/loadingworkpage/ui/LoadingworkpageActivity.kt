@@ -19,8 +19,8 @@ class LoadingworkpageActivity :
   private val viewModel: LoadingworkpageVM by viewModels<LoadingworkpageVM>()
 
 
-  private val REQUEST_CODE_SUCCESSPAGE_ACTIVITY: Int = 726
-  private val REQUEST_CODE_SUCCESSPAGE_ACTIVITY: Int = 506
+  private val REQUEST_CODE_SUCCESSPAGE_ACTIVITY: Int = 303
+
   
   //    将StatusBar设置为透明
   fun setStatusBarTranslucent() {
@@ -30,7 +30,6 @@ class LoadingworkpageActivity :
     )
     StatusBarUtil.setLightMode(this)
   }
-
 
 
   override fun onInitialized(): Unit {

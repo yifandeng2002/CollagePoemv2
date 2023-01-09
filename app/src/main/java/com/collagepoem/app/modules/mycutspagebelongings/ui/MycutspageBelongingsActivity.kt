@@ -19,7 +19,7 @@ class MycutspageBelongingsActivity :
     BaseActivity<ActivityMycutspageBelongingsBinding>(R.layout.activity_mycutspage_belongings) {
   private val viewModel: MycutspageBelongingsVM by viewModels<MycutspageBelongingsVM>()
 
-  private val REQUEST_CODE_DRIFTCUTSPAGETWO_ACTIVITY: Int = 725
+  private val REQUEST_CODE_DRIFTCUTSPAGETWO_ACTIVITY: Int = 215
 
 
   override fun onInitialized(): Unit {

@@ -20,16 +20,16 @@ import kotlin.Unit
 class CanvasPoemActivity : BaseActivity<ActivityCanvasPoemBinding>(R.layout.activity_canvas_poem) {
   private val viewModel: CanvasPoemVM by viewModels<CanvasPoemVM>()
 
-  private val REQUEST_CODE_CANVAS_ACTIVITY: Int = 502
+  private val REQUEST_CODE_CANVAS_ACTIVITY: Int = 653
 
 
-  private val REQUEST_CODE_FLOATWINDOW_MYCUTS_VTWO_ACTIVITY: Int = 332
+  private val REQUEST_CODE_FLOATWINDOW_MYCUTS_VTWO_ACTIVITY: Int = 809
 
 
-  private val REQUEST_CODE_MAINPAGE_ACTIVITY: Int = 512
+  private val REQUEST_CODE_MAINPAGE_ACTIVITY: Int = 831
 
 
-  private val REQUEST_CODE_CANVAS_EDITONE_ACTIVITY: Int = 285
+  private val REQUEST_CODE_CANVAS_EDITONE_ACTIVITY: Int = 425
 
 
   override fun onInitialized(): Unit {
@@ -41,7 +41,7 @@ class CanvasPoemActivity : BaseActivity<ActivityCanvasPoemBinding>(R.layout.acti
     binding.imageSwitchbtn.setOnClickListener {
       val destIntent = CanvasActivity.getIntent(this, null)
       startActivityForResult(destIntent, REQUEST_CODE_CANVAS_ACTIVITY)
-      this.overridePendingTransition(R.anim.slide_up ,R.anim.slide_up )
+      this.overridePendingTransition(R.anim.slide_down ,R.anim.slide_up )
     }
     binding.imageFilebtn.setOnClickListener {
       val destIntent = FloatwindowMycutsVtwoActivity.getIntent(this, null)

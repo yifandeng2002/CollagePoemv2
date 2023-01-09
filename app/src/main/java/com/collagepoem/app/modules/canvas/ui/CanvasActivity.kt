@@ -20,16 +20,16 @@ import kotlin.Unit
 class CanvasActivity : BaseActivity<ActivityCanvasBinding>(R.layout.activity_canvas) {
   private val viewModel: CanvasVM by viewModels<CanvasVM>()
 
-  private val REQUEST_CODE_CANVAS_POEM_ACTIVITY: Int = 348
+  private val REQUEST_CODE_CANVAS_POEM_ACTIVITY: Int = 454
 
 
-  private val REQUEST_CODE_FLOATWINDOW_MYCUTS_VTWO_ACTIVITY: Int = 437
+  private val REQUEST_CODE_FLOATWINDOW_MYCUTS_VTWO_ACTIVITY: Int = 546
 
 
-  private val REQUEST_CODE_MAINPAGE_ACTIVITY: Int = 484
+  private val REQUEST_CODE_MAINPAGE_ACTIVITY: Int = 285
 
 
-  private val REQUEST_CODE_LOADINGWORKPAGE_ACTIVITY: Int = 280
+  private val REQUEST_CODE_LOADINGWORKPAGE_ACTIVITY: Int = 989
 
 
   override fun onInitialized(): Unit {

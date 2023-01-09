@@ -15,7 +15,7 @@ import com.jaeger.library.StatusBarUtil
 class LoginpageActivity : BaseActivity<ActivityLoginpageBinding>(R.layout.activity_loginpage) {
   private val viewModel: LoginpageVM by viewModels<LoginpageVM>()
 
-  private val REQUEST_CODE_MAINPAGE_ACTIVITY: Int = 891
+  private val REQUEST_CODE_MAINPAGE_ACTIVITY: Int = 194
 
   //    将StatusBar设置为透明
   fun setStatusBarTranslucent() {

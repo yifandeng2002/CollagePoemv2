@@ -10,6 +10,7 @@ import com.collagepoem.app.appcomponents.base.BaseActivity
 import com.collagepoem.app.databinding.ActivityCommunitypageInfoBinding
 import com.collagepoem.app.modules.communitypageinfo.`data`.model.CommentsRowModel
 import com.collagepoem.app.modules.communitypageinfo.`data`.viewmodel.CommunitypageInfoVM
+import com.collagepoem.app.modules.communitypageinfoone.ui.CommunitypageInfoOneActivity
 import kotlin.Int
 import kotlin.String
 import kotlin.Unit
@@ -17,6 +18,9 @@ import kotlin.Unit
 class CommunitypageInfoActivity :
     BaseActivity<ActivityCommunitypageInfoBinding>(R.layout.activity_communitypage_info) {
   private val viewModel: CommunitypageInfoVM by viewModels<CommunitypageInfoVM>()
+
+  private val REQUEST_CODE_COMMUNITYPAGE_INFO_ONE_ACTIVITY: Int = 964
+
 
   override fun onInitialized(): Unit {
     viewModel.navArguments = intent.extras?.getBundle("bundle")
@@ -36,6 +40,14 @@ class CommunitypageInfoActivity :
   }
 
   override fun setUpClicks(): Unit {
+    binding.btnFollow.setOnClickListener {
+      val destIntent = CommunitypageInfoOneActivity.getIntent(this, null)
+      startActivityForResult(destIntent, REQUEST_CODE_COMMUNITYPAGE_INFO_ONE_ACTIVITY)
+      this.overridePendingTransition(R.anim.fade_in ,R.anim.fade_out )
+    }
+    binding.imageBackbtn.setOnClickListener {
+      finish()
+    }
   }
 
   fun onClickRecyclerComments(

@@ -23,13 +23,13 @@ class ProfilepageMypageActivity :
     BaseActivity<ActivityProfilepageMypageBinding>(R.layout.activity_profilepage_mypage) {
   private val viewModel: ProfilepageMypageVM by viewModels<ProfilepageMypageVM>()
 
-  private val REQUEST_CODE_PROFILEPAGE_MYPORTFOLIO_ACTIVITY: Int = 301
+  private val REQUEST_CODE_PROFILEPAGE_MYPORTFOLIO_ACTIVITY: Int = 425
 
-  private val REQUEST_CODE_COMMUNITYPAGE_ACTIVITY: Int = 453
+  private val REQUEST_CODE_COMMUNITYPAGE_ACTIVITY: Int = 857
 
-  private val REQUEST_CODE_MAINPAGE_ACTIVITY: Int = 493
+  private val REQUEST_CODE_MAINPAGE_ACTIVITY: Int = 845
 
-  private val REQUEST_CODE_MYCUTSPAGE_BELONGINGS_ACTIVITY: Int = 604
+  private val REQUEST_CODE_MYCUTSPAGE_BELONGINGS_ACTIVITY: Int = 101
 
   //    将StatusBar设置为透明
   fun setStatusBarTranslucent() {
