@@ -41,13 +41,13 @@ class CanvasPoemActivity : BaseActivity<ActivityCanvasPoemBinding>(R.layout.acti
     binding.imageSwitchbtn.setOnClickListener {
       val destIntent = CanvasActivity.getIntent(this, null)
       startActivityForResult(destIntent, REQUEST_CODE_CANVAS_ACTIVITY)
-      this.overridePendingTransition(R.anim.slide_down ,R.anim.slide_up )
+      this.overridePendingTransition(R.anim.slide_up_2 ,R.anim.slide_down_2 )
     }
     binding.imageFilebtn.setOnClickListener {
       val destIntent = FloatwindowMycutsVtwoActivity.getIntent(this, null)
       destIntent.addFlags(Intent.FLAG_ACTIVITY_SINGLE_TOP)
       startActivityForResult(destIntent, REQUEST_CODE_FLOATWINDOW_MYCUTS_VTWO_ACTIVITY)
-      this.overridePendingTransition(R.anim.slide_up ,R.anim.slide_down )
+      this.overridePendingTransition(R.anim.slide_up_2 ,R.anim.slide_down_2 )
     }
     binding.imageCamerabtn.setOnClickListener {
       ImagePickerFragmentDialog().show(supportFragmentManager)
@@ -68,7 +68,7 @@ class CanvasPoemActivity : BaseActivity<ActivityCanvasPoemBinding>(R.layout.acti
     binding.imageWihtepic.setOnClickListener {
       val destIntent = CanvasActivity.getIntent(this, null)
       startActivityForResult(destIntent, REQUEST_CODE_CANVAS_ACTIVITY)
-      this.overridePendingTransition(R.anim.slide_down ,R.anim.slide_up )
+      this.overridePendingTransition(R.anim.slide_up_2 ,R.anim.slide_down_2 )
     }
   }
 

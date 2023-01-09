@@ -50,12 +50,12 @@ class CommunitypageActivity :
     binding.linearCard.setOnClickListener {
       val destIntent = CommunitypageInfoActivity.getIntent(this, null)
       startActivityForResult(destIntent, REQUEST_CODE_COMMUNITYPAGE_INFO_ACTIVITY)
-      this.overridePendingTransition(R.anim.right_to_left ,R.anim.left_to_right )
+      this.overridePendingTransition(R.anim.zoom_in,R.anim.zoom_out )
     }
     binding.imageUser.setOnClickListener {
       val destIntent = ProfilepageMypageActivity.getIntent(this, null)
       startActivityForResult(destIntent, REQUEST_CODE_PROFILEPAGE_MYPAGE_ACTIVITY)
-      this.overridePendingTransition(R.anim.right_to_left ,R.anim.left_to_right )
+      this.overridePendingTransition(R.anim.left_to_right_2 ,R.anim.right_to_left_2 )
     }
     binding.btnFollow.setOnClickListener {
       val destIntent = CommunitypageInfoOneActivity.getIntent(this, null)

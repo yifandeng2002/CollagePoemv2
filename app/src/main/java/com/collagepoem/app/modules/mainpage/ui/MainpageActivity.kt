@@ -51,7 +51,7 @@ class MainpageActivity : BaseActivity<ActivityMainpageBinding>(R.layout.activity
     binding.imageEye.setOnClickListener {
       val destIntent = CommunitypageActivity.getIntent(this, null)
       startActivityForResult(destIntent, REQUEST_CODE_COMMUNITYPAGE_ACTIVITY)
-      this.overridePendingTransition(R.anim.right_to_left ,R.anim.left_to_right )
+      this.overridePendingTransition(R.anim.left_to_right_2 ,R.anim.right_to_left_2 )
     }
     binding.imageImageprofilepi.setOnClickListener {
       val destIntent = ProfilepageMypageActivity.getIntent(this, null)
@@ -71,7 +71,7 @@ class MainpageActivity : BaseActivity<ActivityMainpageBinding>(R.layout.activity
     binding.imageUser.setOnClickListener {
       val destIntent = ProfilepageMypageActivity.getIntent(this, null)
       startActivityForResult(destIntent, REQUEST_CODE_PROFILEPAGE_MYPAGE_ACTIVITY)
-      this.overridePendingTransition(R.anim.right_to_left ,R.anim.left_to_right )
+      this.overridePendingTransition(R.anim.left_to_right_2 ,R.anim.right_to_left_2 )
     }
   }
 

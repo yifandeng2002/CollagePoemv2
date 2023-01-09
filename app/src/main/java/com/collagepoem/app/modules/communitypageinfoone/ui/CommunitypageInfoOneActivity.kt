@@ -46,7 +46,7 @@ class CommunitypageInfoOneActivity :
     binding.linearRowprofilepic.setOnClickListener {
       val destIntent = ProfilepageMyinfoOneActivity.getIntent(this, null)
       startActivityForResult(destIntent, REQUEST_CODE_PROFILEPAGE_MYINFO_ONE_ACTIVITY)
-      this.overridePendingTransition(R.anim.right_to_left ,R.anim.left_to_right )
+      this.overridePendingTransition(R.anim.left_to_right_2 ,R.anim.right_to_left_2 )
     }
   }
 
