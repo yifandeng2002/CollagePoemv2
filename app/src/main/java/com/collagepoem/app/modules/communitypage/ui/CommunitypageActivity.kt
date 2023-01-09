@@ -21,19 +21,19 @@ class CommunitypageActivity :
     BaseActivity<ActivityCommunitypageBinding>(R.layout.activity_communitypage) {
   private val viewModel: CommunitypageVM by viewModels<CommunitypageVM>()
 
-  private val REQUEST_CODE_MAINPAGE_ACTIVITY: Int = 724
+  private val REQUEST_CODE_MAINPAGE_ACTIVITY: Int = 713
 
 
-  private val REQUEST_CODE_COMMUNITYPAGE_INFO_ACTIVITY: Int = 886
+  private val REQUEST_CODE_COMMUNITYPAGE_INFO_ACTIVITY: Int = 777
 
 
-  private val REQUEST_CODE_PROFILEPAGE_MYPAGE_ACTIVITY: Int = 454
+  private val REQUEST_CODE_PROFILEPAGE_MYPAGE_ACTIVITY: Int = 640
 
 
-  private val REQUEST_CODE_PROFILEPAGE_MYINFO_ACTIVITY: Int = 941
+  private val REQUEST_CODE_PROFILEPAGE_MYINFO_ACTIVITY: Int = 832
 
 
-  private val REQUEST_CODE_COMMUNITYPAGE_MESSAGES_ACTIVITY: Int = 332
+  private val REQUEST_CODE_COMMUNITYPAGE_MESSAGES_ACTIVITY: Int = 935
 
 
   override fun onInitialized(): Unit {
@@ -45,17 +45,17 @@ class CommunitypageActivity :
     binding.imageHome.setOnClickListener {
       val destIntent = MainpageActivity.getIntent(this, null)
       startActivityForResult(destIntent, REQUEST_CODE_MAINPAGE_ACTIVITY)
-      this.overridePendingTransition(R.anim.left_to_right ,R.anim.right_to_left )
+      this.overridePendingTransition(R.anim.right_to_left ,R.anim.left_to_right )
     }
     binding.linearCard.setOnClickListener {
       val destIntent = CommunitypageInfoActivity.getIntent(this, null)
       startActivityForResult(destIntent, REQUEST_CODE_COMMUNITYPAGE_INFO_ACTIVITY)
-      this.overridePendingTransition(R.anim.zoom_in ,R.anim.zoom_out )
+      this.overridePendingTransition(R.anim.left_to_right ,R.anim.right_to_left )
     }
     binding.imageUser.setOnClickListener {
       val destIntent = ProfilepageMypageActivity.getIntent(this, null)
       startActivityForResult(destIntent, REQUEST_CODE_PROFILEPAGE_MYPAGE_ACTIVITY)
-      this.overridePendingTransition(R.anim.right_to_left ,R.anim.left_to_right )
+      this.overridePendingTransition(R.anim.left_to_right ,R.anim.right_to_left )
     }
     binding.btnFollow.setOnClickListener {
       val destIntent = ProfilepageMyinfoActivity.getIntent(this, null)

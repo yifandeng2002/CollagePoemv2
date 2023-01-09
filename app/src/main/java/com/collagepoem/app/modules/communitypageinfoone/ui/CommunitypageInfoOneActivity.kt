@@ -10,7 +10,7 @@ import com.collagepoem.app.appcomponents.base.BaseActivity
 import com.collagepoem.app.databinding.ActivityCommunitypageInfoOneBinding
 import com.collagepoem.app.modules.communitypageinfoone.`data`.model.Comments1RowModel
 import com.collagepoem.app.modules.communitypageinfoone.`data`.viewmodel.CommunitypageInfoOneVM
-import com.collagepoem.app.modules.profilepagemyinfo.ui.ProfilepageMyinfoActivity
+import com.collagepoem.app.modules.profilepagemyinfoone.ui.ProfilepageMyinfoOneActivity
 import kotlin.Int
 import kotlin.String
 import kotlin.Unit
@@ -19,7 +19,7 @@ class CommunitypageInfoOneActivity :
     BaseActivity<ActivityCommunitypageInfoOneBinding>(R.layout.activity_communitypage_info_one) {
   private val viewModel: CommunitypageInfoOneVM by viewModels<CommunitypageInfoOneVM>()
 
-  private val REQUEST_CODE_PROFILEPAGE_MYINFO_ACTIVITY: Int = 399
+  private val REQUEST_CODE_PROFILEPAGE_MYINFO_ONE_ACTIVITY: Int = 770
 
 
   override fun onInitialized(): Unit {
@@ -43,10 +43,10 @@ class CommunitypageInfoOneActivity :
     binding.imageBackbtn.setOnClickListener {
       finish()
     }
-    binding.btnFollowed.setOnClickListener {
-      val destIntent = ProfilepageMyinfoActivity.getIntent(this, null)
-      startActivityForResult(destIntent, REQUEST_CODE_PROFILEPAGE_MYINFO_ACTIVITY)
-      this.overridePendingTransition(R.anim.zoom_in ,R.anim.zoom_out )
+    binding.linearRowprofilepic.setOnClickListener {
+      val destIntent = ProfilepageMyinfoOneActivity.getIntent(this, null)
+      startActivityForResult(destIntent, REQUEST_CODE_PROFILEPAGE_MYINFO_ONE_ACTIVITY)
+      this.overridePendingTransition(R.anim.right_to_left ,R.anim.left_to_right )
     }
   }
 

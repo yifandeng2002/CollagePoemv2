@@ -17,7 +17,7 @@ class SuccesspageActivity : BaseActivity<ActivitySuccesspageBinding>(R.layout.ac
     {
   private val viewModel: SuccesspageVM by viewModels<SuccesspageVM>()
 
-  private val REQUEST_CODE_MAINPAGE_ACTIVITY: Int = 654
+  private val REQUEST_CODE_MAINPAGE_ACTIVITY: Int = 340
 
 
   override fun onInitialized(): Unit {
@@ -29,7 +29,7 @@ class SuccesspageActivity : BaseActivity<ActivitySuccesspageBinding>(R.layout.ac
     binding.imageClose.setOnClickListener {
       val destIntent = MainpageActivity.getIntent(this, null)
       startActivityForResult(destIntent, REQUEST_CODE_MAINPAGE_ACTIVITY)
-      this.overridePendingTransition(R.anim.zoom_out ,R.anim.zoom_in )
+      this.overridePendingTransition(R.anim.fade_in ,R.anim.fade_out )
     }
     binding.imageBackbtn.setOnClickListener {
       finish()

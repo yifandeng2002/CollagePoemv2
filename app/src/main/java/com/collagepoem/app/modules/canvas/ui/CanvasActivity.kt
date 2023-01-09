@@ -20,16 +20,16 @@ import kotlin.Unit
 class CanvasActivity : BaseActivity<ActivityCanvasBinding>(R.layout.activity_canvas) {
   private val viewModel: CanvasVM by viewModels<CanvasVM>()
 
-  private val REQUEST_CODE_CANVAS_POEM_ACTIVITY: Int = 464
+  private val REQUEST_CODE_CANVAS_POEM_ACTIVITY: Int = 348
 
 
-  private val REQUEST_CODE_FLOATWINDOW_MYCUTS_VTWO_ACTIVITY: Int = 643
+  private val REQUEST_CODE_FLOATWINDOW_MYCUTS_VTWO_ACTIVITY: Int = 437
 
 
-  private val REQUEST_CODE_MAINPAGE_ACTIVITY: Int = 266
+  private val REQUEST_CODE_MAINPAGE_ACTIVITY: Int = 484
 
 
-  private val REQUEST_CODE_LOADINGWORKPAGE_ACTIVITY: Int = 281
+  private val REQUEST_CODE_LOADINGWORKPAGE_ACTIVITY: Int = 280
 
 
   override fun onInitialized(): Unit {
@@ -47,7 +47,7 @@ class CanvasActivity : BaseActivity<ActivityCanvasBinding>(R.layout.activity_can
     binding.imageUp.setOnClickListener {
       val destIntent = CanvasPoemActivity.getIntent(this, null)
       startActivityForResult(destIntent, REQUEST_CODE_CANVAS_POEM_ACTIVITY)
-      this.overridePendingTransition(R.anim.slide_down ,R.anim.slide_up )
+      this.overridePendingTransition(R.anim.slide_up ,R.anim.slide_down )
     }
     binding.imageFilebtn.setOnClickListener {
       val destIntent = FloatwindowMycutsVtwoActivity.getIntent(this, null)
@@ -62,7 +62,7 @@ class CanvasActivity : BaseActivity<ActivityCanvasBinding>(R.layout.activity_can
     binding.imageFinish.setOnClickListener {
       val destIntent = LoadingworkpageActivity.getIntent(this, null)
       startActivityForResult(destIntent, REQUEST_CODE_LOADINGWORKPAGE_ACTIVITY)
-      this.overridePendingTransition(R.anim.zoom_in ,R.anim.zoom_out )
+      this.overridePendingTransition(R.anim.fade_in ,R.anim.fade_out )
     }
   }
 
