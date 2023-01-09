@@ -16,7 +16,7 @@ class DriftcutspageoneActivity :
     BaseActivity<ActivityDriftcutspageoneBinding>(R.layout.activity_driftcutspageone) {
   private val viewModel: DriftcutspageoneVM by viewModels<DriftcutspageoneVM>()
 
-  private val REQUEST_CODE_COMMUNITYPAGE_INFO_ACTIVITY: Int = 186
+  private val REQUEST_CODE_COMMUNITYPAGE_INFO_ACTIVITY: Int = 517
 
   override fun onInitialized(): Unit {
     viewModel.navArguments = intent.extras?.getBundle("bundle")

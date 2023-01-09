@@ -1,8 +1,5 @@
 package com.collagepoem.app.modules.profilepagemyinfo.ui
 
-import android.content.Context
-import android.content.Intent
-import android.os.Bundle
 import android.view.View
 import androidx.activity.viewModels
 import com.collagepoem.app.R
@@ -20,9 +17,9 @@ class ProfilepageMyinfoActivity :
     BaseActivity<ActivityProfilepageMyinfoBinding>(R.layout.activity_profilepage_myinfo) {
   private val viewModel: ProfilepageMyinfoVM by viewModels<ProfilepageMyinfoVM>()
 
-  private val REQUEST_CODE_COMMUNITYPAGE_INFO_ACTIVITY: Int = 687
+  private val REQUEST_CODE_COMMUNITYPAGE_INFO_ACTIVITY: Int = 197
 
-  private val REQUEST_CODE_COMMUNITYPAGE_INFO_ONE_ACTIVITY: Int = 141
+  private val REQUEST_CODE_COMMUNITYPAGE_INFO_ONE_ACTIVITY: Int = 193
 
   override fun onInitialized(): Unit {
     viewModel.navArguments = intent.extras?.getBundle("bundle")
@@ -82,11 +79,5 @@ class ProfilepageMyinfoActivity :
   companion object {
     const val TAG: String = "PROFILEPAGE_MYINFO_ACTIVITY"
 
-
-    fun getIntent(context: Context, bundle: Bundle?): Intent {
-      val destIntent = Intent(context, ProfilepageMyinfoActivity::class.java)
-      destIntent.putExtra("bundle", bundle)
-      return destIntent
-    }
   }
 }

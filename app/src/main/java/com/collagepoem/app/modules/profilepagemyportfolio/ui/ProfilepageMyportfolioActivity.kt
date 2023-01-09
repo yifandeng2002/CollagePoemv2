@@ -20,9 +20,9 @@ class ProfilepageMyportfolioActivity :
     BaseActivity<ActivityProfilepageMyportfolioBinding>(R.layout.activity_profilepage_myportfolio) {
   private val viewModel: ProfilepageMyportfolioVM by viewModels<ProfilepageMyportfolioVM>()
 
-  private val REQUEST_CODE_MAINPAGE_ACTIVITY: Int = 120
+  private val REQUEST_CODE_MAINPAGE_ACTIVITY: Int = 951
 
-  private val REQUEST_CODE_COMMUNITYPAGE_ACTIVITY: Int = 946
+  private val REQUEST_CODE_COMMUNITYPAGE_ACTIVITY: Int = 732
 
   override fun onInitialized(): Unit {
     viewModel.navArguments = intent.extras?.getBundle("bundle")
@@ -46,6 +46,9 @@ class ProfilepageMyportfolioActivity :
       val destIntent = MainpageActivity.getIntent(this, null)
       startActivityForResult(destIntent, REQUEST_CODE_MAINPAGE_ACTIVITY)
       this.overridePendingTransition(R.anim.left_to_right ,R.anim.left_to_right )
+    }
+    binding.viewBackground.setOnClickListener {
+      finish()
     }
     binding.imageEye.setOnClickListener {
       val destIntent = CommunitypageActivity.getIntent(this, null)
