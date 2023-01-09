@@ -7,21 +7,29 @@ import androidx.activity.viewModels
 import com.collagepoem.app.R
 import com.collagepoem.app.appcomponents.base.BaseActivity
 import com.collagepoem.app.databinding.ActivityLoginpageBinding
-import com.collagepoem.app.modules.loginpage.`data`.viewmodel.LoginpageVM
+import com.collagepoem.app.modules.loginpage.data.viewmodel.LoginpageVM
 import com.collagepoem.app.modules.mainpage.ui.MainpageActivity
-import kotlin.Int
-import kotlin.String
-import kotlin.Unit
+import com.jaeger.library.StatusBarUtil
+
 
 class LoginpageActivity : BaseActivity<ActivityLoginpageBinding>(R.layout.activity_loginpage) {
   private val viewModel: LoginpageVM by viewModels<LoginpageVM>()
 
   private val REQUEST_CODE_MAINPAGE_ACTIVITY: Int = 194
 
+  //    将StatusBar设置为透明
+  fun setStatusBarTranslucent() {
+    StatusBarUtil.setTranslucentForImageViewInFragment(
+      this,
+      0, null
+    )
+    StatusBarUtil.setLightMode(this)
+  }
 
   override fun onInitialized(): Unit {
     viewModel.navArguments = intent.extras?.getBundle("bundle")
     binding.loginpageVM = viewModel
+    setStatusBarTranslucent()
   }
 
   override fun setUpClicks(): Unit {
