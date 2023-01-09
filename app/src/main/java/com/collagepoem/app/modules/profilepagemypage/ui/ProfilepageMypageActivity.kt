@@ -22,13 +22,13 @@ class ProfilepageMypageActivity :
     BaseActivity<ActivityProfilepageMypageBinding>(R.layout.activity_profilepage_mypage) {
   private val viewModel: ProfilepageMypageVM by viewModels<ProfilepageMypageVM>()
 
-  private val REQUEST_CODE_COMMUNITYPAGE_ACTIVITY: Int = 796
+  private val REQUEST_CODE_PROFILEPAGE_MYPORTFOLIO_ACTIVITY: Int = 301
 
-  private val REQUEST_CODE_MAINPAGE_ACTIVITY: Int = 763
+  private val REQUEST_CODE_COMMUNITYPAGE_ACTIVITY: Int = 453
 
-  private val REQUEST_CODE_PROFILEPAGE_MYPORTFOLIO_ACTIVITY: Int = 804
+  private val REQUEST_CODE_MAINPAGE_ACTIVITY: Int = 493
 
-  private val REQUEST_CODE_MYCUTSPAGE_BELONGINGS_ACTIVITY: Int = 145
+  private val REQUEST_CODE_MYCUTSPAGE_BELONGINGS_ACTIVITY: Int = 604
 
   override fun onInitialized(): Unit {
     viewModel.navArguments = intent.extras?.getBundle("bundle")
@@ -48,6 +48,11 @@ class ProfilepageMypageActivity :
   }
 
   override fun setUpClicks(): Unit {
+    binding.linearWorks.setOnClickListener {
+      val destIntent = ProfilepageMyportfolioActivity.getIntent(this, null)
+      startActivityForResult(destIntent, REQUEST_CODE_PROFILEPAGE_MYPORTFOLIO_ACTIVITY)
+      this.overridePendingTransition(R.anim.fade_in ,R.anim.fade_out )
+    }
     binding.imageEye.setOnClickListener {
       val destIntent = CommunitypageActivity.getIntent(this, null)
       startActivityForResult(destIntent, REQUEST_CODE_COMMUNITYPAGE_ACTIVITY)
@@ -57,11 +62,6 @@ class ProfilepageMypageActivity :
       val destIntent = MainpageActivity.getIntent(this, null)
       startActivityForResult(destIntent, REQUEST_CODE_MAINPAGE_ACTIVITY)
       this.overridePendingTransition(R.anim.left_to_right ,R.anim.right_to_left )
-    }
-    binding.txtTextpersonalh.setOnClickListener {
-      val destIntent = ProfilepageMyportfolioActivity.getIntent(this, null)
-      startActivityForResult(destIntent, REQUEST_CODE_PROFILEPAGE_MYPORTFOLIO_ACTIVITY)
-      this.overridePendingTransition(R.anim.zoom_in ,R.anim.zoom_out )
     }
     binding.linearFlips.setOnClickListener {
       val destIntent = MycutspageBelongingsActivity.getIntent(this, null)

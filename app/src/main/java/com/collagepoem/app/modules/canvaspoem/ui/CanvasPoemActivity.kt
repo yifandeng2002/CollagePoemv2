@@ -11,6 +11,7 @@ import com.collagepoem.app.databinding.ActivityCanvasPoemBinding
 import com.collagepoem.app.modules.canvas.ui.CanvasActivity
 import com.collagepoem.app.modules.canvaseditone.ui.CanvasEditoneActivity
 import com.collagepoem.app.modules.canvaspoem.`data`.viewmodel.CanvasPoemVM
+import com.collagepoem.app.modules.floatwindowmycutsvtwo.ui.FloatwindowMycutsVtwoActivity
 import com.collagepoem.app.modules.mainpage.ui.MainpageActivity
 import kotlin.Int
 import kotlin.String
@@ -19,13 +20,16 @@ import kotlin.Unit
 class CanvasPoemActivity : BaseActivity<ActivityCanvasPoemBinding>(R.layout.activity_canvas_poem) {
   private val viewModel: CanvasPoemVM by viewModels<CanvasPoemVM>()
 
-  private val REQUEST_CODE_CANVAS_ACTIVITY: Int = 974
+  private val REQUEST_CODE_CANVAS_ACTIVITY: Int = 502
 
 
-  private val REQUEST_CODE_MAINPAGE_ACTIVITY: Int = 493
+  private val REQUEST_CODE_FLOATWINDOW_MYCUTS_VTWO_ACTIVITY: Int = 332
 
 
-  private val REQUEST_CODE_CANVAS_EDITONE_ACTIVITY: Int = 348
+  private val REQUEST_CODE_MAINPAGE_ACTIVITY: Int = 512
+
+
+  private val REQUEST_CODE_CANVAS_EDITONE_ACTIVITY: Int = 285
 
 
   override fun onInitialized(): Unit {
@@ -37,6 +41,12 @@ class CanvasPoemActivity : BaseActivity<ActivityCanvasPoemBinding>(R.layout.acti
     binding.imageSwitchbtn.setOnClickListener {
       val destIntent = CanvasActivity.getIntent(this, null)
       startActivityForResult(destIntent, REQUEST_CODE_CANVAS_ACTIVITY)
+      this.overridePendingTransition(R.anim.slide_up ,R.anim.slide_up )
+    }
+    binding.imageFilebtn.setOnClickListener {
+      val destIntent = FloatwindowMycutsVtwoActivity.getIntent(this, null)
+      destIntent.addFlags(Intent.FLAG_ACTIVITY_SINGLE_TOP)
+      startActivityForResult(destIntent, REQUEST_CODE_FLOATWINDOW_MYCUTS_VTWO_ACTIVITY)
       this.overridePendingTransition(R.anim.slide_up ,R.anim.slide_down )
     }
     binding.imageCamerabtn.setOnClickListener {
@@ -58,7 +68,7 @@ class CanvasPoemActivity : BaseActivity<ActivityCanvasPoemBinding>(R.layout.acti
     binding.imageWihtepic.setOnClickListener {
       val destIntent = CanvasActivity.getIntent(this, null)
       startActivityForResult(destIntent, REQUEST_CODE_CANVAS_ACTIVITY)
-      this.overridePendingTransition(R.anim.slide_up ,R.anim.slide_down )
+      this.overridePendingTransition(R.anim.slide_down ,R.anim.slide_up )
     }
   }
 

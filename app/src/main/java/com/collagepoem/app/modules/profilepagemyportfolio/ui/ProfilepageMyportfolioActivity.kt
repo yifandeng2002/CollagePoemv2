@@ -8,6 +8,8 @@ import androidx.activity.viewModels
 import com.collagepoem.app.R
 import com.collagepoem.app.appcomponents.base.BaseActivity
 import com.collagepoem.app.databinding.ActivityProfilepageMyportfolioBinding
+import com.collagepoem.app.modules.communitypage.ui.CommunitypageActivity
+import com.collagepoem.app.modules.mainpage.ui.MainpageActivity
 import com.collagepoem.app.modules.profilepagemyportfolio.`data`.model.WorkRowModel
 import com.collagepoem.app.modules.profilepagemyportfolio.`data`.viewmodel.ProfilepageMyportfolioVM
 import kotlin.Int
@@ -17,6 +19,10 @@ import kotlin.Unit
 class ProfilepageMyportfolioActivity :
     BaseActivity<ActivityProfilepageMyportfolioBinding>(R.layout.activity_profilepage_myportfolio) {
   private val viewModel: ProfilepageMyportfolioVM by viewModels<ProfilepageMyportfolioVM>()
+
+  private val REQUEST_CODE_MAINPAGE_ACTIVITY: Int = 120
+
+  private val REQUEST_CODE_COMMUNITYPAGE_ACTIVITY: Int = 946
 
   override fun onInitialized(): Unit {
     viewModel.navArguments = intent.extras?.getBundle("bundle")
@@ -36,6 +42,16 @@ class ProfilepageMyportfolioActivity :
   }
 
   override fun setUpClicks(): Unit {
+    binding.imageHome.setOnClickListener {
+      val destIntent = MainpageActivity.getIntent(this, null)
+      startActivityForResult(destIntent, REQUEST_CODE_MAINPAGE_ACTIVITY)
+      this.overridePendingTransition(R.anim.left_to_right ,R.anim.left_to_right )
+    }
+    binding.imageEye.setOnClickListener {
+      val destIntent = CommunitypageActivity.getIntent(this, null)
+      startActivityForResult(destIntent, REQUEST_CODE_COMMUNITYPAGE_ACTIVITY)
+      this.overridePendingTransition(R.anim.left_to_right ,R.anim.left_to_right )
+    }
   }
 
   fun onClickRecyclerWork(

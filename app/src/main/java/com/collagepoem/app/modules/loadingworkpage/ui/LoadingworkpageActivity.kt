@@ -17,7 +17,7 @@ class LoadingworkpageActivity :
     BaseActivity<ActivityLoadingworkpageBinding>(R.layout.activity_loadingworkpage) {
   private val viewModel: LoadingworkpageVM by viewModels<LoadingworkpageVM>()
 
-  private val REQUEST_CODE_SUCCESSPAGE_ACTIVITY: Int = 506
+  private val REQUEST_CODE_SUCCESSPAGE_ACTIVITY: Int = 726
 
   override fun onInitialized(): Unit {
     viewModel.navArguments = intent.extras?.getBundle("bundle")
@@ -31,7 +31,7 @@ class LoadingworkpageActivity :
     binding.imageFinish.setOnClickListener {
       val destIntent = SuccesspageActivity.getIntent(this, null)
       startActivityForResult(destIntent, REQUEST_CODE_SUCCESSPAGE_ACTIVITY)
-      this.overridePendingTransition(R.anim.zoom_in ,R.anim.zoom_out )
+      this.overridePendingTransition(R.anim.fade_in ,R.anim.fade_out )
     }
   }
 

@@ -17,7 +17,7 @@ class DriftcutspagetwoActivity :
     BaseActivity<ActivityDriftcutspagetwoBinding>(R.layout.activity_driftcutspagetwo) {
   private val viewModel: DriftcutspagetwoVM by viewModels<DriftcutspagetwoVM>()
 
-  private val REQUEST_CODE_DRIFTCUTSPAGETHREE_ACTIVITY: Int = 552
+  private val REQUEST_CODE_DRIFTCUTSPAGETHREE_ACTIVITY: Int = 309
 
   override fun onInitialized(): Unit {
     viewModel.navArguments = intent.extras?.getBundle("bundle")
@@ -31,7 +31,7 @@ class DriftcutspagetwoActivity :
     binding.imageBottonTwo.setOnClickListener {
       val destIntent = DriftcutspagethreeActivity.getIntent(this, null)
       startActivityForResult(destIntent, REQUEST_CODE_DRIFTCUTSPAGETHREE_ACTIVITY)
-      this.overridePendingTransition(R.anim.zoom_in ,R.anim.zoom_out )
+      this.overridePendingTransition(R.anim.fade_in ,R.anim.fade_out )
     }
   }
 

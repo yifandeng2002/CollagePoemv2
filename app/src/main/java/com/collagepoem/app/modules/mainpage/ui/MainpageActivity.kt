@@ -18,13 +18,13 @@ import kotlin.Unit
 class MainpageActivity : BaseActivity<ActivityMainpageBinding>(R.layout.activity_mainpage) {
   private val viewModel: MainpageVM by viewModels<MainpageVM>()
 
-  private val REQUEST_CODE_CANVAS_POEM_ACTIVITY: Int = 682
+  private val REQUEST_CODE_CANVAS_POEM_ACTIVITY: Int = 399
 
 
-  private val REQUEST_CODE_COMMUNITYPAGE_ACTIVITY: Int = 237
+  private val REQUEST_CODE_COMMUNITYPAGE_ACTIVITY: Int = 171
 
 
-  private val REQUEST_CODE_PROFILEPAGE_MYPAGE_ACTIVITY: Int = 411
+  private val REQUEST_CODE_PROFILEPAGE_MYPAGE_ACTIVITY: Int = 450
 
 
   override fun onInitialized(): Unit {
@@ -41,7 +41,7 @@ class MainpageActivity : BaseActivity<ActivityMainpageBinding>(R.layout.activity
     binding.imageEye.setOnClickListener {
       val destIntent = CommunitypageActivity.getIntent(this, null)
       startActivityForResult(destIntent, REQUEST_CODE_COMMUNITYPAGE_ACTIVITY)
-      this.overridePendingTransition(R.anim.right_to_left ,R.anim.left_to_right )
+      this.overridePendingTransition(R.anim.right_to_left ,R.anim.right_to_left )
     }
     binding.imageImageprofilepi.setOnClickListener {
       val destIntent = ProfilepageMypageActivity.getIntent(this, null)
@@ -61,7 +61,7 @@ class MainpageActivity : BaseActivity<ActivityMainpageBinding>(R.layout.activity
     binding.imageUser.setOnClickListener {
       val destIntent = ProfilepageMypageActivity.getIntent(this, null)
       startActivityForResult(destIntent, REQUEST_CODE_PROFILEPAGE_MYPAGE_ACTIVITY)
-      this.overridePendingTransition(R.anim.right_to_left ,R.anim.left_to_right )
+      this.overridePendingTransition(R.anim.right_to_left ,R.anim.right_to_left )
     }
   }
 

@@ -17,7 +17,7 @@ class DriftcutspagethreeActivity :
     BaseActivity<ActivityDriftcutspagethreeBinding>(R.layout.activity_driftcutspagethree) {
   private val viewModel: DriftcutspagethreeVM by viewModels<DriftcutspagethreeVM>()
 
-  private val REQUEST_CODE_MAINPAGE_ACTIVITY: Int = 578
+  private val REQUEST_CODE_MAINPAGE_ACTIVITY: Int = 924
 
 
   override fun onInitialized(): Unit {
@@ -32,7 +32,7 @@ class DriftcutspagethreeActivity :
     binding.imageBacktoholder.setOnClickListener {
       val destIntent = MainpageActivity.getIntent(this, null)
       startActivityForResult(destIntent, REQUEST_CODE_MAINPAGE_ACTIVITY)
-      this.overridePendingTransition(R.anim.zoom_in ,R.anim.zoom_out )
+      this.overridePendingTransition(R.anim.right_to_left ,R.anim.right_to_left )
     }
   }
 
