@@ -13,6 +13,7 @@ import com.collagepoem.app.modules.canvaspoem.ui.CanvasPoemActivity
 import com.collagepoem.app.modules.floatwindowmycutsvtwo.ui.FloatwindowMycutsVtwoActivity
 import com.collagepoem.app.modules.loadingworkpage.ui.LoadingworkpageActivity
 import com.collagepoem.app.modules.mainpage.ui.MainpageActivity
+import com.jaeger.library.StatusBarUtil
 import kotlin.Int
 import kotlin.String
 import kotlin.Unit
@@ -31,10 +32,19 @@ class CanvasActivity : BaseActivity<ActivityCanvasBinding>(R.layout.activity_can
 
   private val REQUEST_CODE_LOADINGWORKPAGE_ACTIVITY: Int = 989
 
+  //    将StatusBar设置为透明
+  fun setStatusBarTranslucent() {
+    StatusBarUtil.setTranslucentForImageViewInFragment(
+      this,
+      0, null
+    )
+    StatusBarUtil.setLightMode(this)
+  }
 
   override fun onInitialized(): Unit {
     viewModel.navArguments = intent.extras?.getBundle("bundle")
     binding.canvasVM = viewModel
+    setStatusBarTranslucent()
   }
 
   override fun setUpClicks(): Unit {

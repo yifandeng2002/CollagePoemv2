@@ -11,6 +11,7 @@ import com.collagepoem.app.databinding.ActivityMycutspageBelongingsBinding
 import com.collagepoem.app.modules.driftcutspagetwo.ui.DriftcutspagetwoActivity
 import com.collagepoem.app.modules.mycutspagebelongings.`data`.model.SticksRowModel
 import com.collagepoem.app.modules.mycutspagebelongings.`data`.viewmodel.MycutspageBelongingsVM
+import com.jaeger.library.StatusBarUtil
 import kotlin.Int
 import kotlin.String
 import kotlin.Unit
@@ -21,6 +22,14 @@ class MycutspageBelongingsActivity :
 
   private val REQUEST_CODE_DRIFTCUTSPAGETWO_ACTIVITY: Int = 215
 
+  //    将StatusBar设置为透明
+  fun setStatusBarTranslucent() {
+    StatusBarUtil.setTranslucentForImageViewInFragment(
+      this,
+      0, null
+    )
+    StatusBarUtil.setLightMode(this)
+  }
 
   override fun onInitialized(): Unit {
     viewModel.navArguments = intent.extras?.getBundle("bundle")
@@ -37,6 +46,7 @@ class MycutspageBelongingsActivity :
       sticksAdapter.updateData(it)
     }
     binding.mycutspageBelongingsVM = viewModel
+    setStatusBarTranslucent()
   }
 
   override fun setUpClicks(): Unit {

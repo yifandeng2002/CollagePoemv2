@@ -9,6 +9,7 @@ import com.collagepoem.app.appcomponents.base.BaseActivity
 import com.collagepoem.app.databinding.ActivityDriftcutspagetwoBinding
 import com.collagepoem.app.modules.driftcutspagethree.ui.DriftcutspagethreeActivity
 import com.collagepoem.app.modules.driftcutspagetwo.`data`.viewmodel.DriftcutspagetwoVM
+import com.jaeger.library.StatusBarUtil
 import kotlin.Int
 import kotlin.String
 import kotlin.Unit
@@ -19,9 +20,19 @@ class DriftcutspagetwoActivity :
 
   private val REQUEST_CODE_DRIFTCUTSPAGETHREE_ACTIVITY: Int = 152
 
+  //    将StatusBar设置为透明
+  fun setStatusBarTranslucent() {
+    StatusBarUtil.setTranslucentForImageViewInFragment(
+      this,
+      0, null
+    )
+    StatusBarUtil.setLightMode(this)
+  }
+
   override fun onInitialized(): Unit {
     viewModel.navArguments = intent.extras?.getBundle("bundle")
     binding.driftcutspagetwoVM = viewModel
+    setStatusBarTranslucent()
   }
 
   override fun setUpClicks(): Unit {

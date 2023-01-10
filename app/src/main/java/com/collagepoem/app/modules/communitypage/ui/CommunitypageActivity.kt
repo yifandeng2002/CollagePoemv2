@@ -13,6 +13,7 @@ import com.collagepoem.app.modules.communitypageinfoone.ui.CommunitypageInfoOneA
 import com.collagepoem.app.modules.communitypagemessages.ui.CommunitypageMessagesActivity
 import com.collagepoem.app.modules.mainpage.ui.MainpageActivity
 import com.collagepoem.app.modules.profilepagemypage.ui.ProfilepageMypageActivity
+import com.jaeger.library.StatusBarUtil
 import kotlin.Int
 import kotlin.String
 import kotlin.Unit
@@ -36,9 +37,19 @@ class CommunitypageActivity :
   private val REQUEST_CODE_COMMUNITYPAGE_MESSAGES_ACTIVITY: Int = 376
 
 
+  //    将StatusBar设置为透明
+  fun setStatusBarTranslucent() {
+    StatusBarUtil.setTranslucentForImageViewInFragment(
+      this,
+      0, null
+    )
+    StatusBarUtil.setLightMode(this)
+  }
+
   override fun onInitialized(): Unit {
     viewModel.navArguments = intent.extras?.getBundle("bundle")
     binding.communitypageVM = viewModel
+    setStatusBarTranslucent()
   }
 
   override fun setUpClicks(): Unit {
