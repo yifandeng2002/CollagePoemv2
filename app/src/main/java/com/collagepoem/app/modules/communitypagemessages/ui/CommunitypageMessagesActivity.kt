@@ -10,6 +10,7 @@ import com.collagepoem.app.appcomponents.base.BaseActivity
 import com.collagepoem.app.databinding.ActivityCommunitypageMessagesBinding
 import com.collagepoem.app.modules.communitypagemessages.`data`.model.MessagesRowModel
 import com.collagepoem.app.modules.communitypagemessages.`data`.viewmodel.CommunitypageMessagesVM
+import com.jaeger.library.StatusBarUtil
 import kotlin.Int
 import kotlin.String
 import kotlin.Unit
@@ -17,6 +18,15 @@ import kotlin.Unit
 class CommunitypageMessagesActivity :
     BaseActivity<ActivityCommunitypageMessagesBinding>(R.layout.activity_communitypage_messages) {
   private val viewModel: CommunitypageMessagesVM by viewModels<CommunitypageMessagesVM>()
+
+  //    将StatusBar设置为透明
+  fun setStatusBarTranslucent() {
+    StatusBarUtil.setTranslucentForImageViewInFragment(
+      this,
+      0, null
+    )
+    StatusBarUtil.setLightMode(this)
+  }
 
   override fun onInitialized(): Unit {
     viewModel.navArguments = intent.extras?.getBundle("bundle")
@@ -33,6 +43,7 @@ class CommunitypageMessagesActivity :
       messagesAdapter.updateData(it)
     }
     binding.communitypageMessagesVM = viewModel
+    setStatusBarTranslucent()
   }
 
   override fun setUpClicks(): Unit {

@@ -8,6 +8,7 @@ import com.collagepoem.app.databinding.ActivityDriftcutspageoneBinding
 import com.collagepoem.app.modules.communitypageinfo.ui.CommunitypageInfoActivity
 import com.collagepoem.app.modules.driftcutspageone.`data`.model.Works3RowModel
 import com.collagepoem.app.modules.driftcutspageone.`data`.viewmodel.DriftcutspageoneVM
+import com.jaeger.library.StatusBarUtil
 import kotlin.Int
 import kotlin.String
 import kotlin.Unit
@@ -17,6 +18,15 @@ class DriftcutspageoneActivity :
   private val viewModel: DriftcutspageoneVM by viewModels<DriftcutspageoneVM>()
 
   private val REQUEST_CODE_COMMUNITYPAGE_INFO_ACTIVITY: Int = 517
+
+  //    将StatusBar设置为透明
+  fun setStatusBarTranslucent() {
+    StatusBarUtil.setTranslucentForImageViewInFragment(
+      this,
+      0, null
+    )
+    StatusBarUtil.setLightMode(this)
+  }
 
   override fun onInitialized(): Unit {
     viewModel.navArguments = intent.extras?.getBundle("bundle")
@@ -33,6 +43,7 @@ class DriftcutspageoneActivity :
       worksAdapter.updateData(it)
     }
     binding.driftcutspageoneVM = viewModel
+    setStatusBarTranslucent()
   }
 
   override fun setUpClicks(): Unit {

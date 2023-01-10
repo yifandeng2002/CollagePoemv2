@@ -10,6 +10,7 @@ import com.collagepoem.app.appcomponents.base.BaseActivity
 import com.collagepoem.app.databinding.ActivityFloatwindowMycutsVtwoBinding
 import com.collagepoem.app.modules.floatwindowmycutsvtwo.`data`.model.StickRowModel
 import com.collagepoem.app.modules.floatwindowmycutsvtwo.`data`.viewmodel.FloatwindowMycutsVtwoVM
+import com.jaeger.library.StatusBarUtil
 import kotlin.Int
 import kotlin.String
 import kotlin.Unit
@@ -17,6 +18,15 @@ import kotlin.Unit
 class FloatwindowMycutsVtwoActivity :
     BaseActivity<ActivityFloatwindowMycutsVtwoBinding>(R.layout.activity_floatwindow_mycuts_vtwo) {
   private val viewModel: FloatwindowMycutsVtwoVM by viewModels<FloatwindowMycutsVtwoVM>()
+
+  //    将StatusBar设置为透明
+  fun setStatusBarTranslucent() {
+    StatusBarUtil.setTranslucentForImageViewInFragment(
+      this,
+      0, null
+    )
+    StatusBarUtil.setLightMode(this)
+  }
 
   override fun onInitialized(): Unit {
     viewModel.navArguments = intent.extras?.getBundle("bundle")
@@ -33,6 +43,7 @@ class FloatwindowMycutsVtwoActivity :
       stickAdapter.updateData(it)
     }
     binding.floatwindowMycutsVtwoVM = viewModel
+    setStatusBarTranslucent()
   }
 
   override fun setUpClicks(): Unit {

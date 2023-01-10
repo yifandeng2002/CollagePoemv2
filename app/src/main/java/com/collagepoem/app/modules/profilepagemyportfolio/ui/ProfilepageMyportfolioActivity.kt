@@ -12,6 +12,7 @@ import com.collagepoem.app.modules.communitypage.ui.CommunitypageActivity
 import com.collagepoem.app.modules.mainpage.ui.MainpageActivity
 import com.collagepoem.app.modules.profilepagemyportfolio.`data`.model.WorkRowModel
 import com.collagepoem.app.modules.profilepagemyportfolio.`data`.viewmodel.ProfilepageMyportfolioVM
+import com.jaeger.library.StatusBarUtil
 import kotlin.Int
 import kotlin.String
 import kotlin.Unit
@@ -23,6 +24,15 @@ class ProfilepageMyportfolioActivity :
   private val REQUEST_CODE_MAINPAGE_ACTIVITY: Int = 951
 
   private val REQUEST_CODE_COMMUNITYPAGE_ACTIVITY: Int = 732
+
+  //    将StatusBar设置为透明
+  fun setStatusBarTranslucent() {
+    StatusBarUtil.setTranslucentForImageViewInFragment(
+      this,
+      0, null
+    )
+    StatusBarUtil.setLightMode(this)
+  }
 
   override fun onInitialized(): Unit {
     viewModel.navArguments = intent.extras?.getBundle("bundle")
@@ -39,6 +49,7 @@ class ProfilepageMyportfolioActivity :
       workAdapter.updateData(it)
     }
     binding.profilepageMyportfolioVM = viewModel
+    setStatusBarTranslucent()
   }
 
   override fun setUpClicks(): Unit {

@@ -9,6 +9,7 @@ import com.collagepoem.app.appcomponents.base.BaseActivity
 import com.collagepoem.app.databinding.ActivityCanvasEditoneBinding
 import com.collagepoem.app.modules.canvaseditone.`data`.viewmodel.CanvasEditoneVM
 import com.collagepoem.app.modules.canvasedittwo.ui.CanvasEdittwoActivity
+import com.jaeger.library.StatusBarUtil
 import kotlin.Int
 import kotlin.String
 import kotlin.Unit
@@ -19,9 +20,19 @@ class CanvasEditoneActivity :
 
   private val REQUEST_CODE_CANVAS_EDITTWO_ACTIVITY: Int = 667
 
+  //    将StatusBar设置为透明
+  fun setStatusBarTranslucent() {
+    StatusBarUtil.setTranslucentForImageViewInFragment(
+      this,
+      0, null
+    )
+    StatusBarUtil.setLightMode(this)
+  }
+
   override fun onInitialized(): Unit {
     viewModel.navArguments = intent.extras?.getBundle("bundle")
     binding.canvasEditoneVM = viewModel
+    setStatusBarTranslucent()
   }
 
   override fun setUpClicks(): Unit {
