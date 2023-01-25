@@ -17,7 +17,7 @@ class DriftcutspagetwoActivity :
     BaseActivity<ActivityDriftcutspagetwoBinding>(R.layout.activity_driftcutspagetwo) {
   private val viewModel: DriftcutspagetwoVM by viewModels<DriftcutspagetwoVM>()
 
-  private val REQUEST_CODE_DRIFTCUTSPAGETHREE_ACTIVITY: Int = 152
+  private val REQUEST_CODE_DRIFTCUTSPAGETHREE_ACTIVITY: Int = 875
 
   override fun onInitialized(): Unit {
     viewModel.navArguments = intent.extras?.getBundle("bundle")

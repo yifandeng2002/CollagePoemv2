@@ -20,9 +20,9 @@ class ProfilepageMyportfolioActivity :
     BaseActivity<ActivityProfilepageMyportfolioBinding>(R.layout.activity_profilepage_myportfolio) {
   private val viewModel: ProfilepageMyportfolioVM by viewModels<ProfilepageMyportfolioVM>()
 
-  private val REQUEST_CODE_MAINPAGE_ACTIVITY: Int = 951
+  private val REQUEST_CODE_MAINPAGE_ACTIVITY: Int = 242
 
-  private val REQUEST_CODE_COMMUNITYPAGE_ACTIVITY: Int = 732
+  private val REQUEST_CODE_COMMUNITYPAGE_ACTIVITY: Int = 604
 
   override fun onInitialized(): Unit {
     viewModel.navArguments = intent.extras?.getBundle("bundle")

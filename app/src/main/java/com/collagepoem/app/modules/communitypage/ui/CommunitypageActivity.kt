@@ -21,19 +21,19 @@ class CommunitypageActivity :
     BaseActivity<ActivityCommunitypageBinding>(R.layout.activity_communitypage) {
   private val viewModel: CommunitypageVM by viewModels<CommunitypageVM>()
 
-  private val REQUEST_CODE_MAINPAGE_ACTIVITY: Int = 368
+  private val REQUEST_CODE_MAINPAGE_ACTIVITY: Int = 104
 
 
-  private val REQUEST_CODE_COMMUNITYPAGE_INFO_ACTIVITY: Int = 556
+  private val REQUEST_CODE_COMMUNITYPAGE_INFO_ACTIVITY: Int = 750
 
 
-  private val REQUEST_CODE_PROFILEPAGE_MYPAGE_ACTIVITY: Int = 196
+  private val REQUEST_CODE_PROFILEPAGE_MYPAGE_ACTIVITY: Int = 994
 
 
-  private val REQUEST_CODE_COMMUNITYPAGE_INFO_ONE_ACTIVITY: Int = 354
+  private val REQUEST_CODE_COMMUNITYPAGE_INFO_ONE_ACTIVITY: Int = 766
 
 
-  private val REQUEST_CODE_COMMUNITYPAGE_MESSAGES_ACTIVITY: Int = 376
+  private val REQUEST_CODE_COMMUNITYPAGE_MESSAGES_ACTIVITY: Int = 103
 
 
   override fun onInitialized(): Unit {

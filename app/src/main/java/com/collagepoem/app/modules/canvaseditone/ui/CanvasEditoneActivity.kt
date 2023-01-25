@@ -17,7 +17,7 @@ class CanvasEditoneActivity :
     BaseActivity<ActivityCanvasEditoneBinding>(R.layout.activity_canvas_editone) {
   private val viewModel: CanvasEditoneVM by viewModels<CanvasEditoneVM>()
 
-  private val REQUEST_CODE_CANVAS_EDITTWO_ACTIVITY: Int = 667
+  private val REQUEST_CODE_CANVAS_EDITTWO_ACTIVITY: Int = 536
 
   override fun onInitialized(): Unit {
     viewModel.navArguments = intent.extras?.getBundle("bundle")

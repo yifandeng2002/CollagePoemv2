@@ -17,9 +17,9 @@ class ProfilepageMyinfoActivity :
     BaseActivity<ActivityProfilepageMyinfoBinding>(R.layout.activity_profilepage_myinfo) {
   private val viewModel: ProfilepageMyinfoVM by viewModels<ProfilepageMyinfoVM>()
 
-  private val REQUEST_CODE_COMMUNITYPAGE_INFO_ACTIVITY: Int = 197
+  private val REQUEST_CODE_COMMUNITYPAGE_INFO_ACTIVITY: Int = 696
 
-  private val REQUEST_CODE_COMMUNITYPAGE_INFO_ONE_ACTIVITY: Int = 193
+  private val REQUEST_CODE_COMMUNITYPAGE_INFO_ONE_ACTIVITY: Int = 225
 
   override fun onInitialized(): Unit {
     viewModel.navArguments = intent.extras?.getBundle("bundle")

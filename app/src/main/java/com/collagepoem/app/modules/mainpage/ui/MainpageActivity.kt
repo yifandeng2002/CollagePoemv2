@@ -18,13 +18,13 @@ import kotlin.Unit
 class MainpageActivity : BaseActivity<ActivityMainpageBinding>(R.layout.activity_mainpage) {
   private val viewModel: MainpageVM by viewModels<MainpageVM>()
 
-  private val REQUEST_CODE_CANVAS_POEM_ACTIVITY: Int = 594
+  private val REQUEST_CODE_CANVAS_POEM_ACTIVITY: Int = 930
 
 
-  private val REQUEST_CODE_COMMUNITYPAGE_ACTIVITY: Int = 532
+  private val REQUEST_CODE_COMMUNITYPAGE_ACTIVITY: Int = 380
 
 
-  private val REQUEST_CODE_PROFILEPAGE_MYPAGE_ACTIVITY: Int = 674
+  private val REQUEST_CODE_PROFILEPAGE_MYPAGE_ACTIVITY: Int = 946
 
 
   override fun onInitialized(): Unit {

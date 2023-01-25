@@ -102,6 +102,8 @@ liked by many others, made with many poems</string>
     <string name="lbl_account">Account</string>
     <string name="lbl_fans">fans</string>
     <string name="msg_please_enter_valid_pa">Please enter valid password</string>
+    <string name="msg_valid_account_name_or_pa">Valid account name or password.</string>
+    <string name="lbl_error">Error</string>
     <string name="msg_this_contact_has_no_phone_nu">This contact has no phone number</string>
     <string name="msg_camera_storage_permission">This Application need permission\n1.Camera permission to capture the image.\n2.Storage Access permission to save the captured image.</string>
     <string name="lbl_camera">Camera</string>

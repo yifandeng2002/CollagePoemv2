@@ -22,13 +22,13 @@ class ProfilepageMypageActivity :
     BaseActivity<ActivityProfilepageMypageBinding>(R.layout.activity_profilepage_mypage) {
   private val viewModel: ProfilepageMypageVM by viewModels<ProfilepageMypageVM>()
 
-  private val REQUEST_CODE_PROFILEPAGE_MYPORTFOLIO_ACTIVITY: Int = 425
+  private val REQUEST_CODE_PROFILEPAGE_MYPORTFOLIO_ACTIVITY: Int = 929
 
-  private val REQUEST_CODE_COMMUNITYPAGE_ACTIVITY: Int = 857
+  private val REQUEST_CODE_COMMUNITYPAGE_ACTIVITY: Int = 748
 
-  private val REQUEST_CODE_MAINPAGE_ACTIVITY: Int = 845
+  private val REQUEST_CODE_MAINPAGE_ACTIVITY: Int = 896
 
-  private val REQUEST_CODE_MYCUTSPAGE_BELONGINGS_ACTIVITY: Int = 101
+  private val REQUEST_CODE_MYCUTSPAGE_BELONGINGS_ACTIVITY: Int = 607
 
   override fun onInitialized(): Unit {
     viewModel.navArguments = intent.extras?.getBundle("bundle")

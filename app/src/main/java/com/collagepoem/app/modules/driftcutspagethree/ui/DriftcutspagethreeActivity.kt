@@ -17,7 +17,7 @@ class DriftcutspagethreeActivity :
     BaseActivity<ActivityDriftcutspagethreeBinding>(R.layout.activity_driftcutspagethree) {
   private val viewModel: DriftcutspagethreeVM by viewModels<DriftcutspagethreeVM>()
 
-  private val REQUEST_CODE_MAINPAGE_ACTIVITY: Int = 824
+  private val REQUEST_CODE_MAINPAGE_ACTIVITY: Int = 754
 
 
   override fun onInitialized(): Unit {

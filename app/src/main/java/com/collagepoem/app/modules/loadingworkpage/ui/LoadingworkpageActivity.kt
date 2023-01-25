@@ -17,7 +17,7 @@ class LoadingworkpageActivity :
     BaseActivity<ActivityLoadingworkpageBinding>(R.layout.activity_loadingworkpage) {
   private val viewModel: LoadingworkpageVM by viewModels<LoadingworkpageVM>()
 
-  private val REQUEST_CODE_SUCCESSPAGE_ACTIVITY: Int = 303
+  private val REQUEST_CODE_SUCCESSPAGE_ACTIVITY: Int = 915
 
   override fun onInitialized(): Unit {
     viewModel.navArguments = intent.extras?.getBundle("bundle")

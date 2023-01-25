@@ -17,7 +17,7 @@ class SuccesspageActivity : BaseActivity<ActivitySuccesspageBinding>(R.layout.ac
     {
   private val viewModel: SuccesspageVM by viewModels<SuccesspageVM>()
 
-  private val REQUEST_CODE_MAINPAGE_ACTIVITY: Int = 116
+  private val REQUEST_CODE_MAINPAGE_ACTIVITY: Int = 776
 
 
   override fun onInitialized(): Unit {
