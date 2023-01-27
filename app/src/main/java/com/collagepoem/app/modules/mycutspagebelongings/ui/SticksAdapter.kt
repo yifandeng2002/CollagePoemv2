@@ -5,10 +5,11 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.collagepoem.app.R
-import com.collagepoem.app.databinding.RowSticksBinding
 import com.collagepoem.app.modules.mycutspagebelongings.`data`.model.SticksRowModel
 import kotlin.Int
 import kotlin.collections.List
+import com.collagepoem.app.databinding.RowSticksBinding
+
 
 class SticksAdapter(
   var list: List<SticksRowModel>
@@ -27,7 +28,7 @@ class SticksAdapter(
     holder.binding.sticksRowModel = sticksRowModel
   }
 
-  override fun getItemCount(): Int = 2
+  override fun getItemCount(): Int = 3
   // TODO uncomment following line after integration with data source
   // return list.size
 
@@ -54,7 +55,7 @@ class SticksAdapter(
   ) : RecyclerView.ViewHolder(view) {
     val binding: RowSticksBinding = RowSticksBinding.bind(itemView)
     init {
-      binding.imageStick.setOnClickListener {
+      binding.linearStick.setOnClickListener {
         // TODO replace with value from datasource
         clickListener?.onItemClick(it, adapterPosition, SticksRowModel())
       }

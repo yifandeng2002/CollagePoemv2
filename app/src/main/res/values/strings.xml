@@ -69,6 +69,7 @@ make them be use</string>
     <string name="lbl_latest">Latest</string>
     <string name="lbl_lalalalalaalal">lalalalalaalal</string>
     <string name="lbl_2">2</string>
+    <string name="lbl_remainingtime">remainingtime</string>
     <string name="lbl_follow2">follow</string>
     <string name="lbl_87">87</string>
     <string name="lbl_comment_35">Comment 35</string>
@@ -93,10 +94,12 @@ Start off your journey with poem</string>
     <string name="lbl_password">Password</string>
     <string name="lbl_collection">collection</string>
     <string name="lbl_had">Had</string>
+    <string name="lbl_bookname">bookname</string>
     <string name="msg_content_here_co2">Content here
 Content hereContent hereContent hereContent hereContent hereContent hereContent hereContent hereContent hereContent hereContent hereContent hereContent hereContent hereContent hereContent hereContent hereContent hereContent hereContent hereContent hereContent hereContent hereContent hereContent hereContent hereContent hereContent hereContent hereContent here</string>
     <string name="lbl_comment">Comment</string>
     <string name="msg_thanks_your_sha">Thanks your sharing
+
 liked by many others, made with many poems</string>
     <string name="lbl_pushed2">Pushed</string>
     <string name="lbl_account">Account</string>
