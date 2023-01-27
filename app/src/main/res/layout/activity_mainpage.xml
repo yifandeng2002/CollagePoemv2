@@ -4,6 +4,9 @@
     <data>
         <variable name="mainpageVM" type="com.collagepoem.app.modules.mainpage.data.viewmodel.MainpageVM"/>
     </data>
+    <FrameLayout android:id="@+id/frameMainpage"
+        android:layout_height="match_parent"
+        android:layout_width="match_parent" style="@style/groupStylegray_200">
     <LinearLayout android:gravity="end" android:id="@+id/linearMainpage"
         android:layout_height="match_parent"
         android:layout_marginTop="@dimen/_72pxv"
@@ -279,4 +282,5 @@
         </FrameLayout>
 
     </LinearLayout>
+    </FrameLayout>
 </layout>
