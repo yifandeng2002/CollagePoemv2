@@ -1,11 +1,21 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<layout xmlns:android="http://schemas.android.com/apk/res/android" xmlns:tools="http://schemas.android.com/tools">
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
     <data>
         <variable name="canvasPoemVM" type="com.collagepoem.app.modules.canvaspoem.data.viewmodel.CanvasPoemVM"/>
     </data>
     <FrameLayout android:id="@+id/frameStackbackground"
         android:layout_height="match_parent"
         android:layout_width="match_parent" style="@style/groupStylegray_200">
+
+        <ImageView
+            android:id="@+id/imageView2"
+            android:layout_width="176dp"
+            android:layout_height="168dp"
+            android:visibility="visible"
+            tools:srcCompat="@tools:sample/avatars" />
+
         <ImageView android:id="@+id/imageBackground"
             android:layout_gravity="center"
             android:layout_height="912dp"
@@ -71,6 +81,7 @@
             android:layout_marginEnd="@dimen/_27pxh"
             android:layout_marginStart="@dimen/_27pxh"
             android:layout_marginTop="@dimen/_101pxv" android:layout_width="@dimen/_356pxh">
+
             <ImageView android:id="@+id/imagePoemcard"
                 android:layout_gravity="start"
                 android:layout_height="match_parent"
@@ -78,6 +89,7 @@
                 android:scaleType="fitXY"
                 imageRes="@{@drawable/img_poemcard}"
                 tools:ignore="ContentDescription" tools:src="@drawable/img_poemcard"/>
+
             <LinearLayout android:id="@+id/linearColumntimecn"
                 android:layout_gravity="top|center"
                 android:layout_height="wrap_content"
@@ -124,6 +136,7 @@
                     android:singleLine="true"
                     android:text="@{canvasPoemVM.canvasPoemModel.txtTimeEN}"
                     style="@style/txtHiraginoMinchoProhiraminprow310" tools:text="@string/lbl_01_05"/>
+
             </LinearLayout>
         </FrameLayout>
         <ImageView android:id="@+id/imagePaperTwo"
@@ -136,7 +149,18 @@
             android:layout_width="@dimen/_87pxh"
             android:scaleType="fitXY" imageRes="@{@drawable/img_paper2}"
             tools:ignore="ContentDescription" tools:src="@drawable/img_paper2"/>
-        <ImageView android:id="@+id/imagePaperOne"
+<!--        <ImageView android:id="@+id/imagePaperOne"-->
+<!--            android:layout_gravity="top|end"-->
+<!--            android:layout_height="@dimen/_48pxh"-->
+<!--            android:layout_marginBottom="@dimen/_309pxv"-->
+<!--            android:layout_marginEnd="@dimen/_15pxh"-->
+<!--            android:layout_marginStart="@dimen/_15pxh"-->
+<!--            android:layout_marginTop="@dimen/_309pxv"-->
+<!--            android:layout_width="@dimen/_104pxh"-->
+<!--            android:scaleType="fitXY" android:src="@drawable/img_paper1"-->
+<!--            tools:ignore="ContentDescription" tools:src="@drawable/img_paper1"/>-->
+        <com.collagepoem.app.modules.canvaspoem.DragFloatActionButton
+            android:id="@+id/actionButton"
             android:layout_gravity="top|end"
             android:layout_height="@dimen/_48pxh"
             android:layout_marginBottom="@dimen/_309pxv"
@@ -146,6 +170,7 @@
             android:layout_width="@dimen/_104pxh"
             android:scaleType="fitXY" android:src="@drawable/img_paper1"
             tools:ignore="ContentDescription" tools:src="@drawable/img_paper1"/>
+
         <ImageView android:id="@+id/imageScissorsbtn"
             android:layout_gravity="bottom|start"
             android:layout_height="@dimen/_135pxh"
@@ -156,17 +181,20 @@
             android:scaleType="fitXY"
             imageRes="@{@drawable/img_scissorsbtn_135x122}"
             tools:ignore="ContentDescription" tools:src="@drawable/img_scissorsbtn_135x122"/>
-        <ImageView android:id="@+id/imageTrashbtn"
-            android:layout_gravity="bottom|start"
+
+        <ImageView
+            android:id="@+id/imageTrashbtn"
+            imageRes="@{@drawable/img_trashbtn}"
+            android:layout_width="@dimen/_110pxh"
             android:layout_height="@dimen/_121pxh"
-            android:layout_marginBottom="@dimen/_222pxv"
-            android:layout_marginEnd="@dimen/_10pxh"
+            android:layout_gravity="bottom|start"
             android:layout_marginStart="@dimen/_8pxh"
             android:layout_marginTop="@dimen/_222pxv"
-            android:layout_width="@dimen/_110pxh"
+            android:layout_marginEnd="@dimen/_10pxh"
+            android:layout_marginBottom="@dimen/_222pxv"
             android:scaleType="fitXY"
-            imageRes="@{@drawable/img_trashbtn}"
-            tools:ignore="ContentDescription" tools:src="@drawable/img_trashbtn"/>
+            tools:ignore="ContentDescription"
+            tools:src="@drawable/img_trashbtn" />
         <ImageView android:id="@+id/imageFilebtn"
             android:layout_gravity="bottom|end"
             android:layout_height="@dimen/_86pxh"
