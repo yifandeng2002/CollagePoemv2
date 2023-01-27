@@ -78,6 +78,7 @@
                 android:scaleType="fitXY"
                 imageRes="@{@drawable/img_poemcard}"
                 tools:ignore="ContentDescription" tools:src="@drawable/img_poemcard"/>
+
             <LinearLayout android:id="@+id/linearColumntimecn"
                 android:layout_gravity="top|center"
                 android:layout_height="wrap_content"

@@ -122,16 +122,19 @@
                         imageRes="@{@drawable/img_trashbtn}"
                         tools:ignore="ContentDescription" tools:src="@drawable/img_trashbtn"/>
                 </FrameLayout>
-                <ImageView android:id="@+id/imageFinish"
+
+                <ImageView
+                    android:id="@+id/imageFinish"
+                    android:layout_width="@dimen/_171pxh"
+                    android:layout_height="48dp"
                     android:layout_gravity="center_horizontal"
-                    android:layout_height="@dimen/_46pxh"
-                    android:layout_marginEnd="@dimen/_10pxh"
                     android:layout_marginStart="@dimen/_10pxh"
                     android:layout_marginTop="@dimen/_61pxv"
-                    android:layout_width="@dimen/_171pxh"
+                    android:layout_marginEnd="@dimen/_10pxh"
+                    android:clickable="true"
                     android:scaleType="fitXY"
                     android:src="@drawable/img_finish"
-                    tools:ignore="ContentDescription" tools:src="@drawable/img_finish"/>
+                    tools:ignore="ContentDescription,SpeakableTextPresentCheck" />
             </LinearLayout>
         </FrameLayout>
     </LinearLayout>
