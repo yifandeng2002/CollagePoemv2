@@ -58,7 +58,7 @@ class MainpageActivity : BaseActivity<ActivityMainpageBinding>(R.layout.activity
       startActivityForResult(destIntent, REQUEST_CODE_PROFILEPAGE_MYPAGE_ACTIVITY)
       this.overridePendingTransition(R.anim.zoom_in ,R.anim.zoom_out )
     }
-    binding.imageImageAddNew.setOnClickListener {
+    binding.imageImageAddNew2.setOnClickListener {
       val destIntent = CanvasPoemActivity.getIntent(this, null)
       startActivityForResult(destIntent, REQUEST_CODE_CANVAS_POEM_ACTIVITY)
       this.overridePendingTransition(R.anim.zoom_in ,R.anim.zoom_out )

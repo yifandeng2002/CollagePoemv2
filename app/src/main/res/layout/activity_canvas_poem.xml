@@ -6,6 +6,8 @@
     <FrameLayout android:id="@+id/frameStackbackground"
         android:layout_height="match_parent"
         android:layout_width="match_parent" style="@style/groupStylegray_200">
+
+
         <ImageView android:id="@+id/imageBackground"
             android:layout_gravity="center"
             android:layout_height="912dp"
@@ -189,5 +191,17 @@
             android:scaleType="fitXY"
             imageRes="@{@drawable/img_camerabtn}"
             tools:ignore="ContentDescription" tools:src="@drawable/img_camerabtn"/>
+
+        <pl.droidsonroids.gif.GifImageView
+            android:id="@+id/gifImageView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:scaleX="1.5"
+            android:scaleY="1.5"
+            android:src="@drawable/cutanimation"
+            android:translationX="60dp"
+            android:translationY="-20dp" />
+
+
     </FrameLayout>
 </layout>
