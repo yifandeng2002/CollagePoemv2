@@ -1,4 +1,4 @@
-package com.collagepoem.app;
+package com.collagepoem.app.modules.canvas.ui;
 
 import android.os.Environment;
 
