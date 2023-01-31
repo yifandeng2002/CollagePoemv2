@@ -100,4 +100,6 @@ class ProfilepageMypageActivity :
       return destIntent
     }
   }
+
+
 }

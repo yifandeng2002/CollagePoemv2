@@ -15,7 +15,7 @@ import kotlin.String
 import kotlin.Unit
 import com.collagepoem.app.databinding.ActivityMycutspageBelongingsBinding
 //import com.collagepoem.app.modules.mycutspagebelongingsone.ui.MycutspageBelongingsOneActivity
-//import com.collagepoem.app.modules.profilepagemypagecontainer.ui.ProfilepageMypageContainerActivity
+import com.collagepoem.app.modules.profilepagemypage.ui.ProfilepageMypageActivity
 
 
 class MycutspageBelongingsActivity :
@@ -54,11 +54,11 @@ class MycutspageBelongingsActivity :
 //      startActivityForResult(destIntent, REQUEST_CODE_MYCUTSPAGE_BELONGINGS_ONE_ACTIVITY)
 //      this.overridePendingTransition(R.anim.right_to_left ,R.anim.left_to_right )
 //    }
-//    binding.imageBack.setOnClickListener {
-//      val destIntent = ProfilepageMypageContainerActivity.getIntent(this, null)
-//      startActivityForResult(destIntent, REQUEST_CODE_PROFILEPAGE_MYPAGE_CONTAINER_ACTIVITY)
-//      this.overridePendingTransition(R.anim.zoom_out ,R.anim.zoom_in )
-//    }
+    binding.imageBack.setOnClickListener {
+      val destIntent = ProfilepageMypageActivity.getIntent(this, null)
+      startActivityForResult(destIntent, REQUEST_CODE_PROFILEPAGE_MYPAGE_CONTAINER_ACTIVITY)
+      this.overridePendingTransition(R.anim.zoom_out ,R.anim.zoom_in )
+    }
   }
 
   fun onClickRecyclerSticks(

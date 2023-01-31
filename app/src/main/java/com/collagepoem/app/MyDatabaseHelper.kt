@@ -12,6 +12,9 @@ class MyDatabaseHelper(val context: Context, name: String, version: Int) :
             "bookname text," +
             "collecttime text,"+
             "country text,"+
+            "state int,"+
+            "Mentioned int,"+
+            "Cited int,"+
             "image blob)"
     override fun onCreate(db: SQLiteDatabase) {
         db.execSQL(createNotes)
