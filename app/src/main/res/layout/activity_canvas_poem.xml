@@ -138,16 +138,20 @@
             android:layout_width="@dimen/_87pxh"
             android:scaleType="fitXY" imageRes="@{@drawable/img_paper2}"
             tools:ignore="ContentDescription" tools:src="@drawable/img_paper2"/>
-        <ImageView android:id="@+id/imagePaperOne"
+
+        <ImageView
+            android:id="@+id/imagePaperOne"
+            android:layout_width="102dp"
+            android:layout_height="52dp"
             android:layout_gravity="top|end"
-            android:layout_height="@dimen/_48pxh"
-            android:layout_marginBottom="@dimen/_309pxv"
-            android:layout_marginEnd="@dimen/_15pxh"
             android:layout_marginStart="@dimen/_15pxh"
             android:layout_marginTop="@dimen/_309pxv"
-            android:layout_width="@dimen/_104pxh"
-            android:scaleType="fitXY" android:src="@drawable/img_paper1"
-            tools:ignore="ContentDescription" tools:src="@drawable/img_paper1"/>
+            android:layout_marginEnd="@dimen/_15pxh"
+            android:layout_marginBottom="@dimen/_309pxv"
+            android:scaleType="fitXY"
+            android:src="@drawable/img_paper1"
+            tools:ignore="ContentDescription"
+            tools:src="@drawable/img_paper1" />
         <ImageView android:id="@+id/imageScissorsbtn"
             android:layout_gravity="bottom|start"
             android:layout_height="@dimen/_135pxh"
