@@ -51,6 +51,12 @@ Check your app\'s UI from the AppNavigation screens of your app.
 │ │ └── RetrofitProvider.kt
 │ └── ui                 - Data Binding Utilities
 │     └── CustomBindingAdapter.kt
+├── dao                  - User login dao 
+│ └── UserDao.kt
+├── entity               - User account info transform
+│ └── User.kt
+├── utils                - Database connection helper
+│ └── JDBCUtils.kt
 ├── constants            - Constant Files
 │ ├── IntegerConstants.kt
 │ └── StringConstants.kt
@@ -69,8 +75,6 @@ Check your app\'s UI from the AppNavigation screens of your app.
   └── RetrofitService.kt
 ```
 ### Fonts
-We were unable to find following Fonts, Please add manually to ```app/src/main/res/font``` and uncomment code in respective font family XML files.
-
 ```
 arialboldmt
 arialmt
