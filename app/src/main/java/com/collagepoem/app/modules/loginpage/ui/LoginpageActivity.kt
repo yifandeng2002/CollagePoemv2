@@ -1,13 +1,20 @@
 package com.collagepoem.app.modules.loginpage.ui
 
+import android.annotation.SuppressLint
 import android.content.Context
 import android.content.Intent
 import android.os.Bundle
+import android.os.Handler
+import android.os.Message
 import android.util.Log
 import android.view.View
+import android.widget.EditText
+import android.widget.TextView
+import android.widget.Toast
 import androidx.activity.viewModels
 import com.collagepoem.app.R
 import com.collagepoem.app.appcomponents.base.BaseActivity
+import com.collagepoem.app.dao.UserDao
 import com.collagepoem.app.databinding.ActivityLoginpageBinding
 import com.collagepoem.app.modules.loginpage.data.viewmodel.LoginpageVM
 import com.collagepoem.app.modules.mainpage.ui.MainpageActivity
@@ -19,8 +26,8 @@ import java.sql.SQLException
 
 class LoginpageActivity : BaseActivity<ActivityLoginpageBinding>(R.layout.activity_loginpage) {
   private val viewModel: LoginpageVM by viewModels<LoginpageVM>()
-
   private val REQUEST_CODE_MAINPAGE_ACTIVITY: Int = 194
+
 
   //    将StatusBar设置为透明
   fun setStatusBarTranslucent() {
@@ -35,53 +42,48 @@ class LoginpageActivity : BaseActivity<ActivityLoginpageBinding>(R.layout.activi
     viewModel.navArguments = intent.extras?.getBundle("bundle")
     binding.loginpageVM = viewModel
     setStatusBarTranslucent()
-    Thread(Runnable {
-      val sql = "SELECT * FROM poeminfo"
-      mysqlConnection(sql)
-    }).start()
-
   }
 
   override fun setUpClicks(): Unit {
     binding.btnLogInSignUpOne.setOnClickListener {
-      val destIntent = MainpageActivity.getIntent(this, null)
-      startActivityForResult(destIntent, REQUEST_CODE_MAINPAGE_ACTIVITY)
-      this.overridePendingTransition(R.anim.fade_in ,R.anim.fade_out )
+//     val destIntent = MainpageActivity.getIntent(this, null)
+//      startActivityForResult(destIntent, REQUEST_CODE_MAINPAGE_ACTIVITY)
+//      this.overridePendingTransition(R.anim.fade_in ,R.anim.fade_out )
+
+      val EditTextAccount: EditText = findViewById(R.id.etAcoount)
+      val EditTextPassword: EditText = findViewById(R.id.etPassword)
+      object : Thread() {
+        override fun run() {
+          val userDao = UserDao()
+          val msg: Int = userDao.login(
+            EditTextAccount.getText().toString(),
+            EditTextPassword.getText().toString()
+          )
+          hand1.sendEmptyMessage(msg)
+        }
+      }.start()
     }
   }
 
-  fun mysqlConnection(sql:String) {
 
-    var cn: Connection
-    var url = "gz-cynosdbmysql-grp-i3ws27i1.sql.tencentcdb.com:25111/UserInfo" + "?useUnicode=true&characterEncoding=utf-8&serverTimezone=Asia/Guangzhou"
-    try {
-//      val msg = Message ()
-//加载驱动
-      Class.forName("com.mysql.jdbc.Driver")
-//建立连接
-      cn = DriverManager.getConnection("jdbc:mysql://gz-cynosdbmysql-grp-i3ws27i1.sql.tencentcdb.com:25111/Poem" + "?useUnicode=true&characterEncoding=utf-8&useJDBCCompliantTimezoneShift=true&useLegacyDatetimeCode=false&serverTimezone=UTC&useSSL=false&autoReconnect=true&failOverReadOnly=false","joedeng2", "Dyf731206")
-      val id=findViewById<View>(R.id.etAcoount)
-      val password=findViewById<View>(R.id.etPassword)
-      val ps = cn.createStatement()
-      val resultSet = ps!!.executeQuery(sql)
-      while (resultSet.next()) {
-        Log.d("mysqlConnection: " ,
-          resultSet.getString("author") +
-                  resultSet.getString("country") + resultSet.getString("title"))
-
+  @SuppressLint("HandlerLeak")
+  val hand1: Handler = object : Handler() {
+    override fun handleMessage(msg: Message) {
+      if (msg.what === 0) {
+        Toast.makeText(applicationContext, "登录失败", Toast.LENGTH_LONG).show()
+      } else if (msg.what === 1) {
+        Toast.makeText(applicationContext, "登录成功", Toast.LENGTH_LONG).show()
+        val destIntent = MainpageActivity.getIntent(this@LoginpageActivity, null)
+        startActivityForResult(destIntent, REQUEST_CODE_MAINPAGE_ACTIVITY)
+        this@LoginpageActivity.overridePendingTransition(R.anim.fade_in ,R.anim.fade_out )
+      } else if (msg.what === 2) {
+        Toast.makeText(applicationContext, "密码错误", Toast.LENGTH_LONG).show()
+      } else if (msg.what === 3) {
+        Toast.makeText(applicationContext, "账号不存在", Toast.LENGTH_LONG).show()
       }
-      if (ps != null) {
-        ps!!.close()
-      }
-      if (cn != null) {
-        cn.close()
-      }
-    } catch (e: ClassNotFoundException) {
-      e.printStackTrace()
-    } catch (e: SQLException) {
-      e.printStackTrace()
     }
   }
+
 
 
   companion object {
