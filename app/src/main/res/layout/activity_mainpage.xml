@@ -4,17 +4,22 @@
     <data>
         <variable name="mainpageVM" type="com.collagepoem.app.modules.mainpage.data.viewmodel.MainpageVM"/>
     </data>
+    <FrameLayout android:id="@+id/frameMainpage"
+        android:layout_height="match_parent"
+        android:layout_width="match_parent" style="@style/groupStylegray_200">
     <LinearLayout android:gravity="end" android:id="@+id/linearMainpage"
         android:layout_height="match_parent"
         android:layout_marginTop="@dimen/_72pxv"
         android:layout_width="match_parent"
         android:orientation="vertical" style="@style/groupStylegray_200">
+
         <LinearLayout android:gravity="start"
             android:id="@+id/linearColumnwelcometext"
             android:layout_height="0dp"
             android:layout_marginStart="@dimen/_10pxh"
             android:layout_weight="1.0"
             android:layout_width="match_parent" android:orientation="vertical">
+
             <LinearLayout android:gravity="start"
                 android:id="@+id/linearRowwelcometext"
                 android:layout_height="wrap_content"
@@ -40,6 +45,7 @@
                     android:scaleType="centerCrop" circular="@{true}"
                     imageRes="@{@drawable/img_imageprofilepi}"
                     tools:ignore="ContentDescription" tools:src="@drawable/img_imageprofilepi"/>
+
             </LinearLayout>
             <HorizontalScrollView android:fillViewport="true"
                 android:id="@+id/horizontalScrollHorizontalscrollpoemcard"
@@ -176,17 +182,23 @@
                             </LinearLayout>
                         </FrameLayout>
                     </FrameLayout>
-                    <ImageView android:id="@+id/imageImageAddNew"
-                        android:layout_gravity="bottom|end"
-                        android:layout_height="@dimen/_87pxh"
-                        android:layout_marginStart="@dimen/_10pxh"
-                        android:layout_marginTop="@dimen/_10pxv"
-                        android:layout_width="@dimen/_104pxh"
-                        android:scaleType="fitXY"
-                        imageRes="@{@drawable/img_imageaddnew}"
-                        tools:ignore="ContentDescription" tools:src="@drawable/img_imageaddnew"/>
+
                 </FrameLayout>
             </HorizontalScrollView>
+
+            <ImageView
+                android:id="@+id/imageImageAddNew2"
+                imageRes="@{@drawable/img_imageaddnew}"
+                android:layout_width="@dimen/_104pxh"
+                android:layout_height="@dimen/_87pxh"
+                android:layout_gravity="bottom|end"
+                android:layout_marginStart="@dimen/_10pxh"
+                android:layout_marginTop="@dimen/_10pxv"
+                android:scaleType="fitXY"
+                android:translationX="0dp"
+                android:translationY="-110dp"
+                tools:ignore="ContentDescription"
+                tools:src="@drawable/img_imageaddnew" />
         </LinearLayout>
         <FrameLayout android:gravity="start"
             android:id="@+id/frameBottombar"
@@ -241,6 +253,7 @@
                         android:singleLine="true"
                         android:text="@{mainpageVM.mainpageModel.txtCommunity}"
                         style="@style/txtArialmt10_3" tools:text="@string/lbl_community"/>
+
                 </LinearLayout>
                 <LinearLayout android:id="@+id/linearMy"
                     android:layout_height="wrap_content"
@@ -263,8 +276,11 @@
                         android:singleLine="true"
                         android:text="@{mainpageVM.mainpageModel.txtMy}"
                         style="@style/txtArialmt10_3" tools:text="@string/lbl_my"/>
+
                 </LinearLayout>
             </LinearLayout>
         </FrameLayout>
+
     </LinearLayout>
+    </FrameLayout>
 </layout>

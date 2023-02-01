@@ -1,68 +1,102 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<manifest package="com.collagepoem.app" xmlns:android="http://schemas.android.com/apk/res/android">
-    <uses-permission android:name="android.permission.INTERNET"/>
-    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"/>
-    <uses-permission android:name="android.permission.CAMERA"/>
-    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE"/>
-    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
-    <application android:allowBackup="false"
-        android:icon="@mipmap/ic_launcher"
-        android:label="@string/app_name" android:largeHeap="true"
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.collagepoem.app">
+
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.CAMERA" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+
+    <application
         android:name="com.collagepoem.app.appcomponents.di.MyApp"
+        android:allowBackup="false"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:largeHeap="true"
         android:roundIcon="@mipmap/ic_launcher_round"
-        android:supportsRtl="true" android:theme="@style/Theme.MyApp" android:usesCleartextTraffic="true">
+        android:supportsRtl="true"
+        android:theme="@style/Theme.MyApp"
+        android:usesCleartextTraffic="true">
         <activity
-            android:name="com.collagepoem.app.modules.profilepagemyinfoone.ui.ProfilepageMyinfoOneActivity" android:screenOrientation="portrait"/>
+            android:name="com.collagepoem.app.modules.profilepagemyinfoone.ui.ProfilepageMyinfoOneActivity"
+            android:screenOrientation="portrait" />
         <activity
-            android:name="com.collagepoem.app.modules.driftcutspagethree.ui.DriftcutspagethreeActivity" android:screenOrientation="portrait"/>
+            android:name="com.collagepoem.app.modules.driftcutspagethree.ui.DriftcutspagethreeActivity"
+            android:screenOrientation="portrait" />
         <activity
-            android:name="com.collagepoem.app.modules.loginpage.ui.LoginpageActivity" android:screenOrientation="portrait"/>
+            android:name=".modules.loginpage.ui.LoginpageActivity"
+            android:screenOrientation="portrait" />
         <activity
-            android:name="com.collagepoem.app.modules.canvas.ui.CanvasActivity" android:screenOrientation="portrait"/>
+            android:name="com.collagepoem.app.modules.canvas.ui.CanvasActivity"
+            android:screenOrientation="portrait" />
         <activity
-            android:name="com.collagepoem.app.modules.floatwindowmycutsvtwo.ui.FloatwindowMycutsVtwoActivity" android:screenOrientation="portrait"/>
+            android:name="com.collagepoem.app.modules.floatwindowmycutsvtwo.ui.FloatwindowMycutsVtwoActivity"
+            android:screenOrientation="portrait" />
         <activity
-            android:name="com.collagepoem.app.modules.communitypagemessages.ui.CommunitypageMessagesActivity" android:screenOrientation="portrait"/>
+            android:name="com.collagepoem.app.modules.communitypagemessages.ui.CommunitypageMessagesActivity"
+            android:screenOrientation="portrait" />
         <activity
-            android:name="com.collagepoem.app.modules.communitypageinfo.ui.CommunitypageInfoActivity" android:screenOrientation="portrait"/>
+            android:name="com.collagepoem.app.modules.communitypageinfo.ui.CommunitypageInfoActivity"
+            android:screenOrientation="portrait" />
         <activity
-            android:name="com.collagepoem.app.modules.successpage.ui.SuccesspageActivity" android:screenOrientation="portrait"/>
+            android:name="com.collagepoem.app.modules.successpage.ui.SuccesspageActivity"
+            android:screenOrientation="portrait" />
         <activity
-            android:name="com.collagepoem.app.modules.canvaspoem.ui.CanvasPoemActivity" android:screenOrientation="portrait"/>
-        <activity android:exported="true"
-            android:name="com.collagepoem.app.modules.landinpage.ui.LandinpageActivity" android:screenOrientation="portrait">
+            android:name="com.collagepoem.app.modules.canvaspoem.ui.CanvasPoemActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="com.collagepoem.app.modules.landinpage.ui.LandinpageActivity"
+            android:exported="true"
+            android:screenOrientation="portrait">
             <intent-filter>
-                <action android:name="android.intent.action.MAIN"/>
-                <category android:name="android.intent.category.LAUNCHER"/>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
         <activity
-            android:name="com.collagepoem.app.modules.communitypageinfoone.ui.CommunitypageInfoOneActivity" android:screenOrientation="portrait"/>
+            android:name="com.collagepoem.app.modules.communitypageinfoone.ui.CommunitypageInfoOneActivity"
+            android:screenOrientation="portrait" />
         <activity
-            android:name="com.collagepoem.app.modules.mainpage.ui.MainpageActivity" android:screenOrientation="portrait"/>
+            android:name="com.collagepoem.app.modules.mainpage.ui.MainpageActivity"
+            android:screenOrientation="portrait" />
         <activity
-            android:name="com.collagepoem.app.modules.mycutspagebelongings.ui.MycutspageBelongingsActivity" android:screenOrientation="portrait"/>
+            android:name="com.collagepoem.app.modules.mycutspagebelongings.ui.MycutspageBelongingsActivity"
+            android:screenOrientation="portrait" />
         <activity
-            android:name="com.collagepoem.app.modules.driftcutspagetwo.ui.DriftcutspagetwoActivity" android:screenOrientation="portrait"/>
+            android:name="com.collagepoem.app.modules.driftcutspagetwo.ui.DriftcutspagetwoActivity"
+            android:screenOrientation="portrait" />
         <activity
-            android:name="com.collagepoem.app.modules.loadingworkpage.ui.LoadingworkpageActivity" android:screenOrientation="portrait"/>
+            android:name="com.collagepoem.app.modules.loadingworkpage.ui.LoadingworkpageActivity"
+            android:screenOrientation="portrait" />
         <activity
-            android:name="com.collagepoem.app.modules.albumpage.ui.AlbumpageActivity" android:screenOrientation="portrait"/>
+            android:name="com.collagepoem.app.modules.albumpage.ui.AlbumpageActivity"
+            android:screenOrientation="portrait" />
         <activity
-            android:name="com.collagepoem.app.modules.communitypage.ui.CommunitypageActivity" android:screenOrientation="portrait"/>
+            android:name="com.collagepoem.app.modules.communitypage.ui.CommunitypageActivity"
+            android:screenOrientation="portrait" />
         <activity
-            android:name="com.collagepoem.app.modules.canvasedittwo.ui.CanvasEdittwoActivity" android:screenOrientation="portrait"/>
+            android:name="com.collagepoem.app.modules.canvasedittwo.ui.CanvasEdittwoActivity"
+            android:screenOrientation="portrait" />
         <activity
-            android:name="com.collagepoem.app.modules.driftcutspageone.ui.DriftcutspageoneActivity" android:screenOrientation="portrait"/>
+            android:name="com.collagepoem.app.modules.driftcutspageone.ui.DriftcutspageoneActivity"
+            android:screenOrientation="portrait" />
         <activity
-            android:name="com.collagepoem.app.modules.camerapage.ui.CamerapageActivity" android:screenOrientation="portrait"/>
+            android:name="com.collagepoem.app.modules.camerapage.ui.CamerapageActivity"
+            android:screenOrientation="portrait" />
         <activity
-            android:name="com.collagepoem.app.modules.profilepagemypage.ui.ProfilepageMypageActivity" android:screenOrientation="portrait"/>
+            android:name="com.collagepoem.app.modules.profilepagemypage.ui.ProfilepageMypageActivity"
+            android:screenOrientation="portrait" />
         <activity
-            android:name="com.collagepoem.app.modules.profilepagemyinfo.ui.ProfilepageMyinfoActivity" android:screenOrientation="portrait"/>
+            android:name="com.collagepoem.app.modules.profilepagemyinfo.ui.ProfilepageMyinfoActivity"
+            android:screenOrientation="portrait" />
         <activity
-            android:name="com.collagepoem.app.modules.canvaseditone.ui.CanvasEditoneActivity" android:screenOrientation="portrait"/>
+            android:name="com.collagepoem.app.modules.canvaseditone.ui.CanvasEditoneActivity"
+            android:screenOrientation="portrait" />
         <activity
-            android:name="com.collagepoem.app.modules.profilepagemyportfolio.ui.ProfilepageMyportfolioActivity" android:screenOrientation="portrait"/>
+            android:name="com.collagepoem.app.modules.profilepagemyportfolio.ui.ProfilepageMyportfolioActivity"
+            android:screenOrientation="portrait" />
     </application>
+
 </manifest>
