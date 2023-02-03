@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <layout xmlns:android="http://schemas.android.com/apk/res/android" xmlns:tools="http://schemas.android.com/tools">
     <data>
-        <variable name="loginpageVM" type="com.collagepoem.app.modules.loginpage.data.viewmodel.LoginpageVM"/>
+        <variable name="logincheckpageVM" type="com.collagepoem.app.modules.logincheckpage.data.viewmodel.LoginCheckpageVM"/>
     </data>
     <FrameLayout android:id="@+id/frameLoginpage"
         android:layout_height="match_parent"
@@ -39,24 +39,62 @@
                 android:layout_marginTop="@dimen/_11pxv"
                 android:layout_width="wrap_content"
                 android:singleLine="true"
-                android:text="@{loginpageVM.loginpageModel.txtSlogan}"
+                android:text="@{logincheckpageVM.loginCheckpageModel.txtSlogan}"
                 style="@style/txtArialmt12" tools:text="@string/msg_start_in_instan"/>
+
             <EditText
+                android:id="@+id/etAcoount"
+                style="@style/etSolidRounded"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_110pxv"
                 android:background="@drawable/rectangle_bg_white_a700_99_radius_4"
                 android:ellipsize="end"
                 android:hint="@string/lbl_account"
-                android:id="@+id/etAcoount" android:inputType="text"
+                android:inputType="text"
+                android:paddingStart="@dimen/_13pxh"
+                android:paddingTop="@dimen/_15pxv"
+                android:paddingEnd="@dimen/_30pxh"
+                android:paddingBottom="@dimen/_14pxv"
+                android:singleLine="true"
+                android:textColorHint="@color/gray_600"
+                tools:ignore="Autofill" />
+            <EditText
+                android:background="@drawable/rectangle_bg_white_a700_99_radius_4"
+                android:ellipsize="end"
+                android:hint="@string/lbl_password"
+                android:id="@+id/etPassword"
+                android:inputType="textPassword"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="@dimen/_110pxv"
+                android:layout_marginTop="@dimen/_18pxv"
                 android:layout_width="match_parent"
                 android:paddingBottom="@dimen/_14pxv"
                 android:paddingEnd="@dimen/_30pxh"
-                android:paddingStart="@dimen/_13pxh"
+                android:paddingStart="@dimen/_14pxh"
                 android:paddingTop="@dimen/_15pxv"
                 android:singleLine="true"
-                android:text="@={loginpageVM.loginpageModel.etAcoountValue}"
+                android:text="@={logincheckpageVM.loginCheckpageModel.etPasswordValue}"
                 android:textColorHint="@color/gray_600"
                 style="@style/etSolidRounded" tools:ignore="Autofill"/>
+
+            <EditText
+                android:id="@+id/etPasswordnew"
+                style="@style/etSolidRounded"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_18pxv"
+                android:background="@drawable/rectangle_bg_white_a700_99_radius_4"
+                android:ellipsize="end"
+                android:hint="@string/lbl_password"
+                android:inputType="textPassword"
+                android:paddingStart="@dimen/_14pxh"
+                android:paddingTop="@dimen/_15pxv"
+                android:paddingEnd="@dimen/_30pxh"
+                android:paddingBottom="@dimen/_14pxv"
+                android:singleLine="true"
+                android:text="@={logincheckpageVM.loginCheckpageModel.etPasswordValue}"
+                android:textColorHint="@color/gray_600"
+                tools:ignore="Autofill" />
 
             <androidx.appcompat.widget.AppCompatButton
                 android:ellipsize="end" android:gravity="center"

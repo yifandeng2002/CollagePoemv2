@@ -1,4 +1,4 @@
-package com.collagepoem.app.modules.loginpage.ui
+package com.collagepoem.app.modules.logincheckpage.ui
 
 import android.annotation.SuppressLint
 import android.content.Context
@@ -12,19 +12,23 @@ import androidx.activity.viewModels
 import com.collagepoem.app.R
 import com.collagepoem.app.appcomponents.base.BaseActivity
 import com.collagepoem.app.dao.UserDao
-import com.collagepoem.app.databinding.ActivityLoginpageBinding
-import com.collagepoem.app.modules.logincheckpage.ui.LoginCheckpageActivity
-import com.collagepoem.app.modules.logindirectpage.ui.LoginDirectpageActivity
-import com.collagepoem.app.modules.loginpage.data.viewmodel.LoginpageVM
+import com.collagepoem.app.databinding.ActivityLogincheckpageBinding
+import com.collagepoem.app.entity.User
+import com.collagepoem.app.modules.logincheckpage.data.viewmodel.LoginCheckpageVM
 import com.collagepoem.app.modules.mainpage.ui.MainpageActivity
 import com.jaeger.library.StatusBarUtil
+import com.mysql.jdbc.log.Log
+import kotlin.math.log
 
 
-class LoginpageActivity : BaseActivity<ActivityLoginpageBinding>(R.layout.activity_loginpage) {
-  private val viewModel: LoginpageVM by viewModels<LoginpageVM>()
+class LoginCheckpageActivity : BaseActivity<ActivityLogincheckpageBinding>(R.layout.activity_logincheckpage) {
+  private val viewModel: LoginCheckpageVM by viewModels<LoginCheckpageVM>()
   private val REQUEST_CODE_MAINPAGE_ACTIVITY: Int = 194
-  private val REQUEST_CODE_LOGINCHECKPAGE_ACTIVITY: Int = 223
-  private val REQUEST_CODE_LOGINDIRECTPAGE_ACTIVITY: Int = 228
+  val user = User()
+  var userAccount: EditText? = null
+  var userPassword: EditText? = null
+
+
 
   //    将StatusBar设置为透明
   fun setStatusBarTranslucent() {
@@ -37,8 +41,12 @@ class LoginpageActivity : BaseActivity<ActivityLoginpageBinding>(R.layout.activi
 
   override fun onInitialized(): Unit {
     viewModel.navArguments = intent.extras?.getBundle("bundle")
-    binding.loginpageVM = viewModel
+    binding.logincheckpageVM = viewModel
     setStatusBarTranslucent()
+    val extraData = intent.getStringExtra("key")
+    val EditTextAccount: EditText = findViewById(R.id.etAcoount)
+    EditTextAccount.setText(extraData)
+
   }
 
   override fun setUpClicks(): Unit {
@@ -46,16 +54,20 @@ class LoginpageActivity : BaseActivity<ActivityLoginpageBinding>(R.layout.activi
 //     val destIntent = MainpageActivity.getIntent(this, null)
 //      startActivityForResult(destIntent, REQUEST_CODE_MAINPAGE_ACTIVITY)
 //      this.overridePendingTransition(R.anim.fade_in ,R.anim.fade_out )
-
+      var msg = 0
       val EditTextAccount: EditText = findViewById(R.id.etAcoount)
-      //val EditTextPassword: EditText = findViewById(R.id.etPassword)
+      val EditTextPassword: EditText = findViewById(R.id.etPassword)
+      val userAccount = EditTextAccount.text.toString()
+      val userPassword = EditTextPassword.text.toString()
+      android.util.Log.e("HEY", userAccount)
       object : Thread() {
         override fun run() {
           val userDao = UserDao()
-          val msg: Int = userDao.login(
-            EditTextAccount.getText().toString(),
-            "0"//EditTextPassword.getText().toString()
-          )
+          user.userAccount=userAccount
+          user.userPassword=userPassword
+          val flag: Boolean = userDao.register(user)
+          if (flag) {
+            msg = 2}
           hand1.sendEmptyMessage(msg)
         }
       }.start()
@@ -70,24 +82,16 @@ class LoginpageActivity : BaseActivity<ActivityLoginpageBinding>(R.layout.activi
         Toast.makeText(applicationContext, "登录失败", Toast.LENGTH_LONG).show()
       } else if (msg.what === 1) {
         Toast.makeText(applicationContext, "登录成功", Toast.LENGTH_LONG).show()
-        val destIntent = MainpageActivity.getIntent(this@LoginpageActivity, null)
+        val destIntent = MainpageActivity.getIntent(this@LoginCheckpageActivity, null)
         startActivityForResult(destIntent, REQUEST_CODE_MAINPAGE_ACTIVITY)
-        this@LoginpageActivity.overridePendingTransition(R.anim.fade_in ,R.anim.fade_out )
+        this@LoginCheckpageActivity.overridePendingTransition(R.anim.fade_in ,R.anim.fade_out )
       } else if (msg.what === 2) {
-        Toast.makeText(applicationContext, "请输入密码", Toast.LENGTH_LONG).show()
-        val destIntent = LoginDirectpageActivity.getIntent(this@LoginpageActivity, null)
-        val EditTextAccount: EditText = findViewById(R.id.etAcoount)
-        destIntent.putExtra("key",EditTextAccount.getText().toString())
-        startActivityForResult(destIntent, REQUEST_CODE_LOGINDIRECTPAGE_ACTIVITY)
-        this@LoginpageActivity.overridePendingTransition(R.anim.fade_in ,R.anim.fade_out )
-
+        Toast.makeText(applicationContext, "注册成功", Toast.LENGTH_LONG).show()
+        val destIntent = MainpageActivity.getIntent(this@LoginCheckpageActivity, null)
+        startActivityForResult(destIntent, REQUEST_CODE_MAINPAGE_ACTIVITY)
+        this@LoginCheckpageActivity.overridePendingTransition(R.anim.fade_in ,R.anim.fade_out )
       } else if (msg.what === 3) {
         Toast.makeText(applicationContext, "账号不存在", Toast.LENGTH_LONG).show()
-        val destIntent = LoginCheckpageActivity.getIntent(this@LoginpageActivity, null)
-        val EditTextAccount: EditText = findViewById(R.id.etAcoount)
-        destIntent.putExtra("key",EditTextAccount.getText().toString())
-        startActivityForResult(destIntent, REQUEST_CODE_LOGINCHECKPAGE_ACTIVITY)
-        this@LoginpageActivity.overridePendingTransition(R.anim.fade_in ,R.anim.fade_out )
       }
     }
   }
@@ -95,11 +99,11 @@ class LoginpageActivity : BaseActivity<ActivityLoginpageBinding>(R.layout.activi
 
 
   companion object {
-    const val TAG: String = "LOGINPAGE_ACTIVITY"
+    const val TAG: String = "LOGINCHECKPAGE_ACTIVITY"
 
 
     fun getIntent(context: Context, bundle: Bundle?): Intent {
-      val destIntent = Intent(context, LoginpageActivity::class.java)
+      val destIntent = Intent(context, LoginCheckpageActivity::class.java)
       destIntent.putExtra("bundle", bundle)
       return destIntent
     }
