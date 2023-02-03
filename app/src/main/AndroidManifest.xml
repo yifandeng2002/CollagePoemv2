@@ -19,10 +19,13 @@
         android:theme="@style/Theme.MyApp"
         android:usesCleartextTraffic="true">
         <activity
-            android:name="com.collagepoem.app.modules.profilepagemyinfoone.ui.ProfilepageMyinfoOneActivity"
+            android:name="com.collagepoem.app.modules.driftcutspagethree.ui.DriftcutspagethreeActivity"
             android:screenOrientation="portrait" />
         <activity
-            android:name="com.collagepoem.app.modules.driftcutspagethree.ui.DriftcutspagethreeActivity"
+            android:name=".modules.logindirectpage.ui.LoginDirectpageActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".modules.logincheckpage.ui.LoginCheckpageActivity"
             android:screenOrientation="portrait" />
         <activity
             android:name=".modules.loginpage.ui.LoginpageActivity"
