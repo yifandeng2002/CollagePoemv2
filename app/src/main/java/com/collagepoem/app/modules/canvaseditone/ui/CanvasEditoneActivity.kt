@@ -41,9 +41,7 @@ class CanvasEditoneActivity :
       startActivityForResult(destIntent, REQUEST_CODE_CANVAS_EDITTWO_ACTIVITY)
       this.overridePendingTransition(R.anim.zoom_in ,R.anim.zoom_out )
     }
-    binding.imageVectortwo.setOnClickListener {
-      finish()
-    }
+
   }
 
   companion object {

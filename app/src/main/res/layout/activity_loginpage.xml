@@ -57,23 +57,7 @@
                 android:text="@={loginpageVM.loginpageModel.etAcoountValue}"
                 android:textColorHint="@color/gray_600"
                 style="@style/etSolidRounded" tools:ignore="Autofill"/>
-            <EditText
-                android:background="@drawable/rectangle_bg_white_a700_99_radius_4"
-                android:ellipsize="end"
-                android:hint="@string/lbl_password"
-                android:id="@+id/etPassword"
-                android:inputType="textPassword"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="@dimen/_18pxv"
-                android:layout_width="match_parent"
-                android:paddingBottom="@dimen/_14pxv"
-                android:paddingEnd="@dimen/_30pxh"
-                android:paddingStart="@dimen/_14pxh"
-                android:paddingTop="@dimen/_15pxv"
-                android:singleLine="true"
-                android:text="@={loginpageVM.loginpageModel.etPasswordValue}"
-                android:textColorHint="@color/gray_600"
-                style="@style/etSolidRounded" tools:ignore="Autofill"/>
+
             <androidx.appcompat.widget.AppCompatButton
                 android:ellipsize="end" android:gravity="center"
                 android:id="@+id/btnLogInSignUpOne"
