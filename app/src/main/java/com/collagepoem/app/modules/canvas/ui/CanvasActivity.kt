@@ -4,47 +4,39 @@ import android.animation.Animator
 import android.animation.AnimatorListenerAdapter
 import android.animation.ObjectAnimator
 import android.animation.ValueAnimator
-import android.app.Activity
 import android.content.Context
 import android.content.Intent
-import android.content.pm.PackageManager
 import android.graphics.Bitmap
 import android.graphics.Canvas
 import android.graphics.Paint
 import android.graphics.Rect
+import android.icu.text.SimpleDateFormat
 import android.net.Uri
-import android.os.Bundle
-import android.os.Handler
-import android.os.Message
+import android.os.*
 import android.provider.MediaStore
+import android.provider.Settings
 import android.util.Log
-import android.view.Display
 import android.view.View
 import android.view.Window
 import android.view.animation.DecelerateInterpolator
 import android.widget.*
 import androidx.activity.viewModels
-import androidx.core.app.ActivityCompat
-import androidx.core.content.ContextCompat
+import androidx.annotation.RequiresApi
 import com.collagepoem.app.R
 import com.collagepoem.app.appcomponents.base.BaseActivity
 import com.collagepoem.app.appcomponents.views.ImagePickerFragmentDialog
 import com.collagepoem.app.databinding.ActivityCanvasBinding
-import com.collagepoem.app.modules.albumpage.ui.AlbumpageActivity
-import com.collagepoem.app.modules.canvas.`data`.viewmodel.CanvasVM
+import com.collagepoem.app.modules.canvas.data.viewmodel.CanvasVM
 import com.collagepoem.app.modules.canvaspoem.ui.CanvasPoemActivity
 import com.collagepoem.app.modules.floatwindowmycutsvtwo.ui.FloatwindowMycutsVtwoActivity
 import com.collagepoem.app.modules.loadingworkpage.ui.LoadingworkpageActivity
 import com.collagepoem.app.modules.mainpage.ui.MainpageActivity
 import com.jaeger.library.StatusBarUtil
 import java.io.File
-import java.io.FileNotFoundException
 import java.io.FileOutputStream
 import java.io.IOException
-import java.lang.Exception
-import kotlin.Int
-import kotlin.String
-import kotlin.Unit
+import java.util.*
+
 
 class CanvasActivity : BaseActivity<ActivityCanvasBinding>(R.layout.activity_canvas) {
   private val viewModel: CanvasVM by viewModels<CanvasVM>()
@@ -91,11 +83,11 @@ class CanvasActivity : BaseActivity<ActivityCanvasBinding>(R.layout.activity_can
       startActivityForResult(destIntent, REQUEST_CODE_MAINPAGE_ACTIVITY)
       this.overridePendingTransition(R.anim.zoom_out ,R.anim.zoom_in )
     }
-    binding.imageFinish.setOnClickListener {
-      val destIntent = LoadingworkpageActivity.getIntent(this, null)
-      startActivityForResult(destIntent, REQUEST_CODE_LOADINGWORKPAGE_ACTIVITY)
-      this.overridePendingTransition(R.anim.fade_in ,R.anim.fade_out )
-    }
+//    binding.imageFinish.setOnClickListener {
+//      val destIntent = LoadingworkpageActivity.getIntent(this, null)
+//      startActivityForResult(destIntent, REQUEST_CODE_LOADINGWORKPAGE_ACTIVITY)
+//      this.overridePendingTransition(R.anim.fade_in ,R.anim.fade_out )
+//    }
   }
 
   companion object {
@@ -111,23 +103,28 @@ class CanvasActivity : BaseActivity<ActivityCanvasBinding>(R.layout.activity_can
 
 
   //截屏作品，并保存至图库
+
   private var mSave: Button? = null
   private var mSaveArea: FrameLayout? = null
   private var mCutTop = 0
   private var mCutLeft = 0
   private var mPicGet: ImageView? = null
   private var mFL: FrameLayout? = null
-
+  private var path: String? = null
+  private var file_path: String? = null
   private var mPicGetHeight = 0
   private var mPicGetWidth = 0
   private var saveBitmap: Bitmap? = null
   private var mTotal: LinearLayout? = null
   private val mSavePositions = IntArray(2)
-
+  private var formatter: SimpleDateFormat? =null
   private var successHandler: SuccessHandler? = null
-
+  private var  curDate:Date?=null
   private var initHandler: InitHandler? = null
+  private var str: String? =null
 
+
+  @RequiresApi(Build.VERSION_CODES.R)
   protected override fun onCreate(savedInstanceState: Bundle?) {
     requestWindowFeature(Window.FEATURE_NO_TITLE)
     super.onCreate(savedInstanceState)
@@ -137,9 +134,20 @@ class CanvasActivity : BaseActivity<ActivityCanvasBinding>(R.layout.activity_can
     mSave?.setOnClickListener{
       mSave!!.text = "存储中……"
       mSave!!.isEnabled = false
+
+      var card1 =findViewById<ImageView>(R.id.imageFilebtn)
+      var card2 =findViewById<ImageView>(R.id.imageCamerabtn)
+      var card3 =findViewById<ImageView>(R.id.imageScissorsbtn)
+      var card4 =findViewById<ImageView>(R.id.imageTrashbtn)
+      card1.visibility=View.INVISIBLE
+      card2.visibility=View.INVISIBLE
+      card3.visibility=View.INVISIBLE
+      card4.visibility=View.INVISIBLE
+
       Thread { screenshot() }.start()
     }
   }
+
 
   //override fun requestWindowFeature(featureNoTitle: Int): Boolean {}
   //override fun setContentView(activity_main: Int) {}
@@ -171,6 +179,7 @@ class CanvasActivity : BaseActivity<ActivityCanvasBinding>(R.layout.activity_can
 //        Thread { screenshot() }.start()
 //  }
 
+  @RequiresApi(Build.VERSION_CODES.R)
   private fun screenshot() {
     // 获取屏幕
     val dView: View = getWindow().getDecorView()
@@ -200,23 +209,32 @@ class CanvasActivity : BaseActivity<ActivityCanvasBinding>(R.layout.activity_can
           Rect(0, 0, mSaveArea!!.width, mSaveArea!!.height),
           paint
         )
-        val imageDir = File(Constant.IMAGE_DIR)
 
-        if (!imageDir.exists()) {
-          imageDir.mkdir()
-        }
-        val imageName: String = Constant.SCREEN_SHOT
 
+        formatter = SimpleDateFormat("HH_mm_ss");
+        curDate = Date(System.currentTimeMillis());
+//获取当前时间
+        str = "T_"+formatter!!.format(curDate);
+
+        val imageName: String = str + Constant.SCREEN_SHOT
+        path = getExternalFilesDir(Environment.DIRECTORY_DOWNLOADS).toString() + "/"
+        file_path = path
+
+        val imageDir = File(path)
+
+//        if (!imageDir.exists()) {
+//          imageDir.mkdir()
+//        }
         val file = File(imageDir, imageName)
-        Log.e("TAG",file.toString())
-        try {
-          if (file.exists()) {
-            file.delete()
-          }
-          file.createNewFile()
-        } catch (e: IOException) {
-          e.printStackTrace()
-        }
+        Log.i("TAG",file.toString())
+//        try {
+//          if (file.exists()) {
+////            file.delete()
+//          }
+//          file.createNewFile()
+//        } catch (e: IOException) {
+//          e.printStackTrace()
+//        }
         val os = FileOutputStream(file)
         saveBitmap!!.compress(Bitmap.CompressFormat.PNG, 100, os)
         os.flush()
@@ -266,36 +284,19 @@ class CanvasActivity : BaseActivity<ActivityCanvasBinding>(R.layout.activity_can
    */
   private fun showSuccess() {
     Toast.makeText(this@CanvasActivity, "保存成功", Toast.LENGTH_SHORT).show()
-    mPicGet!!.setImageBitmap(saveBitmap)
-    val valueAnimator = ValueAnimator.ofFloat(1f, 0.7f)
-    valueAnimator.addUpdateListener { animation ->
-      val lp = mPicGet!!.layoutParams
-      lp.height = (mPicGetHeight * animation.animatedValue as Float).toInt()
-      lp.width = (mPicGetWidth * animation.animatedValue as Float).toInt()
-      mPicGet!!.layoutParams = lp
-    }
-    valueAnimator.addListener(object : AnimatorListenerAdapter() {
-      override fun onAnimationStart(animation: Animator) {
-        mFL!!.visibility = View.VISIBLE
-        mPicGet!!.visibility = View.VISIBLE
-        val lp = mPicGet!!.layoutParams
-        lp.height = mPicGetHeight
-        lp.width = mPicGetWidth
-        mPicGet!!.layoutParams = lp
-      }
 
-      override fun onAnimationEnd(animation: Animator) {
-        Handler().postDelayed({
-          mPicGet!!.visibility = View.GONE
-          mFL!!.visibility = View.GONE
-          mSave!!.isEnabled = true
-          mSave!!.text = "存储到相册"
-        }, 1500)
-      }
-    })
-    valueAnimator.interpolator = DecelerateInterpolator()
-    valueAnimator.duration = 800
-    valueAnimator.start()
+    var card1 =findViewById<ImageView>(R.id.imageFilebtn)
+    var card2 =findViewById<ImageView>(R.id.imageCamerabtn)
+    var card3 =findViewById<ImageView>(R.id.imageScissorsbtn)
+    var card4 =findViewById<ImageView>(R.id.imageTrashbtn)
+    card1.visibility=View.VISIBLE
+    card2.visibility=View.VISIBLE
+    card3.visibility=View.VISIBLE
+    card4.visibility=View.VISIBLE
+
+      val destIntent = LoadingworkpageActivity.getIntent(this, null)
+      startActivityForResult(destIntent, REQUEST_CODE_LOADINGWORKPAGE_ACTIVITY)
+      this.overridePendingTransition(R.anim.fade_in ,R.anim.fade_out )
   }
 
   private fun showSuccessNew() {
