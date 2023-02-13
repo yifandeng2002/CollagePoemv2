@@ -120,7 +120,7 @@ class CanvasEditoneActivity :
     // 108是上边界的距离（大约上边框栏的大小 这里根据自己情况调整）
     Log.i(TAG,width.toString())
     Log.i(TAG,height.toString())
-    bitmap = Bitmap.createBitmap(bitmap!!, x, y  , width, height)
+    bitmap = Bitmap.createBitmap(bitmap!!, x+5, y+5 , width-5, height-5)
     //这个能获得上边界的画面
     //bitmap = Bitmap.createBitmap(bitmap, x, y, width, height);
     try {

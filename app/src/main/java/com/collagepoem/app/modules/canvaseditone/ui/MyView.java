@@ -36,8 +36,10 @@ public class MyView extends View {
         if(sign){
             paint.setColor(Color.TRANSPARENT);
         }else{
-            paint.setColor(Color.GREEN);
+            paint.setColor(Color.WHITE);
             paint.setAlpha(80);
+            paint.setStyle(Paint.Style.STROKE);
+            paint.setStrokeWidth(10);
             Log.e(TAG, String.valueOf(y));
             canvas.drawRect(new Rect(x, y, m, n), paint);
         }
