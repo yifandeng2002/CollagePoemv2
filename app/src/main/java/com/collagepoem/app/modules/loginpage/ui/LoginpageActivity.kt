@@ -42,8 +42,6 @@ class LoginpageActivity : BaseActivity<ActivityLoginpageBinding>(R.layout.activi
 
   companion object {
     const val TAG: String = "LOGINPAGE_ACTIVITY"
-
-
     fun getIntent(context: Context, bundle: Bundle?): Intent {
       val destIntent = Intent(context, LoginpageActivity::class.java)
       destIntent.putExtra("bundle", bundle)

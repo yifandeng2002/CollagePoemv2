@@ -78,8 +78,6 @@ class CanvasActivity : BaseActivity<ActivityCanvasBinding>(R.layout.activity_can
 
   companion object {
     const val TAG: String = "CANVAS_ACTIVITY"
-
-
     fun getIntent(context: Context, bundle: Bundle?): Intent {
       val destIntent = Intent(context, CanvasActivity::class.java)
       destIntent.putExtra("bundle", bundle)

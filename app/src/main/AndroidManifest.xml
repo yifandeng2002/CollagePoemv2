@@ -12,7 +12,7 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true" android:theme="@style/Theme.MyApp" android:usesCleartextTraffic="true">
         <activity
-            android:name="com.collagepoem.app.modules.profilepagemyinfoone.ui.ProfilepageMyinfoOneActivity" android:screenOrientation="portrait"/>
+            android:name=".modules.profilepagemyinfoone.ui.ProfilepageMyinfoOneActivity" android:screenOrientation="portrait"/>
         <activity
             android:name="com.collagepoem.app.modules.driftcutspagethree.ui.DriftcutspagethreeActivity" android:screenOrientation="portrait"/>
         <activity
