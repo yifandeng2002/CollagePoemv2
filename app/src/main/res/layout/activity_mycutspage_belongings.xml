@@ -38,13 +38,16 @@
                     android:layout_width="0dp" android:singleLine="true"
                     android:text="@{mycutspageBelongingsVM.mycutspageBelongingsModel.txtTextholder}"
                     style="@style/txtArialmt14_1" tools:text="@string/lbl_clips"/>
-                <ImageView android:id="@+id/imageEdit"
-                    android:layout_height="@dimen/_26pxh"
+
+                <ImageView
+                    android:id="@+id/imageEdit"
+                    android:layout_width="22dp"
+                    android:layout_height="17dp"
                     android:layout_marginStart="@dimen/_142pxh"
-                    android:layout_width="@dimen/_27pxh"
                     android:scaleType="fitXY"
                     android:src="@drawable/img_edit"
-                    tools:ignore="ContentDescription" tools:src="@drawable/img_edit"/>
+                    tools:ignore="ContentDescription"
+                    tools:src="@drawable/img_edit" />
             </LinearLayout>
         </androidx.appcompat.widget.Toolbar>
         <LinearLayout android:gravity="end"

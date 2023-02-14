@@ -65,7 +65,6 @@ class DragFloatActionButton : androidx.appcompat.widget.AppCompatImageView {
                 }
                 val dx = rawX - lastX
                 val dy = rawY - lastY
-                //这里修复一些华为手机无法触发点击事件
                 val distance = Math.sqrt((dx * dx + dy * dy).toDouble()).toInt()
                 if (distance == 0) {
                     isDrag = false

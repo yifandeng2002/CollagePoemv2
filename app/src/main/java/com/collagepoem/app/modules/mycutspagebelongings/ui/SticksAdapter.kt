@@ -28,7 +28,7 @@ class SticksAdapter(
     holder.binding.sticksRowModel = sticksRowModel
   }
 
-  override fun getItemCount(): Int = 3
+  override fun getItemCount(): Int = 1
   // TODO uncomment following line after integration with data source
   // return list.size
 

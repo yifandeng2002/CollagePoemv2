@@ -50,7 +50,7 @@
                 android:ellipsize="end"
                 android:gravity="right"
                 android:singleLine="true"
-                android:text="@{sticksRowModel.txtRemainingtime}"
+                android:text="@{sticksRowModel.txtRemainingtime.toString()}"
                 tools:text="@string/lbl_remainingtime" />
         </LinearLayout>
     </LinearLayout>
