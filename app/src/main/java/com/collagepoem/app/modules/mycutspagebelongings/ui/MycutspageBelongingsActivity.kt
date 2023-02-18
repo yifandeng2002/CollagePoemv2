@@ -86,7 +86,13 @@ class MycutspageBelongingsActivity :
 //        }
 //      }.start()
 
-
+      object : Thread() {
+        override fun run() {
+          val deletenote = NoteInfo()
+          deletenote.delete()
+          Log.d("note","delete")
+        }
+      }.start()
     }
   }
 

@@ -56,5 +56,24 @@ class NoteInfo {
 
     }
 
+    fun delete() {
+        val connection = JDBCUtils.conn
+        try {
+            val sql = "delete from noteinfo where state=4 "
+            if (connection != null) { // connection不为null表示与数据库建立了连接
+                val ps = connection.prepareStatement(sql)
 
+                if (ps != null){
+                    ps.execute()
+                    Log.d("note", "已删除" )
+                }
+                connection.close()
+                ps.close()
+            }
+
+        }catch (e: Exception) {
+            e.printStackTrace()
+            Log.d("note", "异常" )
+        }
+    }
 }

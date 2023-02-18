@@ -6,7 +6,7 @@ import android.os.Bundle
 import androidx.activity.viewModels
 import com.collagepoem.app.R
 import com.collagepoem.app.appcomponents.base.BaseActivity
-import com.collagepoem.app.appcomponents.views.ImagePickerFragmentDialog
+import com.collagepoem.app.modules.landinpage.views.ImagePickerFragmentDialog
 import com.collagepoem.app.databinding.ActivityCanvasPoemBinding
 import com.collagepoem.app.modules.canvas.ui.CanvasActivity
 import com.collagepoem.app.modules.canvaseditone.ui.CanvasEditoneActivity

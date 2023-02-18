@@ -1,4 +1,4 @@
-package com.collagepoem.app.appcomponents.views
+package com.collagepoem.app.modules.landinpage.views
 
 import android.Manifest.permission.CAMERA
 import android.Manifest.permission.READ_EXTERNAL_STORAGE
