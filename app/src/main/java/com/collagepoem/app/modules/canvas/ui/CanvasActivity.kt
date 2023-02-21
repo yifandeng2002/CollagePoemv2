@@ -122,12 +122,14 @@ class CanvasActivity : BaseActivity<ActivityCanvasBinding>(R.layout.activity_can
   private var  curDate:Date?=null
   private var initHandler: InitHandler? = null
   private var str: String? =null
+  private var cun=Constant()
 
 
   @RequiresApi(Build.VERSION_CODES.R)
   protected override fun onCreate(savedInstanceState: Bundle?) {
     requestWindowFeature(Window.FEATURE_NO_TITLE)
     super.onCreate(savedInstanceState)
+
 
     //setContentView(R.layout.activity_canvas)
     initView()
@@ -213,12 +215,15 @@ class CanvasActivity : BaseActivity<ActivityCanvasBinding>(R.layout.activity_can
 
         formatter = SimpleDateFormat("HH_mm_ss");
         curDate = Date(System.currentTimeMillis());
-//获取当前时间
+
+        //获取当前时间
         str = "T_"+formatter!!.format(curDate);
 
         val imageName: String = str + Constant.SCREEN_SHOT
         path = getExternalFilesDir(Environment.DIRECTORY_DOWNLOADS).toString() + "/"
         file_path = path
+        //获取截屏图片路径
+        Constant.curSCREEN_SHOT=path+imageName
 
         val imageDir = File(path)
 
