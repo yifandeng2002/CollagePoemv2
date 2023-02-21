@@ -128,15 +128,18 @@
                         tools:ignore="ContentDescription" tools:src="@drawable/img_close"/>
                 </LinearLayout>
             </androidx.appcompat.widget.Toolbar>
-            <TextView android:gravity="center_horizontal"
+
+            <TextView
                 android:id="@+id/txtDescription"
+                style="@style/txtArialmt24"
+                android:layout_width="309dp"
                 android:layout_height="wrap_content"
-                android:layout_marginEnd="@dimen/_37pxh"
-                android:layout_marginStart="@dimen/_42pxh"
+                android:layout_marginStart="@dimen/_40pxh"
                 android:layout_marginTop="@dimen/_463pxv"
-                android:layout_width="match_parent"
+                android:layout_marginEnd="@dimen/_37pxh"
+                android:gravity="center_horizontal"
                 android:text="@{successpageVM.successpageModel.txtDescription}"
-                style="@style/txtArialmt24" tools:text="@string/msg_congratulations"/>
+                tools:text="@string/msg_congratulations" />
         </LinearLayout>
     </FrameLayout>
 </layout>

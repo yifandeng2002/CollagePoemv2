@@ -28,21 +28,25 @@
                     android:scaleType="fitXY"
                     android:src="@drawable/img_imageback"
                     tools:ignore="ContentDescription" tools:src="@drawable/img_imageback"/>
-                <TextView android:ellipsize="end"
+
+                <TextView
                     android:id="@+id/txtTextholder"
+                    style="@style/txtArialmt14_1"
+                    android:layout_width="51dp"
                     android:layout_height="wrap_content"
-                    android:layout_marginBottom="@dimen/_4pxv"
-                    android:layout_marginStart="@dimen/_156pxh"
+                    android:layout_marginStart="140dp"
                     android:layout_marginTop="@dimen/_7pxv"
+                    android:layout_marginBottom="@dimen/_4pxv"
                     android:layout_weight="0.45"
-                    android:layout_width="0dp" android:singleLine="true"
+                    android:ellipsize="end"
+                    android:singleLine="true"
                     android:text="@{mycutspageBelongingsVM.mycutspageBelongingsModel.txtTextholder}"
-                    style="@style/txtArialmt14_1" tools:text="@string/lbl_clips"/>
+                    tools:text="@string/lbl_clips" />
 
                 <ImageView
                     android:id="@+id/imageEdit"
-                    android:layout_width="22dp"
-                    android:layout_height="17dp"
+                    android:layout_width="28dp"
+                    android:layout_height="match_parent"
                     android:layout_marginStart="@dimen/_142pxh"
                     android:scaleType="fitXY"
                     android:src="@drawable/img_edit"
@@ -50,34 +54,51 @@
                     tools:src="@drawable/img_edit" />
             </LinearLayout>
         </androidx.appcompat.widget.Toolbar>
-        <LinearLayout android:gravity="end"
+
+        <LinearLayout
             android:id="@+id/linearRowhad"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginEnd="@dimen/_102pxh"
-            android:layout_marginStart="@dimen/_102pxh"
+
             android:layout_marginTop="@dimen/_14pxv"
-            android:layout_width="wrap_content" android:orientation="horizontal">
-            <TextView android:ellipsize="end" android:id="@+id/txtHad"
+            android:layout_marginEnd="@dimen/_102pxh"
+            android:gravity="center"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/txtHad"
+                style="@style/txtArialboldmt14"
+                android:layout_width="52dp"
                 android:layout_height="wrap_content"
-                android:layout_weight="0.29" android:layout_width="0dp"
+                android:layout_weight="0.29"
+                android:ellipsize="end"
                 android:singleLine="true"
                 android:text="@{mycutspageBelongingsVM.mycutspageBelongingsModel.txtHad}"
-                style="@style/txtArialboldmt14" tools:text="@string/lbl_had"/>
-            <TextView android:ellipsize="end"
+                tools:text="@string/lbl_had" />
+
+            <TextView
                 android:id="@+id/txtFlowaway"
+                style="@style/txtArialmt14_1"
+                android:layout_width="53dp"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="@dimen/_82pxh"
-                android:layout_weight="0.71" android:layout_width="0dp"
+                android:layout_weight="0.71"
+                android:ellipsize="end"
                 android:singleLine="true"
                 android:text="@{mycutspageBelongingsVM.mycutspageBelongingsModel.txtFlowaway}"
-                style="@style/txtArialmt14_1" tools:text="@string/lbl_flow_away"/>
+                tools:text="@string/lbl_flow_away" />
         </LinearLayout>
-        <View android:background="@color/gray_500"
-            android:id="@+id/viewDrift" android:layout_gravity="start"
+
+        <View
+            android:id="@+id/viewDrift"
+            android:layout_width="@dimen/_46pxh"
             android:layout_height="@dimen/_3pxv"
-            android:layout_marginEnd="@dimen/_240pxh"
+            android:layout_gravity="start"
             android:layout_marginStart="@dimen/_124pxh"
-            android:layout_marginTop="@dimen/_6pxv" android:layout_width="@dimen/_46pxh"/>
+            android:layout_marginTop="@dimen/_6pxv"
+            android:layout_marginEnd="@dimen/_240pxh"
+            android:background="@color/gray_500" />
+
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/recyclerSticks"
             android:layout_height="wrap_content"

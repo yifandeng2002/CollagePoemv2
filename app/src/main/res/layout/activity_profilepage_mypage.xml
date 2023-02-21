@@ -140,15 +140,18 @@
                         android:layout_marginTop="@dimen/_1pxv"
                         android:layout_weight="0.18"
                         android:layout_width="0dp" android:orientation="vertical">
-                        <TextView android:ellipsize="end"
+
+                        <TextView
                             android:id="@+id/txtFlipnumber"
+                            style="@style/txtArialboldmt14_3"
+                            android:layout_width="33dp"
                             android:layout_height="wrap_content"
-                            android:layout_marginEnd="@dimen/_10pxh"
                             android:layout_marginStart="@dimen/_3pxh"
-                            android:layout_width="match_parent"
+                            android:layout_marginEnd="@dimen/_10pxh"
+                            android:ellipsize="end"
                             android:singleLine="true"
                             android:text="@{profilepageMypageVM.profilepageMypageModel.txtFlipnumber}"
-                            style="@style/txtArialboldmt14_3" tools:text="@string/lbl_20"/>
+                            tools:text="@string/lbl_20" />
                         <TextView android:ellipsize="end"
                             android:id="@+id/txtFlips"
                             android:layout_height="wrap_content"
@@ -187,7 +190,7 @@
                             android:id="@+id/txtCollect"
                             android:layout_height="wrap_content"
                             android:layout_marginTop="@dimen/_16pxv"
-                            android:layout_width="match_parent"
+                            android:layout_width="wrap_content"
                             android:singleLine="true"
                             android:text="@{profilepageMypageVM.profilepageMypageModel.txtCollect}"
                             style="@style/txtArialmt12_4" tools:text="@string/lbl_collection"/>
@@ -198,7 +201,7 @@
                 android:id="@+id/linearRowown"
                 android:layout_height="wrap_content"
                 android:layout_marginEnd="@dimen/_38pxh"
-                android:layout_marginStart="@dimen/_38pxh"
+                android:layout_marginStart="@dimen/_40pxh"
                 android:layout_marginTop="@dimen/_13pxv"
                 android:layout_width="wrap_content" android:orientation="horizontal">
                 <TextView android:ellipsize="end"
@@ -222,7 +225,7 @@
                 android:layout_gravity="start"
                 android:layout_height="@dimen/_3pxv"
                 android:layout_marginEnd="@dimen/_129pxh"
-                android:layout_marginStart="@dimen/_129pxh"
+                android:layout_marginStart="@dimen/_35pxh"
                 android:layout_marginTop="@dimen/_6pxv" android:layout_width="@dimen/_46pxh"/>
             <androidx.recyclerview.widget.RecyclerView
                 android:gravity="start" android:id="@+id/recyclerWorks"

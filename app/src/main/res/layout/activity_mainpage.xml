@@ -9,7 +9,7 @@
         android:layout_width="match_parent" style="@style/groupStylegray_200">
     <LinearLayout android:gravity="end" android:id="@+id/linearMainpage"
         android:layout_height="match_parent"
-        android:layout_marginTop="@dimen/_72pxv"
+        android:layout_marginTop="60dp"
         android:layout_width="match_parent"
         android:orientation="vertical" style="@style/groupStylegray_200">
 
@@ -20,33 +20,71 @@
             android:layout_weight="1.0"
             android:layout_width="match_parent" android:orientation="vertical">
 
-            <LinearLayout android:gravity="start"
-                android:id="@+id/linearRowwelcometext"
-                android:layout_height="wrap_content"
-                android:layout_marginEnd="@dimen/_10pxh"
-                android:layout_width="match_parent" android:orientation="horizontal">
-                <androidx.appcompat.widget.Toolbar
-                    android:id="@+id/toolbarToolbar"
-                    android:layout_height="wrap_content"
-                    android:layout_marginBottom="@dimen/_6pxv"
-                    android:layout_marginTop="@dimen/_9pxv"
-                    android:layout_weight="0.77"
-                    android:layout_width="0dp" app:contentInsetStart="0dp">
-                    <TextView android:id="@+id/txtWelcometext"
-                        android:layout_height="wrap_content"
-                        android:layout_width="match_parent"
-                        android:text="@{mainpageVM.mainpageModel.txtWelcometext}"
-                        style="@style/txtInterregular14" tools:text="@string/msg_welcome_back_st"/>
-                </androidx.appcompat.widget.Toolbar>
-                <ImageView android:id="@+id/imageImageprofilepi"
-                    android:layout_height="@dimen/_59pxh"
-                    android:layout_marginStart="@dimen/_107pxh"
-                    android:layout_width="@dimen/_59pxh"
-                    android:scaleType="centerCrop" circular="@{true}"
-                    imageRes="@{@drawable/img_imageprofilepi}"
-                    tools:ignore="ContentDescription" tools:src="@drawable/img_imageprofilepi"/>
 
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:gravity="center"
+                android:layout_marginHorizontal="15dp">
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:layout_marginLeft="10dp">
+
+                    <LinearLayout
+                        android:id="@+id/linearRowwelcometext"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginEnd="15dp"
+                        android:gravity="start"
+                        android:orientation="horizontal">
+
+                        <androidx.appcompat.widget.Toolbar
+                            android:id="@+id/toolbarToolbar"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="0.77"
+                            app:contentInsetStart="0dp">
+
+                            <TextView
+                                android:id="@+id/txtWelcometext"
+                                style="@style/TextAppearance.AppCompat.Headline"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:text="@{mainpageVM.mainpageModel.txtWelcometext}"
+                                tools:text="@string/msg_welcome_back_st" />
+
+                        </androidx.appcompat.widget.Toolbar>
+
+                    </LinearLayout>
+
+                    <TextView
+                        android:id="@+id/textView"
+                        style="@style/txtInterregular14"
+                        android:layout_width="200dp"
+                        android:layout_height="wrap_content"
+                        android:text="开启今日灵感之旅吧" />
+                </LinearLayout>
+
+                <ImageView
+                    android:id="@+id/imageImageprofilepi"
+                    circular="@{true}"
+                    imageRes="@{@drawable/img_imageprofilepi}"
+                    android:layout_width="@dimen/_59pxh"
+                    android:layout_height="@dimen/_59pxh"
+                    android:layout_marginStart="100dp"
+                    android:scaleType="centerCrop"
+                    tools:ignore="ContentDescription"
+                    tools:src="@drawable/img_imageprofilepi" />
             </LinearLayout>
+
+
+
+
             <HorizontalScrollView android:fillViewport="true"
                 android:id="@+id/horizontalScrollHorizontalscrollpoemcard"
                 android:layout_height="wrap_content"
