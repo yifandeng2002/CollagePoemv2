@@ -106,12 +106,6 @@ class SuccesspageActivity : BaseActivity<ActivitySuccesspageBinding>(R.layout.ac
     binding.imageBackbtn.setOnClickListener {
       finish()
     }
-
-//    binding.imageMoment.setOnClickListener {
-//      val destIntent = SharetoWeChatActivity.getIntent(this, null)
-//      startActivityForResult(destIntent, REQUEST_CODE_SHARETOWECHAT_ACTIVITY)
-//      this.overridePendingTransition(R.anim.fade_in ,R.anim.fade_out )
-//    }
   }
 
   companion object {

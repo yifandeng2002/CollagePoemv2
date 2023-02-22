@@ -83,11 +83,6 @@ class CanvasActivity : BaseActivity<ActivityCanvasBinding>(R.layout.activity_can
       startActivityForResult(destIntent, REQUEST_CODE_MAINPAGE_ACTIVITY)
       this.overridePendingTransition(R.anim.zoom_out ,R.anim.zoom_in )
     }
-//    binding.imageFinish.setOnClickListener {
-//      val destIntent = LoadingworkpageActivity.getIntent(this, null)
-//      startActivityForResult(destIntent, REQUEST_CODE_LOADINGWORKPAGE_ACTIVITY)
-//      this.overridePendingTransition(R.anim.fade_in ,R.anim.fade_out )
-//    }
   }
 
   companion object {
@@ -175,12 +170,6 @@ class CanvasActivity : BaseActivity<ActivityCanvasBinding>(R.layout.activity_can
     }
   }
 
-//  override fun onClick(v: View?) {
-//        mSave!!.text = "存储中……"
-//        mSave!!.isEnabled = false
-//        Thread { screenshot() }.start()
-//  }
-
   @RequiresApi(Build.VERSION_CODES.R)
   private fun screenshot() {
     // 获取屏幕
@@ -227,19 +216,8 @@ class CanvasActivity : BaseActivity<ActivityCanvasBinding>(R.layout.activity_can
 
         val imageDir = File(path)
 
-//        if (!imageDir.exists()) {
-//          imageDir.mkdir()
-//        }
         val file = File(imageDir, imageName)
         Log.i("TAG",file.toString())
-//        try {
-//          if (file.exists()) {
-////            file.delete()
-//          }
-//          file.createNewFile()
-//        } catch (e: IOException) {
-//          e.printStackTrace()
-//        }
         val os = FileOutputStream(file)
         saveBitmap!!.compress(Bitmap.CompressFormat.PNG, 100, os)
         os.flush()
