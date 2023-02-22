@@ -57,7 +57,6 @@ class CanvasActivity : BaseActivity<ActivityCanvasBinding>(R.layout.activity_can
   override fun onInitialized(): Unit {
     viewModel.navArguments = intent.extras?.getBundle("bundle")
     binding.canvasVM = viewModel
-//    requestWindowFeature(Window.FEATURE_NO_TITLE)
     setStatusBarTranslucent()
   }
 

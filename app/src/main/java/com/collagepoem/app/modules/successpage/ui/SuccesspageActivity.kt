@@ -68,8 +68,6 @@ class SuccesspageActivity : BaseActivity<ActivitySuccesspageBinding>(R.layout.ac
         }
         lat=findViewById(R.id.frameImagePoem)
 
-        //Log.e(ConstraintLayoutStates.TAG,file.exists().toString())
-        //Log.e(ConstraintLayoutStates.TAG,Constant.curSCREEN_SHOT)
 
         if (file.exists()) {
           val bm: Bitmap = BitmapFactory.decodeFile(filepath)

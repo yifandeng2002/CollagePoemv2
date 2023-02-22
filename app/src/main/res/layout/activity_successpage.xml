@@ -123,7 +123,7 @@
                 <ImageView
                     android:id="@+id/imagePoem"
                     imageRes="@{@drawable/img_poem}"
-                    android:layout_width="396dp"
+                    android:layout_width="370dp"
                     android:layout_height="377dp"
                     android:layout_gravity="start|center_vertical"
                     android:layout_marginTop="@dimen/_78pxv"
