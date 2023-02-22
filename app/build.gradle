@@ -90,5 +90,11 @@ dependencies {
     implementation 'pl.droidsonroids.gif:android-gif-drawable:1.2.19'
     implementation 'org.jetbrains.kotlinx:kotlinx-serialization-json:1.3.0'
 
+    //xpopup
+    implementation 'com.github.li-xiaojun:XPopup:2.7.5'
+    implementation 'androidx.appcompat:appcompat:1.3.1'
+    implementation 'com.google.android.material:material:1.4.0'
+    implementation 'androidx.recyclerview:recyclerview:1.2.1'
+
 }
 

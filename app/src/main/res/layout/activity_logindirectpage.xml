@@ -30,17 +30,20 @@
                 android:scaleType="fitXY"
                 android:src="@drawable/img_volume"
                 tools:ignore="ContentDescription" tools:src="@drawable/img_volume"/>
-            <TextView android:ellipsize="end"
+
+            <TextView
                 android:id="@+id/txtSlogan"
-                android:layout_gravity="center_horizontal"
+                style="@style/txtArialmt12"
+                android:layout_width="110dp"
                 android:layout_height="wrap_content"
-                android:layout_marginEnd="@dimen/_137pxh"
+                android:layout_gravity="center_horizontal"
                 android:layout_marginStart="@dimen/_137pxh"
                 android:layout_marginTop="@dimen/_11pxv"
-                android:layout_width="wrap_content"
+                android:layout_marginEnd="@dimen/_137pxh"
+                android:ellipsize="end"
                 android:singleLine="true"
                 android:text="@{logindirectpageVM.loginDirectpageModel.txtSlogan}"
-                style="@style/txtArialmt12" tools:text="@string/msg_start_in_instan"/>
+                tools:text="@string/msg_start_in_instan" />
 
             <EditText
                 android:id="@+id/etAcoount"

@@ -30,14 +30,17 @@
                 android:scaleType="fitXY"
                 android:src="@drawable/img_backbtn"
                 tools:ignore="ContentDescription" tools:src="@drawable/img_backbtn"/>
-            <TextView android:gravity="end"
+
+            <TextView
                 android:id="@+id/txtDescription"
+                style="@style/txtArialmt24"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="@dimen/_10pxh"
                 android:layout_marginTop="@dimen/_106pxv"
-                android:layout_width="match_parent"
+                android:gravity="center"
                 android:text="@{loadingworkpageVM.loadingworkpageModel.txtDescription}"
-                style="@style/txtArialmt24" tools:text="@string/msg_in_preparation"/>
+                tools:text="@string/msg_in_preparation" />
             <FrameLayout android:id="@+id/frameStackpoemtwo"
                 android:layout_gravity="end"
                 android:layout_height="@dimen/_128pxv"

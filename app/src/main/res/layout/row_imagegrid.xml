@@ -4,21 +4,24 @@
         <variable name="imagegridRowModel" type="com.collagepoem.app.modules.albumpage.data.model.ImagegridRowModel"/>
     </data>
     <FrameLayout android:id="@+id/frameStackpicone"
-        android:layout_height="wrap_content" android:layout_width="match_parent">
+        android:layout_height="wrap_content" android:layout_width="wrap_content">
         <ImageView android:id="@+id/imagePicOne"
             android:layout_gravity="start"
             android:layout_height="@dimen/_118pxh"
             android:layout_width="@dimen/_118pxh"
             android:scaleType="fitXY" imageRes="@{@drawable/img_pic1}"
             tools:ignore="ContentDescription" tools:src="@drawable/img_pic1"/>
+
         <androidx.appcompat.widget.AppCompatCheckBox
-            android:ellipsize="end" android:id="@+id/checkBoxCheck"
-            android:layout_gravity="top|end"
+            android:id="@+id/checkBoxCheck"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginBottom="@dimen/_10pxv"
-            android:layout_marginEnd="@dimen/_4pxh"
+            android:layout_gravity="top|end"
             android:layout_marginStart="@dimen/_10pxh"
             android:layout_marginTop="@dimen/_5pxv"
-            android:layout_width="wrap_content" android:singleLine="true"/>
+            android:layout_marginEnd="@dimen/_4pxh"
+            android:layout_marginBottom="@dimen/_10pxv"
+            android:ellipsize="end"
+            android:singleLine="true" />
     </FrameLayout>
 </layout>

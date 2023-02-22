@@ -108,7 +108,7 @@
                 <LinearLayout android:gravity="center_horizontal"
                     android:id="@+id/linearImgtime"
                     android:layout_height="wrap_content"
-                    android:layout_marginStart="@dimen/_71pxh"
+                    android:layout_marginStart="65dp"
                     android:layout_weight="0.48"
                     android:layout_width="0dp"
                     android:orientation="vertical" style="@style/groupStylewhite_A700">
