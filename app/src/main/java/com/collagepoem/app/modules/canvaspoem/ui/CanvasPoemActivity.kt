@@ -17,12 +17,11 @@ import androidx.activity.viewModels
 import com.collagepoem.app.R
 import com.collagepoem.app.appcomponents.base.BaseActivity
 
-import com.collagepoem.app.appcomponents.views.ImagePickerFragmentDialog
 import com.collagepoem.app.databinding.ActivityCanvasPoem2Binding
-import com.collagepoem.app.modules.canvas.ui.CanvasActivity
 import com.collagepoem.app.modules.canvaseditone.ui.CanvasEditoneActivity
 import com.collagepoem.app.modules.canvaspoem.data.viewmodel.CanvasPoemVM
 import com.collagepoem.app.modules.floatwindowmycutsvtwo.ui.FloatwindowMycutsVtwoActivity
+import com.collagepoem.app.modules.landinpage.views.ImagePickerFragmentDialog
 import com.collagepoem.app.modules.mainpage.ui.MainpageActivity
 import com.jaeger.library.StatusBarUtil
 
@@ -183,7 +182,7 @@ class CanvasPoemActivity : BaseActivity<ActivityCanvasPoem2Binding>(R.layout.act
 
   override fun setUpClicks(): Unit {
     binding.imageSwitchbtn.setOnClickListener {
-      val destIntent = CanvasActivity.getIntent(this, null)
+      val destIntent = CanvasPoemActivity.getIntent(this, null)
       startActivityForResult(destIntent, REQUEST_CODE_CANVAS_ACTIVITY)
       this.overridePendingTransition(R.anim.slide_up_2 ,R.anim.slide_down_2 )
     }
