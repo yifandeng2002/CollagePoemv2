@@ -224,6 +224,12 @@
                                 android:singleLine="true"
                                 android:text="@{canvasPoemVM.canvasPoemModel.txtTimeEN}"
                                 tools:text="@string/lbl_01_05" />
+
+                            <Button
+                                android:id="@+id/button"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:text="Button" />
                         </LinearLayout>
                     </FrameLayout>
 
@@ -380,6 +386,20 @@
                     tools:src="@drawable/img_backbtn" />
             </LinearLayout>
         </androidx.appcompat.widget.Toolbar>
+
+        <FrameLayout
+            android:id="@+id/fl_pic"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@color/black"
+            android:visibility="gone">
+
+            <ImageView
+                android:id="@+id/iv_pic_get"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_gravity="center" />
+        </FrameLayout>
 
     </FrameLayout>
 </layout>
