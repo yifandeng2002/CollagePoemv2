@@ -1,8 +1,18 @@
 package com.collagepoem.app.modules.canvaspoem.ui
 
+import android.content.ClipData
+import android.content.ClipDescription
 import android.content.Context
 import android.content.Intent
 import android.os.Bundle
+import android.view.DragEvent
+import android.view.Gravity
+import android.view.LayoutInflater
+import android.view.View
+import android.view.ViewGroup
+import android.widget.FrameLayout
+import android.widget.LinearLayout
+import android.widget.Toast
 import androidx.activity.viewModels
 import com.collagepoem.app.R
 import com.collagepoem.app.appcomponents.base.BaseActivity
@@ -10,13 +20,11 @@ import com.collagepoem.app.appcomponents.views.ImagePickerFragmentDialog
 import com.collagepoem.app.databinding.ActivityCanvasPoemBinding
 import com.collagepoem.app.modules.canvas.ui.CanvasActivity
 import com.collagepoem.app.modules.canvaseditone.ui.CanvasEditoneActivity
-import com.collagepoem.app.modules.canvaspoem.`data`.viewmodel.CanvasPoemVM
+import com.collagepoem.app.modules.canvaspoem.data.viewmodel.CanvasPoemVM
 import com.collagepoem.app.modules.floatwindowmycutsvtwo.ui.FloatwindowMycutsVtwoActivity
 import com.collagepoem.app.modules.mainpage.ui.MainpageActivity
 import com.jaeger.library.StatusBarUtil
-import kotlin.Int
-import kotlin.String
-import kotlin.Unit
+
 
 class CanvasPoemActivity : BaseActivity<ActivityCanvasPoemBinding>(R.layout.activity_canvas_poem) {
   private val viewModel: CanvasPoemVM by viewModels<CanvasPoemVM>()
@@ -31,6 +39,11 @@ class CanvasPoemActivity : BaseActivity<ActivityCanvasPoemBinding>(R.layout.acti
 
 
   private val REQUEST_CODE_CANVAS_EDITONE_ACTIVITY: Int = 425
+  private lateinit var dragView: View
+  private lateinit var dragView2: View
+  private lateinit var llTrash: View
+  private lateinit var llTop: View
+  private lateinit var llBottom: View
 
   //    将StatusBar设置为透明
   fun setStatusBarTranslucent() {
@@ -45,7 +58,129 @@ class CanvasPoemActivity : BaseActivity<ActivityCanvasPoemBinding>(R.layout.acti
     viewModel.navArguments = intent.extras?.getBundle("bundle")
     binding.canvasPoemVM = viewModel
     setStatusBarTranslucent()
+    //setContentView(R.layout.activity_canvas_poem)
+    dragView = findViewById(R.id.imagePaperOne)
+    dragView2 = findViewById(R.id.imagePaperTwo)
+    llTop = findViewById(R.id.canva)
+    llBottom = findViewById(R.id.sidebar)
+    llTrash = findViewById(R.id.imageTrashbtn)
+    llTop.setOnDragListener (dragListener)
+    llBottom.setOnDragListener (dragListener)
+    llTrash.setOnDragListener(dragListener)
+
+
+    dragView.setOnLongClickListener{
+      val clipText = "This is our ClipData text"
+      val item = ClipData. Item (clipText)
+      val mimeTypes = arrayOf (ClipDescription.MIMETYPE_TEXT_PLAIN)
+      val data = ClipData (clipText, mimeTypes, item)
+      val dragshadowBuilder = View.DragShadowBuilder(it)
+
+      it.startDragAndDrop (data, dragshadowBuilder, it, 0)
+      it.visibility = View. INVISIBLE
+      true
+
+    }
+
+    dragView2.setOnLongClickListener{
+            val clipText = "This is our ClipData text"
+            val item = ClipData. Item (clipText)
+            val mimeTypes = arrayOf (ClipDescription.MIMETYPE_TEXT_PLAIN)
+            val data = ClipData (clipText, mimeTypes, item)
+            val dragshadowBuilder = View.DragShadowBuilder(it)
+            it.startDragAndDrop (data, dragshadowBuilder, it, 0)
+            it.visibility = View. INVISIBLE
+            true
+
+    }
+
+
   }
+
+
+
+
+  val dragListener = View.OnDragListener { view, event ->
+    when (event.action) {
+      DragEvent.ACTION_DRAG_STARTED -> {
+        event.clipDescription.hasMimeType(ClipDescription.MIMETYPE_TEXT_PLAIN)
+
+      }
+      DragEvent.ACTION_DRAG_ENTERED -> {
+        view.invalidate()
+        true
+      }
+      DragEvent.ACTION_DRAG_LOCATION -> true
+      DragEvent.ACTION_DRAG_EXITED -> {
+        view.invalidate()
+        true
+      }
+      DragEvent.ACTION_DROP -> {
+        val item = event.clipData.getItemAt(0)
+        val dragData = item.text
+
+        view.invalidate()
+
+        val v = event.localState as View
+        val owner = v.parent as ViewGroup
+        owner.removeView(v)
+        if(view!=llTrash){
+        val destination = view as LinearLayout
+        destination.addView(v)
+        v.visibility = View.VISIBLE
+        }
+        else{
+          Toast.makeText(this, "已删除", Toast.LENGTH_SHORT).show()
+        }
+        true
+      }
+      DragEvent.ACTION_DRAG_ENDED -> {
+        view.invalidate()
+        true
+      }
+      else -> false
+    }
+  }
+
+  val canvasdragListener = View.OnDragListener { view, event ->
+    when (event.action) {
+      DragEvent.ACTION_DRAG_STARTED -> {
+        event.clipDescription.hasMimeType(ClipDescription.MIMETYPE_TEXT_PLAIN)
+      }
+      DragEvent.ACTION_DRAG_ENTERED -> {
+        view.invalidate()
+        true
+      }
+      DragEvent.ACTION_DRAG_LOCATION -> true
+      DragEvent.ACTION_DRAG_EXITED -> {
+        view.invalidate()
+        true
+      }
+      DragEvent.ACTION_DROP -> {
+        val item = event.clipData.getItemAt(0)
+        val dragData = item.text
+        Toast.makeText(this, dragData, Toast.LENGTH_SHORT).show()
+
+        view.invalidate()
+
+        val v = event.localState as View
+        val owner = v.parent as ViewGroup
+        owner.removeView(v)
+        val destination = view as LinearLayout
+        destination.addView(v)
+        v.visibility = View.VISIBLE
+        true
+
+      }
+      DragEvent.ACTION_DRAG_ENDED -> {
+        view.invalidate()
+        true
+      }
+      else -> false
+    }
+  }
+
+
 
   override fun setUpClicks(): Unit {
     binding.imageSwitchbtn.setOnClickListener {
@@ -92,4 +227,8 @@ class CanvasPoemActivity : BaseActivity<ActivityCanvasPoemBinding>(R.layout.acti
       return destIntent
     }
   }
+
 }
+
+
+

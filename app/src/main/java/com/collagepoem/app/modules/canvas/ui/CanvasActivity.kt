@@ -3,6 +3,7 @@ package com.collagepoem.app.modules.canvas.ui
 import android.content.Context
 import android.content.Intent
 import android.os.Bundle
+import android.widget.LinearLayout
 import androidx.activity.viewModels
 import com.collagepoem.app.R
 import com.collagepoem.app.appcomponents.base.BaseActivity
@@ -45,6 +46,7 @@ class CanvasActivity : BaseActivity<ActivityCanvasBinding>(R.layout.activity_can
     viewModel.navArguments = intent.extras?.getBundle("bundle")
     binding.canvasVM = viewModel
     setStatusBarTranslucent()
+
   }
 
   override fun setUpClicks(): Unit {

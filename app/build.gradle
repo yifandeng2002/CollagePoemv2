@@ -2,6 +2,7 @@ plugins {
     id 'com.android.application'
     id 'kotlin-android'
     id 'kotlin-kapt'
+    id 'kotlinx-serialization'
 }
 
 def koin_version = "2.1.6"
@@ -17,7 +18,7 @@ android {
 
     defaultConfig {
         applicationId "com.collagepoem.app"
-        minSdkVersion 23
+        minSdkVersion 24
         targetSdkVersion 33
         versionCode 1
         versionName "1.0"
@@ -87,6 +88,7 @@ dependencies {
     //添加StatusBarUtil的依赖
     implementation 'com.jaeger.statusbarutil:library:1.5.1'
     implementation 'pl.droidsonroids.gif:android-gif-drawable:1.2.19'
+    implementation 'org.jetbrains.kotlinx:kotlinx-serialization-json:1.3.0'
 
 }
 

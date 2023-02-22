@@ -12,6 +12,13 @@
         <FrameLayout android:gravity="start"
             android:id="@+id/frameStackbackground"
             android:layout_height="match_parent" android:layout_width="match_parent">
+
+            <LinearLayout
+                android:id="@+id/sidebar_reciever"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="horizontal"></LinearLayout>
+
             <ImageView android:id="@+id/imageBackground"
                 android:layout_gravity="start"
                 android:layout_height="match_parent"
