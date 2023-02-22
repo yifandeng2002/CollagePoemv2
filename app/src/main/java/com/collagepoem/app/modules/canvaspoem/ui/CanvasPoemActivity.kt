@@ -3,6 +3,7 @@ package com.collagepoem.app.modules.canvaspoem.ui
 import android.content.Context
 import android.content.Intent
 import android.os.Bundle
+import android.widget.Toast
 import androidx.activity.viewModels
 import com.collagepoem.app.R
 import com.collagepoem.app.appcomponents.base.BaseActivity
@@ -14,6 +15,8 @@ import com.collagepoem.app.modules.canvaspoem.`data`.viewmodel.CanvasPoemVM
 import com.collagepoem.app.modules.floatwindowmycutsvtwo.ui.FloatwindowMycutsVtwoActivity
 import com.collagepoem.app.modules.mainpage.ui.MainpageActivity
 import com.jaeger.library.StatusBarUtil
+import com.lxj.xpopup.XPopup
+import com.lxj.xpopup.interfaces.OnSelectListener
 import kotlin.Int
 import kotlin.String
 import kotlin.Unit
@@ -54,11 +57,31 @@ class CanvasPoemActivity : BaseActivity<ActivityCanvasPoemBinding>(R.layout.acti
       this.overridePendingTransition(R.anim.slide_up_2 ,R.anim.slide_down_2 )
     }
     binding.imageFilebtn.setOnClickListener {
-      val destIntent = FloatwindowMycutsVtwoActivity.getIntent(this, null)
-      destIntent.addFlags(Intent.FLAG_ACTIVITY_SINGLE_TOP)
-      startActivityForResult(destIntent, REQUEST_CODE_FLOATWINDOW_MYCUTS_VTWO_ACTIVITY)
-      this.overridePendingTransition(R.anim.slide_up_2 ,R.anim.slide_down_2 )
-    }
+//      val destIntent = FloatwindowMycutsVtwoActivity.getIntent(this, null)
+//      destIntent.addFlags(Intent.FLAG_ACTIVITY_SINGLE_TOP)
+//      startActivityForResult(destIntent, REQUEST_CODE_FLOATWINDOW_MYCUTS_VTWO_ACTIVITY)
+//      this.overridePendingTransition(R.anim.slide_up_2 ,R.anim.slide_down_2 )
+
+        XPopup.Builder(this@CanvasPoemActivity)
+          .isDarkTheme(false)
+          .hasShadowBg(true)
+          .borderRadius(100f)
+          .maxHeight(2000)
+          .hasBlurBg(true)
+          .moveUpToKeyboard(false)
+          .isCoverSoftInput(true) //
+          .asBottomList(
+            "纸条夹",
+            arrayOf("条目1", "条目2","条目3"),
+            intArrayOf(R.drawable.img_note3,R.drawable.img_note1,R.drawable.img_note2),
+            -1,
+            OnSelectListener { position, text -> Toast.makeText(this@CanvasPoemActivity, "click $text", Toast.LENGTH_SHORT).show() },
+            R.layout.noterecyclerview,
+            R.layout.noteitemforcanvas
+          ) .show()
+      }
+
+
     binding.imageCamerabtn.setOnClickListener {
       ImagePickerFragmentDialog().show(supportFragmentManager)
       { path ->//TODO HANDLE DATA

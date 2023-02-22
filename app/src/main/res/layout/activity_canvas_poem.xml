@@ -196,15 +196,15 @@
             imageRes="@{@drawable/img_camerabtn}"
             tools:ignore="ContentDescription" tools:src="@drawable/img_camerabtn"/>
 
-        <pl.droidsonroids.gif.GifImageView
-            android:id="@+id/gifImageView"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:scaleX="1.5"
-            android:scaleY="1.5"
-            android:src="@drawable/cutanimation"
-            android:translationX="60dp"
-            android:translationY="-20dp" />
+<!--        <pl.droidsonroids.gif.GifImageView-->
+<!--            android:id="@+id/gifImageView"-->
+<!--            android:layout_width="wrap_content"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:scaleX="1.5"-->
+<!--            android:scaleY="1.5"-->
+<!--            android:src="@drawable/cutanimation"-->
+<!--            android:translationX="60dp"-->
+<!--            android:translationY="-20dp" />-->
 
 
     </FrameLayout>
