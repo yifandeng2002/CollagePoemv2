@@ -17,7 +17,7 @@ import androidx.activity.viewModels
 import com.collagepoem.app.R
 import com.collagepoem.app.appcomponents.base.BaseActivity
 import com.collagepoem.app.appcomponents.views.ImagePickerFragmentDialog
-import com.collagepoem.app.databinding.ActivityCanvasPoemBinding
+import com.collagepoem.app.databinding.ActivityCanvasPoem2Binding
 import com.collagepoem.app.modules.canvas.ui.CanvasActivity
 import com.collagepoem.app.modules.canvaseditone.ui.CanvasEditoneActivity
 import com.collagepoem.app.modules.canvaspoem.data.viewmodel.CanvasPoemVM
@@ -26,7 +26,7 @@ import com.collagepoem.app.modules.mainpage.ui.MainpageActivity
 import com.jaeger.library.StatusBarUtil
 
 
-class CanvasPoemActivity : BaseActivity<ActivityCanvasPoemBinding>(R.layout.activity_canvas_poem) {
+class CanvasPoemActivity : BaseActivity<ActivityCanvasPoem2Binding>(R.layout.activity_canvas_poem2) {
   private val viewModel: CanvasPoemVM by viewModels<CanvasPoemVM>()
 
   private val REQUEST_CODE_CANVAS_ACTIVITY: Int = 653
@@ -96,8 +96,6 @@ class CanvasPoemActivity : BaseActivity<ActivityCanvasPoemBinding>(R.layout.acti
 
 
   }
-
-
 
 
   val dragListener = View.OnDragListener { view, event ->
@@ -200,7 +198,7 @@ class CanvasPoemActivity : BaseActivity<ActivityCanvasPoemBinding>(R.layout.acti
       }
 
     }
-    binding.imageImageBack.setOnClickListener {
+    binding.imageBackbtn.setOnClickListener {
       val destIntent = MainpageActivity.getIntent(this, null)
       startActivityForResult(destIntent, REQUEST_CODE_MAINPAGE_ACTIVITY)
       this.overridePendingTransition(R.anim.zoom_out ,R.anim.zoom_in )
@@ -210,11 +208,11 @@ class CanvasPoemActivity : BaseActivity<ActivityCanvasPoemBinding>(R.layout.acti
       startActivityForResult(destIntent, REQUEST_CODE_CANVAS_EDITONE_ACTIVITY)
       this.overridePendingTransition(R.anim.zoom_in ,R.anim.zoom_out )
     }
-    binding.imageWihtepic.setOnClickListener {
-      val destIntent = CanvasActivity.getIntent(this, null)
-      startActivityForResult(destIntent, REQUEST_CODE_CANVAS_ACTIVITY)
-      this.overridePendingTransition(R.anim.slide_up_2 ,R.anim.slide_down_2 )
-    }
+//    binding.imageWihtepic.setOnClickListener {
+//      val destIntent = CanvasActivity.getIntent(this, null)
+//      startActivityForResult(destIntent, REQUEST_CODE_CANVAS_ACTIVITY)
+//      this.overridePendingTransition(R.anim.slide_up_2 ,R.anim.slide_down_2 )
+//    }
   }
 
   companion object {
