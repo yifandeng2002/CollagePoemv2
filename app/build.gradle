@@ -90,6 +90,7 @@ dependencies {
     //添加StatusBarUtil的依赖
     implementation 'com.jaeger.statusbarutil:library:1.5.1'
 
-
+//    //微信SDK
+//    implementation 'com.tencent.mm.opensdk:wechat-sdk-android-without-mta:+'
 }
 

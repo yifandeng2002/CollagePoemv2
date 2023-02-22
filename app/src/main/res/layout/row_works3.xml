@@ -61,7 +61,7 @@
                 </LinearLayout>
             </LinearLayout>
         </LinearLayout>
-        <ImageView android:id="@+id/imageWork"
+        <ImageView android:id="@+id/imageWorkS"
             android:layout_gravity="top|start"
             android:layout_height="@dimen/_180pxh"
             android:layout_marginBottom="@dimen/_10pxv"
