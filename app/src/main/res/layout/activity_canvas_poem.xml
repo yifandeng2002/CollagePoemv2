@@ -15,118 +15,167 @@
             android:scaleType="fitXY"
             android:src="@drawable/img_background_912x410"
             tools:ignore="ContentDescription" tools:src="@drawable/img_background_912x410"/>
-        <FrameLayout android:id="@+id/frameStackcard"
-            android:layout_gravity="top|start"
-            android:layout_height="@dimen/_604pxv"
-            android:layout_marginBottom="@dimen/_60pxv"
-            android:layout_marginEnd="@dimen/_10pxh"
-            android:layout_marginTop="@dimen/_60pxv" android:layout_width="@dimen/_243pxh">
-            <ImageView android:id="@+id/imageCard"
-                android:layout_gravity="start"
-                android:layout_height="match_parent"
-                android:layout_width="match_parent"
-                android:scaleType="fitXY"
-                imageRes="@{@drawable/img_card}"
-                tools:ignore="ContentDescription" tools:src="@drawable/img_card"/>
-            <ImageView android:id="@+id/imageImageBack"
-                android:layout_gravity="top|start"
-                android:layout_height="@dimen/_18pxh"
-                android:layout_marginBottom="@dimen/_13pxv"
-                android:layout_marginEnd="@dimen/_24pxh"
-                android:layout_marginStart="@dimen/_24pxh"
-                android:layout_marginTop="@dimen/_13pxv"
-                android:layout_width="@dimen/_10pxh"
-                android:scaleType="fitXY"
-                android:src="@drawable/img_imageback"
-                tools:ignore="ContentDescription" tools:src="@drawable/img_imageback"/>
-        </FrameLayout>
-        <LinearLayout android:id="@+id/linearSwtichMode"
-            android:layout_gravity="bottom|start"
+
+        <LinearLayout
+            android:id="@+id/linearSwtichMode"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginEnd="@dimen/_10pxh"
+            android:layout_gravity="bottom|start"
             android:layout_marginTop="@dimen/_10pxv"
-            android:layout_width="wrap_content" android:orientation="vertical">
-            <ImageView android:id="@+id/imageSwitchbtn"
-                android:layout_gravity="end"
-                android:layout_height="@dimen/_32pxh"
-                android:layout_marginEnd="@dimen/_88pxh"
-                android:layout_marginStart="@dimen/_88pxh"
+            android:layout_marginEnd="@dimen/_10pxh"
+            android:orientation="vertical">
+
+            <ImageView
+                android:id="@+id/imageSwitchbtn"
                 android:layout_width="@dimen/_43pxh"
+                android:layout_height="@dimen/_32pxh"
+                android:layout_gravity="end"
+                android:layout_marginStart="@dimen/_88pxh"
+                android:layout_marginEnd="@dimen/_88pxh"
                 android:scaleType="fitXY"
                 android:src="@drawable/img_switchbtn"
-                tools:ignore="ContentDescription" tools:src="@drawable/img_switchbtn"/>
-            <ImageView android:id="@+id/imageWihtepic"
-                android:layout_gravity="start"
-                android:layout_height="@dimen/_129pxh"
-                android:layout_marginTop="@dimen/_13pxv"
-                android:layout_width="@dimen/_316pxh"
-                android:scaleType="fitXY"
-                imageRes="@{@drawable/img_wihtepic}"
-                tools:ignore="ContentDescription" tools:src="@drawable/img_wihtepic"/>
-        </LinearLayout>
-        <FrameLayout android:id="@+id/framePoem"
-            android:layout_gravity="top|center"
-            android:layout_height="@dimen/_648pxv"
-            android:layout_marginBottom="@dimen/_101pxv"
-            android:layout_marginEnd="@dimen/_27pxh"
-            android:layout_marginStart="@dimen/_27pxh"
-            android:layout_marginTop="@dimen/_101pxv" android:layout_width="@dimen/_356pxh">
-            <ImageView android:id="@+id/imagePoemcard"
-                android:layout_gravity="start"
-                android:layout_height="match_parent"
-                android:layout_width="match_parent"
-                android:scaleType="fitXY"
-                imageRes="@{@drawable/img_poemcard}"
-                tools:ignore="ContentDescription" tools:src="@drawable/img_poemcard"/>
+                tools:ignore="ContentDescription"
+                tools:src="@drawable/img_switchbtn" />
 
-            <LinearLayout android:id="@+id/linearColumntimecn"
-                android:layout_gravity="top|center"
-                android:layout_height="wrap_content"
-                android:layout_marginBottom="@dimen/_36pxv"
-                android:layout_marginEnd="@dimen/_38pxh"
-                android:layout_marginStart="@dimen/_38pxh"
-                android:layout_marginTop="@dimen/_36pxv"
-                android:layout_width="match_parent" android:orientation="vertical">
-                <TextView android:ellipsize="end"
-                    android:id="@+id/txtTimeCN"
-                    android:layout_gravity="center_horizontal"
-                    android:layout_height="wrap_content"
-                    android:layout_marginEnd="@dimen/_114pxh"
-                    android:layout_marginStart="@dimen/_118pxh"
-                    android:layout_width="wrap_content"
-                    android:singleLine="true"
-                    android:text="@{canvasPoemVM.canvasPoemModel.txtTimeCN}"
-                    style="@style/txtArialmt10" tools:text="@string/lbl_2022_1_3"/>
-                <TextView android:ellipsize="end"
-                    android:id="@+id/txtOrder"
-                    android:layout_height="wrap_content"
-                    android:layout_marginEnd="@dimen/_10pxh"
-                    android:layout_marginStart="@dimen/_1pxh"
-                    android:layout_marginTop="@dimen/_47pxv"
-                    android:layout_width="wrap_content"
-                    android:singleLine="true"
-                    android:text="@{canvasPoemVM.canvasPoemModel.txtOrder}"
-                    style="@style/txtHiraginoMinchoProhiraminprow340" tools:text="@string/lbl_one"/>
-                <TextView android:id="@+id/txtDescription"
-                    android:layout_height="wrap_content"
-                    android:layout_marginEnd="@dimen/_10pxh"
-                    android:layout_marginTop="@dimen/_57pxv"
-                    android:layout_width="match_parent"
-                    android:letterSpacing="0.08"
-                    android:text="@{canvasPoemVM.canvasPoemModel.txtDescription}"
-                    style="@style/txtHiraginoMinchoProhiraminprow616" tools:text="@string/msg_content_here_co"/>
-                <TextView android:ellipsize="end"
-                    android:id="@+id/txtTimeEN"
-                    android:layout_gravity="end"
-                    android:layout_height="wrap_content"
-                    android:layout_marginStart="@dimen/_10pxh"
-                    android:layout_marginTop="@dimen/_37pxv"
-                    android:layout_width="wrap_content"
-                    android:singleLine="true"
-                    android:text="@{canvasPoemVM.canvasPoemModel.txtTimeEN}"
-                    style="@style/txtHiraginoMinchoProhiraminprow310" tools:text="@string/lbl_01_05"/>
-            </LinearLayout>
+            <ImageView
+                android:id="@+id/imageWihtepic"
+                imageRes="@{@drawable/img_wihtepic}"
+                android:layout_width="@dimen/_316pxh"
+                android:layout_height="@dimen/_129pxh"
+                android:layout_gravity="start"
+                android:layout_marginTop="@dimen/_13pxv"
+                android:scaleType="fitXY"
+                tools:ignore="ContentDescription"
+                tools:src="@drawable/img_wihtepic" />
+        </LinearLayout>
+
+        <FrameLayout
+            android:id="@+id/frameStackcard"
+            android:layout_width="@dimen/_243pxh"
+            android:layout_height="@dimen/_604pxv"
+            android:layout_gravity="top|start"
+            android:layout_marginTop="@dimen/_60pxv"
+            android:layout_marginEnd="@dimen/_10pxh"
+            android:layout_marginBottom="@dimen/_60pxv">
+
+            <ImageView
+                android:id="@+id/imageCard"
+                imageRes="@{@drawable/img_card}"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_gravity="start"
+                android:scaleType="fitXY"
+                tools:ignore="ContentDescription"
+                tools:src="@drawable/img_card" />
+
+            <ImageView
+                android:id="@+id/imageImageBack"
+                android:layout_width="@dimen/_10pxh"
+                android:layout_height="@dimen/_18pxh"
+                android:layout_gravity="top|start"
+                android:layout_marginStart="@dimen/_24pxh"
+                android:layout_marginTop="@dimen/_13pxv"
+                android:layout_marginEnd="@dimen/_24pxh"
+                android:layout_marginBottom="@dimen/_13pxv"
+                android:scaleType="fitXY"
+                android:src="@drawable/img_imageback"
+                tools:ignore="ContentDescription"
+                tools:src="@drawable/img_imageback" />
         </FrameLayout>
+
+        <com.example.text1.ZoomTranslateDoubleTapController
+            android:id="@+id/frameChange"
+            android:layout_width="341dp"
+            android:layout_height="518dp"
+            android:translationX="30sp"
+            android:translationY="80sp">
+
+            <FrameLayout
+                android:id="@+id/framePoem"
+                android:layout_width="@dimen/_356pxh"
+                android:layout_height="@dimen/_648pxv"
+                android:layout_gravity="top|center"
+                android:layout_marginStart="@dimen/_27pxh"
+                android:layout_marginTop="@dimen/_101pxv"
+                android:layout_marginEnd="@dimen/_27pxh"
+                android:layout_marginBottom="@dimen/_101pxv">
+
+                <ImageView
+                    android:id="@+id/imagePoemcard"
+                    imageRes="@{@drawable/img_poemcard}"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_gravity="start"
+                    android:scaleType="fitXY"
+                    tools:ignore="ContentDescription"
+                    tools:src="@drawable/img_poemcard" />
+
+                <LinearLayout
+                    android:id="@+id/linearColumntimecn"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="top|center"
+                    android:layout_marginStart="@dimen/_38pxh"
+                    android:layout_marginTop="@dimen/_36pxv"
+                    android:layout_marginEnd="@dimen/_38pxh"
+                    android:layout_marginBottom="@dimen/_36pxv"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:id="@+id/txtTimeCN"
+                        style="@style/txtArialmt10"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_horizontal"
+                        android:layout_marginStart="@dimen/_118pxh"
+                        android:layout_marginEnd="@dimen/_114pxh"
+                        android:ellipsize="end"
+                        android:singleLine="true"
+                        android:text="@{canvasPoemVM.canvasPoemModel.txtTimeCN}"
+                        tools:text="@string/lbl_2022_1_3" />
+
+                    <TextView
+                        android:id="@+id/txtOrder"
+                        style="@style/txtHiraginoMinchoProhiraminprow340"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="@dimen/_1pxh"
+                        android:layout_marginTop="@dimen/_47pxv"
+                        android:layout_marginEnd="@dimen/_10pxh"
+                        android:ellipsize="end"
+                        android:singleLine="true"
+                        android:text="@{canvasPoemVM.canvasPoemModel.txtOrder}"
+                        tools:text="@string/lbl_one" />
+
+                    <TextView
+                        android:id="@+id/txtDescription"
+                        style="@style/txtHiraginoMinchoProhiraminprow616"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/_57pxv"
+                        android:layout_marginEnd="@dimen/_10pxh"
+                        android:letterSpacing="0.08"
+                        android:text="@{canvasPoemVM.canvasPoemModel.txtDescription}"
+                        tools:text="@string/msg_content_here_co" />
+
+                    <TextView
+                        android:id="@+id/txtTimeEN"
+                        style="@style/txtHiraginoMinchoProhiraminprow310"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="end"
+                        android:layout_marginStart="@dimen/_10pxh"
+                        android:layout_marginTop="@dimen/_37pxv"
+                        android:ellipsize="end"
+                        android:singleLine="true"
+                        android:text="@{canvasPoemVM.canvasPoemModel.txtTimeEN}"
+                        tools:text="@string/lbl_01_05" />
+                </LinearLayout>
+
+            </FrameLayout>
+
+        </com.example.text1.ZoomTranslateDoubleTapController>
+
         <ImageView android:id="@+id/imagePaperTwo"
             android:layout_gravity="top|end"
             android:layout_height="@dimen/_59pxh"
