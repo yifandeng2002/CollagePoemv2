@@ -71,22 +71,25 @@
                         android:text="@{communitypageInfoVM.communitypageInfoModel.txtSignature}"
                         style="@style/txtArialmt12_1" tools:text="@string/msg_this_is_a_signa"/>
                 </LinearLayout>
+
                 <androidx.appcompat.widget.AppCompatButton
-                    android:ellipsize="end" android:gravity="center"
                     android:id="@+id/btnFollow"
-                    android:layout_height="@dimen/_21pxv"
-                    android:layout_marginBottom="@dimen/_15pxv"
+                    style="@style/btnSolidRounded_1"
+                    android:layout_width="@dimen/_52pxh"
+                    android:layout_height="29dp"
                     android:layout_marginStart="@dimen/_11pxh"
                     android:layout_marginTop="@dimen/_8pxv"
-                    android:layout_width="@dimen/_52pxh"
-                    android:paddingBottom="@dimen/_2pxv"
-                    android:paddingEnd="@dimen/_6pxh"
+                    android:layout_marginBottom="@dimen/_15pxv"
+                    android:ellipsize="end"
+                    android:gravity="center"
                     android:paddingStart="@dimen/_6pxh"
                     android:paddingTop="@dimen/_2pxv"
+                    android:paddingEnd="@dimen/_6pxh"
+                    android:paddingBottom="@dimen/_2pxv"
                     android:singleLine="true"
                     android:text="@string/lbl_follow"
                     android:textAllCaps="false"
-                    style="@style/btnSolidRounded_1" tools:text="@string/lbl_follow"/>
+                    tools:text="@string/lbl_follow" />
             </LinearLayout>
             <TextView android:ellipsize="end"
                 android:id="@+id/txtContent"
