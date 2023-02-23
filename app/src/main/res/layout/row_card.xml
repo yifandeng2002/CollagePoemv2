@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android" xmlns:tools="http://schemas.android.com/tools">
+    <data>
+        <variable name="CardRowModel" type="com.collagepoem.app.modules.mycutspagebelongings.data.model.SticksRowModel"/>
+    </data>
+
+    <FrameLayout
+        android:id="@+id/framePoem1"
+        android:layout_width="@dimen/_356pxh"
+        android:layout_height="@dimen/_648pxv"
+        android:layout_gravity="start">
+
+        <ImageView
+            android:id="@+id/imagePoemcard"
+            tools:ignore="ContentDescription"
+            tools:src="@drawable/img_poemcard"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_gravity="start"
+            android:scaleType="fitXY" />
+
+        <LinearLayout
+            android:id="@+id/linearColumntimecn"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="top|center"
+            android:layout_marginStart="@dimen/_38pxh"
+            android:layout_marginTop="@dimen/_36pxv"
+            android:layout_marginEnd="@dimen/_38pxh"
+            android:layout_marginBottom="@dimen/_36pxv"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/txtTimeCN"
+                style="@style/txtArialmt10"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginStart="@dimen/_118pxh"
+                android:layout_marginEnd="@dimen/_114pxh"
+                android:ellipsize="end"
+                android:singleLine="true"
+                android:text="2023.1" />
+
+            <TextView
+                android:id="@+id/txtOrder"
+                style="@style/txtHiraginoMinchoProhiraminprow340"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/_1pxh"
+                android:layout_marginTop="@dimen/_47pxv"
+                android:layout_marginEnd="@dimen/_10pxh"
+                android:ellipsize="end"
+                android:singleLine="false"
+                android:text="壹" />
+
+            <TextView
+                android:id="@+id/txtDescription"
+                style="@style/txtHiraginoMinchoProhiraminprow616"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_57pxv"
+                android:layout_marginEnd="@dimen/_10pxh"
+                android:letterSpacing="0.08"
+                android:singleLine="false"
+                android:text="contentlalalalalalla" />
+
+            <TextView
+                android:id="@+id/txtTimeEN"
+                style="@style/txtHiraginoMinchoProhiraminprow310"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="end"
+                android:layout_marginStart="@dimen/_10pxh"
+                android:layout_marginTop="@dimen/_37pxv"
+                android:ellipsize="end"
+                android:singleLine="true"
+                android:text="01/15" />
+        </LinearLayout>
+    </FrameLayout>
+</layout>
