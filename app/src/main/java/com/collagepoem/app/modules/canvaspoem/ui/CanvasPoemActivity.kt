@@ -2,7 +2,9 @@ package com.collagepoem.app.modules.canvaspoem.ui
 
 import android.animation.Animator
 import android.animation.AnimatorListenerAdapter
+import android.animation.AnimatorSet
 import android.animation.ObjectAnimator
+import android.animation.ValueAnimator
 import android.content.ClipData
 import android.content.ClipDescription
 import android.content.Context
@@ -17,6 +19,7 @@ import android.os.*
 import android.provider.MediaStore
 import android.util.Log
 import android.view.*
+import android.view.animation.Animation
 import android.widget.*
 import androidx.activity.viewModels
 import androidx.annotation.RequiresApi
@@ -234,6 +237,21 @@ class CanvasPoemActivity : BaseActivity<ActivityCanvasPoem2Binding>(R.layout.act
 //      startActivityForResult(destIntent, REQUEST_CODE_CANVAS_ACTIVITY)
 //      this.overridePendingTransition(R.anim.slide_up_2 ,R.anim.slide_down_2 )
 //    }
+    binding.imageUp2.setOnClickListener {
+      var view = findViewById<View>(R.id.frameStackfinish)
+      var set = AnimatorSet()
+      // 向下动画(暂时不用)
+      var downAnim = ObjectAnimator.ofFloat(view, "translationY", 0F, 30F, 0F)
+      // 向上动画
+      var upAnim = ObjectAnimator.ofFloat(view, "translationY", 0F, -2500F)
+      //upAnim.repeatMode = ValueAnimator.REVERSE
+      //upAnim.repeatCount = Animation.INFINITE
+      set.duration = 1000
+      // 顺序执行动画
+      //set.playSequentially(upAnim)
+        set.playSequentially(upAnim)
+      set.start()
+    }
   }
 
   companion object {

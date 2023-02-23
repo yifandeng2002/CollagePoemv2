@@ -13,8 +13,21 @@
     <string name="lbl_20">20</string>
     <string name="msg_liked_by_many_o">它被许多人所喜爱，组成了更多的诗词</string>
     <string name="msg_start_in_instan">只需简单的一步开始</string>
-    <string name="msg_content_here_co">Content here
-Content hereContent hereContent hereContent hereContent hereContent hereContent hereContent hereContent hereContent hereContent hereContent hereContent hereContent hereContent hereContent hereContent hereContent hereContent hereContent hereContent hereContent hereContent hereContent hereContent</string>
+    <string name="msg_content_here_co">
+从明天起 做一个幸福的人\n
+喂马 劈柴 周游世界\n
+从明天起 关心粮食和蔬菜\n
+我有一所房子 面朝大海 春暖花开\n
+从明天起 和每一个亲人通信\n
+告诉他们我的幸福\n
+那幸福的闪电告诉我的\n
+我将告诉每一个人\n
+给每一条河每一座山取一个温暖的名字\n
+陌生人 我也为你祝福\n
+愿你有一个灿烂的前程\n
+愿你有情人终成眷属\n
+愿你在尘世获的幸福\n
+我也愿面朝大海 春暖花开\n"</string>
     <string name="lbl_taigeer_india">泰戈尔?印度?</string>
     <string name="lbl_1day">1DAY</string>
     <string name="lbl_message">消息</string>
@@ -34,7 +47,7 @@ Content hereContent hereContent hereContent hereContent hereContent hereContent 
     <string name="lbl_edit">编辑</string>
     <string name="lbl_followed">已关注</string>
     <string name="lbl_foward_2">转发 2</string>
-    <string name="lbl_one">壹</string>
+    <string name="lbl_one">面朝大海\n春暖花开</string>
     <string name="lbl_12">12</string>
     <string name="lbl_works">作品</string>
     <string name="msg_in_preparation">正在准备您的作品······
