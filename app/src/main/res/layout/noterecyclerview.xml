@@ -20,14 +20,14 @@
             android:layout_marginRight="@dimen/_20pxh">
 
             <TextView
-                android:id="@+id/tv_title"
-                style="@style/txtSTZhongsong21"
+                android:id="@+id/tv_title1"
+                style="@style/txtArialmt21"
                 android:layout_width="358dp"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center|bottom"
 
                 android:gravity="center"
-                android:text="TextView" />
+                android:text="" />
 
             <ImageView
                 android:id="@+id/imageView"
@@ -50,6 +50,6 @@
             android:layout_width="match_parent"
             app:layoutManager="androidx.recyclerview.widget.GridLayoutManager"
             app:spanCount="1" itemSpace="@{@dimen/_1pxh}"
-             tools:listitem="@layout/noteitemforcanvas"/>
+            tools:listitem="@layout/noteitemforcanvas"/>
     </LinearLayout>
 </layout>

@@ -21,7 +21,6 @@ import com.collagepoem.app.modules.canvas.ui.Constant
 import com.collagepoem.app.modules.mainpage.ui.MainpageActivity
 import com.collagepoem.app.modules.successpage.`data`.viewmodel.SuccesspageVM
 import com.jaeger.library.StatusBarUtil
-import kotlinx.android.synthetic.main.activity_successpage.*
 import java.io.File
 import kotlin.Int
 import kotlin.String
@@ -79,13 +78,13 @@ class SuccesspageActivity : BaseActivity<ActivitySuccesspageBinding>(R.layout.ac
           imageView!!.setImageBitmap(bm)
         }
 
-//跳转微信分享
-        val intent = Intent(this, SharetoWeChatActivity::class.java)
-        imageShare.setOnClickListener {
-          val intent = Intent(this, SharetoWeChatActivity::class.java)
-          intent.putExtra ("key", "value")
-          startActivity(intent)
-        }
+////跳转微信分享
+//        val intent = Intent(this, SharetoWeChatActivity::class.java)
+//        imageShare.setOnClickListener {
+//          val intent = Intent(this, SharetoWeChatActivity::class.java)
+//          intent.putExtra ("key", "value")
+//          startActivity(intent)
+//        }
       }
 
 

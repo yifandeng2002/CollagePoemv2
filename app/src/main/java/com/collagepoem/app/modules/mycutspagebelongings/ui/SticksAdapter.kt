@@ -3,6 +3,7 @@ package com.collagepoem.app.modules.mycutspagebelongings.ui
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.collagepoem.app.R
 import com.collagepoem.app.modules.mycutspagebelongings.`data`.model.SticksRowModel
@@ -14,7 +15,13 @@ import com.collagepoem.app.databinding.RowSticksBinding
 class SticksAdapter(
   var list: List<SticksRowModel>
 ) : RecyclerView.Adapter<SticksAdapter.RowSticksVH>() {
-  private var clickListener: OnItemClickListener? = null
+//  private var clickListener: OnItemClickListener? = null
+
+  inner class RowSticksVH(view: View) : RecyclerView.ViewHolder(view) {
+    val txtName: TextView = view.findViewById(R.id.txtBookname)
+    val txtCollect: TextView = view.findViewById(R.id.txtRemainingtime)
+  }
+
 
   override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): RowSticksVH {
     val view=LayoutInflater.from(parent.context).inflate(R.layout.row_sticks,parent,false)
@@ -22,43 +29,11 @@ class SticksAdapter(
   }
 
   override fun onBindViewHolder(holder: RowSticksVH, position: Int) {
-    val sticksRowModel = SticksRowModel()
-    // TODO uncomment following line after integration with data source
-    // val sticksRowModel = list[position]
-    holder.binding.sticksRowModel = sticksRowModel
+    val thisList = list
+    holder.txtName.setText(thisList[position].txtBookname)
+    holder.txtCollect.setText(thisList[position].txtRemainingtime.toString())
   }
 
-  override fun getItemCount(): Int = 1
-  // TODO uncomment following line after integration with data source
-  // return list.size
+  override fun getItemCount(): Int = list.size
 
-  public fun updateData(newData: List<SticksRowModel>) {
-    list = newData
-    notifyDataSetChanged()
-  }
-
-  fun setOnItemClickListener(clickListener: OnItemClickListener) {
-    this.clickListener = clickListener
-  }
-
-  interface OnItemClickListener {
-    fun onItemClick(
-      view: View,
-      position: Int,
-      item: SticksRowModel
-    ) {
-    }
-  }
-
-  inner class RowSticksVH(
-    view: View
-  ) : RecyclerView.ViewHolder(view) {
-    val binding: RowSticksBinding = RowSticksBinding.bind(itemView)
-    init {
-      binding.linearStick.setOnClickListener {
-        // TODO replace with value from datasource
-        clickListener?.onItemClick(it, adapterPosition, SticksRowModel())
-      }
-    }
-  }
 }

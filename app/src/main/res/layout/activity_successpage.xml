@@ -96,6 +96,16 @@
             android:layout_width="match_parent"
             android:scaleType="fitXY" imageRes="@{@drawable/img_poem}"
             tools:ignore="ContentDescription" tools:src="@drawable/img_poem"/>
+
+        <FrameLayout
+            android:id="@+id/frameImagePoem"
+            android:layout_width="250dp"
+            android:layout_height="381dp"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="120dp">
+
+        </FrameLayout>
+
         <LinearLayout android:id="@+id/linearColumnbackbtn"
             android:layout_gravity="top|center"
             android:layout_height="wrap_content"

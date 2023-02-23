@@ -40,7 +40,7 @@
                     android:layout_weight="0.45"
                     android:ellipsize="end"
                     android:singleLine="true"
-                    android:text="@{mycutspageBelongingsVM.mycutspageBelongingsModel.txtTextholder}"
+                    android:text="纸条夹"
                     tools:text="@string/lbl_clips" />
 
                 <ImageView
@@ -73,7 +73,7 @@
                 android:layout_weight="0.29"
                 android:ellipsize="end"
                 android:singleLine="true"
-                android:text="@{mycutspageBelongingsVM.mycutspageBelongingsModel.txtHad}"
+                android:text="已有的"
                 tools:text="@string/lbl_had" />
 
             <TextView
@@ -85,7 +85,7 @@
                 android:layout_weight="0.71"
                 android:ellipsize="end"
                 android:singleLine="true"
-                android:text="@{mycutspageBelongingsVM.mycutspageBelongingsModel.txtFlowaway}"
+                android:text="已漂流"
                 tools:text="@string/lbl_flow_away" />
         </LinearLayout>
 
@@ -100,7 +100,7 @@
             android:background="@color/gray_500" />
 
         <androidx.recyclerview.widget.RecyclerView
-            android:id="@+id/recyclerSticks"
+            android:id="@+id/recyclerView"
             android:layout_height="wrap_content"
             android:layout_marginEnd="@dimen/_18pxh"
             android:layout_marginStart="@dimen/_18pxh"
