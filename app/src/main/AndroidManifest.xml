@@ -44,15 +44,11 @@
             android:screenOrientation="portrait" />
         <activity
             android:name="com.collagepoem.app.modules.successpage.ui.SuccesspageActivity"
-            android:screenOrientation="portrait"
-            android:exported="true"/>
-
-
+            android:screenOrientation="portrait" />
         <activity
             android:name="com.collagepoem.app.modules.canvaspoem.ui.CanvasPoemActivity"
-            android:screenOrientation="portrait" />
-
-
+            android:screenOrientation="portrait"
+            android:exported="true"/>
         <activity
             android:name="com.collagepoem.app.modules.landinpage.ui.LandinpageActivity"
             android:exported="true"
@@ -104,9 +100,6 @@
             android:screenOrientation="portrait" />
         <activity
             android:name="com.collagepoem.app.modules.profilepagemyportfolio.ui.ProfilepageMyportfolioActivity"
-            android:screenOrientation="portrait" />
-        <activity
-            android:name=".modules.successpage.ui.SharetoWeChatActivity"
             android:screenOrientation="portrait" />
 
 
