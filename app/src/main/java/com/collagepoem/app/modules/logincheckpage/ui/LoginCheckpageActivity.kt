@@ -9,6 +9,7 @@ import android.os.Message
 import android.widget.EditText
 import android.widget.Toast
 import androidx.activity.viewModels
+import androidx.appcompat.app.AppCompatActivity
 import com.collagepoem.app.R
 import com.collagepoem.app.appcomponents.base.BaseActivity
 import com.collagepoem.app.dao.UserDao
@@ -18,6 +19,10 @@ import com.collagepoem.app.modules.logincheckpage.data.viewmodel.LoginCheckpageV
 import com.collagepoem.app.modules.mainpage.ui.MainpageActivity
 import com.jaeger.library.StatusBarUtil
 import com.mysql.jdbc.log.Log
+import java.io.ByteArrayOutputStream
+import java.io.FileInputStream
+import java.io.IOException
+import java.sql.Blob
 import kotlin.math.log
 
 
@@ -27,7 +32,6 @@ class LoginCheckpageActivity : BaseActivity<ActivityLogincheckpageBinding>(R.lay
   val user = User()
   var userAccount: EditText? = null
   var userPassword: EditText? = null
-
 
 
   //    将StatusBar设置为透明
@@ -59,6 +63,7 @@ class LoginCheckpageActivity : BaseActivity<ActivityLogincheckpageBinding>(R.lay
       val EditTextPassword: EditText = findViewById(R.id.etPassword)
       val userAccount = EditTextAccount.text.toString()
       val userPassword = EditTextPassword.text.toString()
+      val account=UserDao.Companion
       android.util.Log.e("HEY", userAccount)
       object : Thread() {
         override fun run() {
@@ -73,6 +78,10 @@ class LoginCheckpageActivity : BaseActivity<ActivityLogincheckpageBinding>(R.lay
       }.start()
     }
   }
+
+
+
+
 
 
   @SuppressLint("HandlerLeak")
