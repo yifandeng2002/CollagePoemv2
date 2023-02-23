@@ -24,6 +24,8 @@ import com.collagepoem.app.modules.floatwindowmycutsvtwo.ui.FloatwindowMycutsVtw
 import com.collagepoem.app.modules.landinpage.views.ImagePickerFragmentDialog
 import com.collagepoem.app.modules.mainpage.ui.MainpageActivity
 import com.jaeger.library.StatusBarUtil
+import com.lxj.xpopup.XPopup
+import com.lxj.xpopup.interfaces.OnSelectListener
 
 
 class CanvasPoemActivity : BaseActivity<ActivityCanvasPoem2Binding>(R.layout.activity_canvas_poem2) {
@@ -187,10 +189,23 @@ class CanvasPoemActivity : BaseActivity<ActivityCanvasPoem2Binding>(R.layout.act
       this.overridePendingTransition(R.anim.slide_up_2 ,R.anim.slide_down_2 )
     }
     binding.imageFilebtn.setOnClickListener {
-      val destIntent = FloatwindowMycutsVtwoActivity.getIntent(this, null)
-      destIntent.addFlags(Intent.FLAG_ACTIVITY_SINGLE_TOP)
-      startActivityForResult(destIntent, REQUEST_CODE_FLOATWINDOW_MYCUTS_VTWO_ACTIVITY)
-      this.overridePendingTransition(R.anim.slide_up_2 ,R.anim.slide_down_2 )
+      XPopup.Builder(this@CanvasPoemActivity)
+        .isDarkTheme(false)
+        .hasShadowBg(true)
+        .borderRadius(100f)
+        .maxHeight(2000)
+        .hasBlurBg(true)
+        .moveUpToKeyboard(false)
+        .isCoverSoftInput(true) //
+        .asBottomList(
+          "纸条夹",
+          arrayOf("条目1", "条目2","条目3"),
+          intArrayOf(R.drawable.img_note3,R.drawable.img_note1,R.drawable.img_note2),
+          -1,
+          OnSelectListener { position, text -> Toast.makeText(this@CanvasPoemActivity, "click $text", Toast.LENGTH_SHORT).show() },
+          R.layout.noterecyclerview,
+          R.layout.noteitemforcanvas
+        ) .show()
     }
     binding.imageCamerabtn.setOnClickListener {
       ImagePickerFragmentDialog().show(supportFragmentManager)
