@@ -42,6 +42,8 @@ import com.collagepoem.app.modules.loadingworkpage.ui.LoadingworkpageActivity
 import com.collagepoem.app.modules.mainpage.ui.MainpageActivity
 import com.collagepoem.app.modules.successpage.ui.SuccesspageActivity
 import com.jaeger.library.StatusBarUtil
+import com.lxj.xpopup.XPopup
+import com.lxj.xpopup.interfaces.OnSelectListener
 import java.io.File
 import java.io.FileNotFoundException
 import java.io.FileOutputStream
@@ -118,6 +120,7 @@ class CanvasPoemActivity : AppCompatActivity(),View.OnTouchListener {
     var imageBackbtn = findViewById<ImageView>(R.id.imageBackbtn)
     var imageScissorsbtn = findViewById<ImageView>(R.id.imageScissorsbtn)
     var imageUp2 = findViewById<ImageView>(R.id.imageUp2)
+    var imageUp3 = findViewById<ImageView>(R.id.imageUp3)
     image1 = findViewById(R.id.framePoem)
     image2 = findViewById<View>(R.id.imagePaperTwo) as ImageView
     myView = MyView(this)
@@ -151,10 +154,23 @@ class CanvasPoemActivity : AppCompatActivity(),View.OnTouchListener {
       this.overridePendingTransition(R.anim.slide_up_2 ,R.anim.slide_down_2 )
     }
     imageFilebtn.setOnClickListener {
-      val destIntent = FloatwindowMycutsVtwoActivity.getIntent(this, null)
-      destIntent.addFlags(Intent.FLAG_ACTIVITY_SINGLE_TOP)
-      startActivityForResult(destIntent, REQUEST_CODE_FLOATWINDOW_MYCUTS_VTWO_ACTIVITY)
-      this.overridePendingTransition(R.anim.slide_up_2 ,R.anim.slide_down_2 )
+      XPopup.Builder(this@CanvasPoemActivity)
+        .isDarkTheme(false)
+        .hasShadowBg(true)
+        .borderRadius(100f)
+        .maxHeight(2000)
+        .hasBlurBg(true)
+        .moveUpToKeyboard(false)
+        .isCoverSoftInput(true)
+        .asBottomList(
+          "纸条夹",
+          arrayOf("条目1", "条目2","条目3","条目4"),
+          intArrayOf(R.drawable.img_note3,R.drawable.img_note2,R.drawable.img_note2,R.drawable.img_note4),
+          -1,
+          OnSelectListener { position, text -> Toast.makeText(this@CanvasPoemActivity, "click $text", Toast.LENGTH_SHORT).show() },
+          R.layout.noterecyclerview,
+          R.layout.noteitemforcanvas
+        ) .show()
     }
 
 //    binding.imageUp2.setOnClickListener {
@@ -208,6 +224,21 @@ class CanvasPoemActivity : AppCompatActivity(),View.OnTouchListener {
       var downAnim = ObjectAnimator.ofFloat(view, "translationY", 0F, 30F, 0F)
       // 向上动画
       var upAnim = ObjectAnimator.ofFloat(view, "translationY", 0F, -2500F)
+      //upAnim.repeatMode = ValueAnimator.REVERSE
+      //upAnim.repeatCount = Animation.INFINITE
+      set.duration = 1000
+      // 顺序执行动画
+      //set.playSequentially(upAnim)
+      set.playSequentially(upAnim)
+      set.start()
+    }
+    imageUp3.setOnClickListener {
+      var view = findViewById<View>(R.id.frameStackfinish)
+      var set = AnimatorSet()
+      // 向下动画(暂时不用)
+      var downAnim = ObjectAnimator.ofFloat(view, "translationY", 0F, 30F, 0F)
+      // 向上动画
+      var upAnim = ObjectAnimator.ofFloat(view, "translationY", -2500F, 0F)
       //upAnim.repeatMode = ValueAnimator.REVERSE
       //upAnim.repeatCount = Animation.INFINITE
       set.duration = 1000
@@ -411,7 +442,7 @@ class CanvasPoemActivity : AppCompatActivity(),View.OnTouchListener {
   //截屏作品，并保存至图库
 
   private var mSave: Button? = null
-  private var mSaveArea: FrameLayout? = null
+  private var mSaveArea: ImageView? = null
   private var mCutTop = 0
   private var mCutLeft = 0
   private var mPicGet: ImageView? = null
@@ -462,7 +493,7 @@ class CanvasPoemActivity : AppCompatActivity(),View.OnTouchListener {
   private fun initView() {
     mSave = findViewById(R.id.button)
 //        Log.e(ControlsProviderService.TAG, mSave!!.id.toString())
-    mSaveArea = findViewById(R.id.frameStackcanvas) as FrameLayout?
+    mSaveArea = findViewById(R.id.imageCanvas) as ImageView?
     mPicGet = findViewById(R.id.iv_pic_get) as ImageView?
     mFL = findViewById(R.id.fl_pic) as FrameLayout?
     mTotal = findViewById(R.id.frameStackbackground) as FrameLayout?

@@ -46,6 +46,7 @@ class SuccesspageActivity : BaseActivity<ActivitySuccesspageBinding>(R.layout.ac
       //   作品在成功、分享页面显示
       public var lat: FrameLayout?=null
       public var imageView:ImageView?=null
+      public var imageShare:ImageView?=null
 
       @SuppressLint("MissingInflatedId")
       override fun onCreate(savedInstanceState: Bundle?) {
@@ -58,6 +59,7 @@ class SuccesspageActivity : BaseActivity<ActivitySuccesspageBinding>(R.layout.ac
         val filepath = Constant.curSCREEN_SHOT
         val file = File(filepath)
         imageView=findViewById(R.id.imagePoem)
+        imageShare=findViewById(R.id.imageShare)
 
         var bytes = ByteArray(file.length().toInt() + 1)
         Log.e(ConstraintLayoutStates.TAG,bytes.size.toString())
@@ -78,13 +80,13 @@ class SuccesspageActivity : BaseActivity<ActivitySuccesspageBinding>(R.layout.ac
           imageView!!.setImageBitmap(bm)
         }
 
-////跳转微信分享
-//        val intent = Intent(this, SharetoWeChatActivity::class.java)
-//        imageShare.setOnClickListener {
-//          val intent = Intent(this, SharetoWeChatActivity::class.java)
-//          intent.putExtra ("key", "value")
-//          startActivity(intent)
-//        }
+//跳转微信分享
+        val intent = Intent(this, SharetoWeChatActivity::class.java)
+        binding.imageShare.setOnClickListener {
+          val intent = Intent(this, SharetoWeChatActivity::class.java)
+          intent.putExtra ("key", "value")
+          startActivity(intent)
+        }
       }
 
 

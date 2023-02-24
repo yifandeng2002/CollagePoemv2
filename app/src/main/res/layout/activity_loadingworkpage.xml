@@ -65,25 +65,26 @@
                     imageRes="@{@drawable/img_poem1}"
                     tools:ignore="ContentDescription" tools:src="@drawable/img_poem1"/>
             </FrameLayout>
-            <ImageView android:id="@+id/imageDriftbottle"
-                android:layout_gravity="start"
-                android:layout_height="@dimen/_182pxh"
-                android:layout_marginEnd="@dimen/_10pxh"
-                android:layout_marginTop="@dimen/_31pxv"
+
+            <ImageView
+                android:id="@+id/imageDriftbottle"
                 android:layout_width="@dimen/_157pxh"
+                android:layout_height="@dimen/_182pxh"
+                android:layout_gravity="start"
+                android:layout_marginLeft="-50dp"
+                android:layout_marginTop="@dimen/_31pxv"
                 android:scaleType="fitXY"
                 android:src="@drawable/img_driftbottle"
-                tools:ignore="ContentDescription" tools:src="@drawable/img_driftbottle"/>
-            <ImageView android:id="@+id/imageFinish"
-                android:layout_gravity="end"
-                android:layout_height="@dimen/_46pxh"
-                android:layout_marginEnd="@dimen/_78pxh"
-                android:layout_marginStart="@dimen/_78pxh"
-                android:layout_marginTop="@dimen/_37pxv"
-                android:layout_width="@dimen/_171pxh"
-                android:scaleType="fitXY"
-                android:src="@drawable/img_finish_46x171"
-                tools:ignore="ContentDescription" tools:src="@drawable/img_finish_46x171"/>
+                tools:ignore="ContentDescription"
+                tools:src="@drawable/img_driftbottle" />
+
+            <Button
+                android:id="@+id/finishBtn"
+                android:layout_width="156dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:text="完成" />
+
         </LinearLayout>
     </FrameLayout>
 </layout>

@@ -50,8 +50,7 @@
     <string name="lbl_one">面朝大海\n春暖花开</string>
     <string name="lbl_12">12</string>
     <string name="lbl_works">作品</string>
-    <string name="msg_in_preparation">正在准备您的作品······
-您剩下了一些素材&#xd;
+    <string name="msg_in_preparation">正在准备您的作品······\n您剩下了一些素材&#xd;
 可以拖入漂流瓶赠予他人～</string>
     <string name="lbl_left">还剩</string>
     <string name="lbl_send">发送</string>

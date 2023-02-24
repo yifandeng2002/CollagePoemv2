@@ -88,14 +88,28 @@
                     tools:ignore="ContentDescription" tools:src="@drawable/img_download"/>
             </LinearLayout>
         </FrameLayout>
-        <ImageView android:id="@+id/imagePoem"
-            android:layout_gravity="top|start"
-            android:layout_height="@dimen/_479pxv"
-            android:layout_marginBottom="@dimen/_78pxv"
+
+        <ImageView
+            android:id="@+id/imagePoem"
+            imageRes="@{@drawable/img_poem}"
+            android:layout_width="301dp"
+            android:layout_height="441dp"
+            android:layout_gravity="center_horizontal|top"
             android:layout_marginTop="@dimen/_78pxv"
-            android:layout_width="match_parent"
-            android:scaleType="fitXY" imageRes="@{@drawable/img_poem}"
-            tools:ignore="ContentDescription" tools:src="@drawable/img_poem"/>
+            android:layout_marginBottom="@dimen/_78pxv"
+            android:scaleType="fitXY"
+            tools:ignore="ContentDescription"
+            tools:src="@drawable/img_poem" />
+
+        <FrameLayout
+            android:id="@+id/imagePoem2"
+            android:layout_width="283dp"
+            android:layout_height="440dp"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="90dp"
+            android:visibility="invisible">
+
+        </FrameLayout>
 
         <FrameLayout
             android:id="@+id/frameImagePoem"
