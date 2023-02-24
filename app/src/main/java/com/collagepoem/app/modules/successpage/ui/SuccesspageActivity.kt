@@ -75,18 +75,16 @@ class SuccesspageActivity : BaseActivity<ActivitySuccesspageBinding>(R.layout.ac
           val mat=Matrix()
           mat.setScale(0.1f,0.1f)
           val bc: Bitmap = Bitmap.createBitmap(bm,0,0,bm.width,bm.height,mat,true)
-
+          if(bm!=null)
+          {
+            imageView!!.setImageBitmap(bm)
+          }
           // 将图片显示到ImageView中
-          imageView!!.setImageBitmap(bm)
+
         }
 
-//跳转微信分享
-        val intent = Intent(this, SharetoWeChatActivity::class.java)
-        binding.imageShare.setOnClickListener {
-          val intent = Intent(this, SharetoWeChatActivity::class.java)
-          intent.putExtra ("key", "value")
-          startActivity(intent)
-        }
+
+
       }
 
 
@@ -104,6 +102,11 @@ class SuccesspageActivity : BaseActivity<ActivitySuccesspageBinding>(R.layout.ac
     }
     binding.imageBackbtn.setOnClickListener {
       finish()
+    }
+    binding.imageShare.setOnClickListener {
+      val intent = Intent(this, SharetoWeChatActivity::class.java)
+      intent.putExtra ("key", "value")
+      startActivity(intent)
     }
   }
 

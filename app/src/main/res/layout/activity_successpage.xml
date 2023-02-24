@@ -91,13 +91,13 @@
 
         <ImageView
             android:id="@+id/imagePoem"
-            imageRes="@{@drawable/img_poem}"
             android:layout_width="301dp"
             android:layout_height="441dp"
             android:layout_gravity="center_horizontal|top"
             android:layout_marginTop="@dimen/_78pxv"
             android:layout_marginBottom="@dimen/_78pxv"
             android:scaleType="fitXY"
+            android:src = "@drawable/img_poem"
             tools:ignore="ContentDescription"
             tools:src="@drawable/img_poem" />
 
@@ -162,7 +162,7 @@
                 android:layout_marginTop="@dimen/_463pxv"
                 android:layout_marginEnd="@dimen/_37pxh"
                 android:gravity="center_horizontal"
-                android:text="@{successpageVM.successpageModel.txtDescription}"
+                android:text="@string/msg_congratulations"
                 tools:text="@string/msg_congratulations" />
         </LinearLayout>
     </FrameLayout>

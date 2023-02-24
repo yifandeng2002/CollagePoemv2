@@ -114,6 +114,8 @@ class MainpageActivity : BaseActivity<ActivityMainpageBinding>(R.layout.activity
     }
   }
 
+
+
   companion object {
     const val TAG: String = "MAINPAGE_ACTIVITY"
 
