@@ -39,6 +39,7 @@ import com.collagepoem.app.modules.canvaspoem.data.viewmodel.MyView
 import com.collagepoem.app.modules.floatwindowmycutsvtwo.ui.FloatwindowMycutsVtwoActivity
 import com.collagepoem.app.modules.landinpage.views.ImagePickerFragmentDialog
 import com.collagepoem.app.modules.loadingworkpage.ui.LoadingworkpageActivity
+import com.collagepoem.app.modules.mainpage.PoemCut
 import com.collagepoem.app.modules.mainpage.ui.MainpageActivity
 import com.collagepoem.app.modules.successpage.ui.SuccesspageActivity
 import com.jaeger.library.StatusBarUtil
@@ -127,8 +128,14 @@ class CanvasPoemActivity : AppCompatActivity(),View.OnTouchListener {
     button = findViewById(R.id.imageScissorsbtn)
     dragView = findViewById(R.id.imagePaperOne)
     dragView2 = findViewById(R.id.imagePaperTwo)
-
-
+    var txtOrder = findViewById<TextView>(R.id.txtOrder)
+    var txtDescription = findViewById<TextView>(R.id.txtDescription)
+    var txtTimeCN = findViewById<TextView>(R.id.txtTimeCN)
+    var txtTimeEN = findViewById<TextView>(R.id.txtTimeEN)
+    txtOrder.setText(PoemCut.txtName)
+    txtDescription.setText(PoemCut.txtthis)
+    txtTimeCN.setText(PoemCut.txtTimecn)
+    txtTimeEN.setText(PoemCut.txtTimeen)
 
 
     //setContentView(R.layout.activity_canvas)
