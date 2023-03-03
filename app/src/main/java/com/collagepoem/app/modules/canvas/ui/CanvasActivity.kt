@@ -3,10 +3,11 @@ package com.collagepoem.app.modules.canvas.ui
 import android.content.Context
 import android.content.Intent
 import android.os.Bundle
+import android.widget.LinearLayout
 import androidx.activity.viewModels
 import com.collagepoem.app.R
 import com.collagepoem.app.appcomponents.base.BaseActivity
-import com.collagepoem.app.appcomponents.views.ImagePickerFragmentDialog
+import com.collagepoem.app.modules.landinpage.views.ImagePickerFragmentDialog
 import com.collagepoem.app.databinding.ActivityCanvasBinding
 import com.collagepoem.app.modules.canvas.`data`.viewmodel.CanvasVM
 import com.collagepoem.app.modules.canvaspoem.ui.CanvasPoemActivity
@@ -45,6 +46,7 @@ class CanvasActivity : BaseActivity<ActivityCanvasBinding>(R.layout.activity_can
     viewModel.navArguments = intent.extras?.getBundle("bundle")
     binding.canvasVM = viewModel
     setStatusBarTranslucent()
+
   }
 
   override fun setUpClicks(): Unit {

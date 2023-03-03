@@ -7,9 +7,9 @@
         android:layout_height="wrap_content"
         android:layout_width="match_parent" android:orientation="horizontal">
         <ImageView android:id="@+id/imageProfilepicOne"
-            android:layout_height="@dimen/_39pxh"
+            android:layout_width="60dp"
+            android:layout_height="60dp"
             android:layout_marginBottom="@dimen/_20pxv"
-            android:layout_width="@dimen/_39pxh"
             android:scaleType="fitXY"
             android:src="@drawable/img_profilepic"
             tools:ignore="ContentDescription" tools:src="@drawable/img_profilepic"/>

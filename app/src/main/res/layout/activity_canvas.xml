@@ -12,6 +12,13 @@
         <FrameLayout android:gravity="start"
             android:id="@+id/frameStackbackground"
             android:layout_height="match_parent" android:layout_width="match_parent">
+
+            <LinearLayout
+                android:id="@+id/sidebar_reciever"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="horizontal"></LinearLayout>
+
             <ImageView android:id="@+id/imageBackground"
                 android:layout_gravity="start"
                 android:layout_height="match_parent"
@@ -65,74 +72,125 @@
                         </LinearLayout>
                     </LinearLayout>
                 </androidx.appcompat.widget.Toolbar>
-                <FrameLayout android:id="@+id/frameStackcanvas"
-                    android:layout_gravity="center_horizontal"
+
+                <FrameLayout
+                    android:id="@+id/frameStackcanvas"
+                    android:layout_width="@dimen/_402pxh"
                     android:layout_height="@dimen/_629pxv"
-                    android:layout_marginEnd="@dimen/_9pxh"
-                    android:layout_marginTop="@dimen/_13pxv" android:layout_width="@dimen/_402pxh">
-                    <ImageView android:id="@+id/imageCanvas"
-                        android:layout_gravity="center"
-                        android:layout_height="@dimen/_629pxh"
-                        android:layout_marginEnd="@dimen/_32pxh"
-                        android:layout_marginStart="@dimen/_40pxh"
-                        android:layout_width="@dimen/_328pxh"
-                        android:scaleType="fitXY"
+                    android:layout_gravity="center_horizontal"
+                    android:layout_marginTop="@dimen/_13pxv"
+                    android:layout_marginEnd="@dimen/_9pxh">
+
+                    <ImageView
+                        android:id="@+id/imageCanvas"
                         imageRes="@{@drawable/img_canvas}"
-                        tools:ignore="ContentDescription" tools:src="@drawable/img_canvas"/>
-                    <ImageView android:id="@+id/imageFilebtn"
-                        android:layout_gravity="bottom|end"
+                        android:layout_width="@dimen/_328pxh"
+                        android:layout_height="@dimen/_629pxh"
+                        android:layout_gravity="center"
+                        android:layout_marginStart="@dimen/_40pxh"
+                        android:layout_marginEnd="@dimen/_32pxh"
+                        android:scaleType="fitXY"
+                        tools:ignore="ContentDescription"
+                        tools:src="@drawable/img_canvas" />
+
+                    <ImageView
+                        android:id="@+id/imageFilebtn"
+                        imageRes="@{@drawable/img_filebtn}"
+                        android:layout_width="@dimen/_91pxh"
                         android:layout_height="@dimen/_86pxh"
-                        android:layout_marginBottom="@dimen/_127pxv"
-                        android:layout_marginEnd="@dimen/_6pxh"
+                        android:layout_gravity="bottom|end"
                         android:layout_marginStart="@dimen/_10pxh"
                         android:layout_marginTop="@dimen/_127pxv"
-                        android:layout_width="@dimen/_91pxh"
+                        android:layout_marginEnd="@dimen/_6pxh"
+                        android:layout_marginBottom="@dimen/_127pxv"
                         android:scaleType="fitXY"
-                        imageRes="@{@drawable/img_filebtn}"
-                        tools:ignore="ContentDescription" tools:src="@drawable/img_filebtn"/>
-                    <ImageView android:id="@+id/imageCamerabtn"
-                        android:layout_gravity="bottom|end"
+                        tools:ignore="ContentDescription"
+                        tools:src="@drawable/img_filebtn" />
+
+                    <ImageView
+                        android:id="@+id/imageCamerabtn"
+                        imageRes="@{@drawable/img_camerabtn}"
+                        android:layout_width="@dimen/_103pxh"
                         android:layout_height="@dimen/_87pxh"
-                        android:layout_marginBottom="@dimen/_24pxv"
+                        android:layout_gravity="bottom|end"
                         android:layout_marginStart="@dimen/_10pxh"
                         android:layout_marginTop="@dimen/_24pxv"
-                        android:layout_width="@dimen/_103pxh"
+                        android:layout_marginBottom="@dimen/_24pxv"
                         android:scaleType="fitXY"
-                        imageRes="@{@drawable/img_camerabtn}"
-                        tools:ignore="ContentDescription" tools:src="@drawable/img_camerabtn"/>
-                    <ImageView android:id="@+id/imageScissorsbtn"
-                        android:layout_gravity="bottom|start"
-                        android:layout_height="@dimen/_135pxh"
-                        android:layout_marginBottom="@dimen/_157pxv"
-                        android:layout_marginEnd="@dimen/_10pxh"
-                        android:layout_marginTop="@dimen/_157pxv"
-                        android:layout_width="@dimen/_122pxh"
-                        android:scaleType="fitXY"
+                        tools:ignore="ContentDescription"
+                        tools:src="@drawable/img_camerabtn" />
+
+                    <ImageView
+                        android:id="@+id/imageScissorsbtn"
                         imageRes="@{@drawable/img_scissorsbtn}"
-                        tools:ignore="ContentDescription" tools:src="@drawable/img_scissorsbtn"/>
-                    <ImageView android:id="@+id/imageTrashbtn"
+                        android:layout_width="@dimen/_122pxh"
+                        android:layout_height="@dimen/_135pxh"
                         android:layout_gravity="bottom|start"
-                        android:layout_height="@dimen/_121pxh"
-                        android:layout_marginBottom="@dimen/_55pxv"
+                        android:layout_marginTop="@dimen/_157pxv"
                         android:layout_marginEnd="@dimen/_10pxh"
+                        android:layout_marginBottom="@dimen/_157pxv"
+                        android:scaleType="fitXY"
+                        tools:ignore="ContentDescription"
+                        tools:src="@drawable/img_scissorsbtn" />
+
+                    <ImageView
+                        android:id="@+id/imageTrashbtn"
+                        imageRes="@{@drawable/img_trashbtn}"
+                        android:layout_width="@dimen/_110pxh"
+                        android:layout_height="@dimen/_121pxh"
+                        android:layout_gravity="bottom|start"
                         android:layout_marginStart="@dimen/_8pxh"
                         android:layout_marginTop="@dimen/_55pxv"
-                        android:layout_width="@dimen/_110pxh"
+                        android:layout_marginEnd="@dimen/_10pxh"
+                        android:layout_marginBottom="@dimen/_55pxv"
                         android:scaleType="fitXY"
-                        imageRes="@{@drawable/img_trashbtn}"
-                        tools:ignore="ContentDescription" tools:src="@drawable/img_trashbtn"/>
+                        tools:ignore="ContentDescription"
+                        tools:src="@drawable/img_trashbtn" />
                 </FrameLayout>
-                <ImageView android:id="@+id/imageFinish"
+
+<!--                <ImageView-->
+<!--                    android:id="@+id/imageFinish"-->
+<!--                    android:layout_width="@dimen/_171pxh"-->
+<!--                    android:layout_height="48dp"-->
+<!--                    android:layout_gravity="center_horizontal"-->
+<!--                    android:layout_marginStart="@dimen/_10pxh"-->
+<!--                    android:layout_marginTop="@dimen/_61pxv"-->
+<!--                    android:layout_marginEnd="@dimen/_10pxh"-->
+<!--                    android:clickable="true"-->
+<!--                    android:scaleType="fitXY"-->
+<!--                    android:src="@drawable/img_finish"-->
+<!--                    tools:ignore="ContentDescription,SpeakableTextPresentCheck" />-->
+
+                <Button
+                    android:id="@+id/imageFinish"
+                    android:layout_width="171.42dp"
+                    android:layout_height="48dp"
                     android:layout_gravity="center_horizontal"
-                    android:layout_height="@dimen/_46pxh"
-                    android:layout_marginEnd="@dimen/_10pxh"
-                    android:layout_marginStart="@dimen/_10pxh"
-                    android:layout_marginTop="@dimen/_61pxv"
-                    android:layout_width="@dimen/_171pxh"
+                    android:layout_marginStart="10.02dp"
+                    android:layout_marginTop="48.85dp"
+                    android:layout_marginEnd="10.02dp"
+                    android:background="@drawable/img_btnback"
+                    android:clickable="true"
+                    android:gravity="center"
                     android:scaleType="fitXY"
-                    android:src="@drawable/img_finish"
-                    tools:ignore="ContentDescription" tools:src="@drawable/img_finish"/>
+                    android:text="完成"
+                    android:textColor="@color/material_dynamic_neutral40" />
+
             </LinearLayout>
+        </FrameLayout>
+
+        <FrameLayout
+            android:id="@+id/fl_pic"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@color/black"
+            android:visibility="gone">
+
+            <ImageView
+                android:id="@+id/iv_pic_get"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_gravity="center" />
         </FrameLayout>
     </LinearLayout>
 </layout>

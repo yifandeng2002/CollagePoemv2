@@ -88,14 +88,38 @@
                     tools:ignore="ContentDescription" tools:src="@drawable/img_download"/>
             </LinearLayout>
         </FrameLayout>
-        <ImageView android:id="@+id/imagePoem"
-            android:layout_gravity="top|start"
-            android:layout_height="@dimen/_479pxv"
-            android:layout_marginBottom="@dimen/_78pxv"
+
+        <ImageView
+            android:id="@+id/imagePoem"
+            android:layout_width="301dp"
+            android:layout_height="441dp"
+            android:layout_gravity="center_horizontal|top"
             android:layout_marginTop="@dimen/_78pxv"
-            android:layout_width="match_parent"
-            android:scaleType="fitXY" imageRes="@{@drawable/img_poem}"
-            tools:ignore="ContentDescription" tools:src="@drawable/img_poem"/>
+            android:layout_marginBottom="@dimen/_78pxv"
+            android:scaleType="fitXY"
+            android:src = "@drawable/img_poem"
+            tools:ignore="ContentDescription"
+            tools:src="@drawable/img_poem" />
+
+        <FrameLayout
+            android:id="@+id/imagePoem2"
+            android:layout_width="283dp"
+            android:layout_height="440dp"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="90dp"
+            android:visibility="invisible">
+
+        </FrameLayout>
+
+        <FrameLayout
+            android:id="@+id/frameImagePoem"
+            android:layout_width="250dp"
+            android:layout_height="381dp"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="120dp">
+
+        </FrameLayout>
+
         <LinearLayout android:id="@+id/linearColumnbackbtn"
             android:layout_gravity="top|center"
             android:layout_height="wrap_content"
@@ -128,15 +152,18 @@
                         tools:ignore="ContentDescription" tools:src="@drawable/img_close"/>
                 </LinearLayout>
             </androidx.appcompat.widget.Toolbar>
-            <TextView android:gravity="center_horizontal"
+
+            <TextView
                 android:id="@+id/txtDescription"
+                style="@style/txtArialmt24"
+                android:layout_width="309dp"
                 android:layout_height="wrap_content"
-                android:layout_marginEnd="@dimen/_37pxh"
-                android:layout_marginStart="@dimen/_42pxh"
+                android:layout_marginStart="@dimen/_40pxh"
                 android:layout_marginTop="@dimen/_463pxv"
-                android:layout_width="match_parent"
-                android:text="@{successpageVM.successpageModel.txtDescription}"
-                style="@style/txtArialmt24" tools:text="@string/msg_congratulations"/>
+                android:layout_marginEnd="@dimen/_37pxh"
+                android:gravity="center_horizontal"
+                android:text="@string/msg_congratulations"
+                tools:text="@string/msg_congratulations" />
         </LinearLayout>
     </FrameLayout>
 </layout>

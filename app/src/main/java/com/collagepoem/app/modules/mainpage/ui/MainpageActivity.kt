@@ -3,14 +3,26 @@ package com.collagepoem.app.modules.mainpage.ui
 import android.content.Context
 import android.content.Intent
 import android.os.Bundle
+import android.os.Handler
+import android.os.Looper
+import android.os.Message
+import android.util.Log
+import android.widget.ImageView
 import androidx.activity.viewModels
+import androidx.recyclerview.widget.LinearLayoutManager
+import androidx.recyclerview.widget.RecyclerView
 import com.collagepoem.app.R
 import com.collagepoem.app.appcomponents.base.BaseActivity
+import com.collagepoem.app.appcomponents.di.MyApp
 import com.collagepoem.app.databinding.ActivityMainpageBinding
 import com.collagepoem.app.modules.canvaspoem.ui.CanvasPoemActivity
 import com.collagepoem.app.modules.communitypage.ui.CommunitypageActivity
+import com.collagepoem.app.modules.mainpage.Poem1
+import com.collagepoem.app.modules.mainpage.PoemCut
+import com.collagepoem.app.modules.mainpage.data.model.CardRowModel
 import com.collagepoem.app.modules.mainpage.`data`.viewmodel.MainpageVM
 import com.collagepoem.app.modules.profilepagemypage.ui.ProfilepageMypageActivity
+import com.collagepoem.app.noteinfo.poemInfo
 import com.jaeger.library.StatusBarUtil
 import kotlin.Int
 import kotlin.String
@@ -26,7 +38,8 @@ class MainpageActivity : BaseActivity<ActivityMainpageBinding>(R.layout.activity
 
 
   private val REQUEST_CODE_PROFILEPAGE_MYPAGE_ACTIVITY: Int = 674
-
+  private var list=ArrayList<CardRowModel>()
+  public var note = Poem1
   //    将StatusBar设置为透明
   fun setStatusBarTranslucent() {
     StatusBarUtil.setTranslucentForImageViewInFragment(
@@ -36,14 +49,93 @@ class MainpageActivity : BaseActivity<ActivityMainpageBinding>(R.layout.activity
     StatusBarUtil.setLightMode(this)
   }
 
+  var handler = object : Handler(Looper.getMainLooper()){
+    override fun handleMessage(msg: Message) {
+      super.handleMessage(msg)
+      if(msg.obj !=null)
+      {
+        note = msg.obj as Poem1
+
+        if(note!!.TimeEN.size!=0)
+        {
+          //updateData(note)
+          var newData=ArrayList<CardRowModel>()
+          for( i in 0 until note!!.Descrip.size)
+          {
+            //Log.e("g",SticksRowModel(note.title[i], note.collecttime[i] as Date?,null).toString())
+            newData.add(CardRowModel(note!!.TimeCN[i], note!!.TimeEN[i],note!!.Order[i],note!!.Descrip[i],MyApp.getInstance().resources.getDrawable(R.drawable.img_poemcard_648x356)))
+          }
+          if (newData != null) {
+            list = newData
+          }
+          val recyclerView = findViewById<RecyclerView> (R.id.recyclerView)
+          var recyclerCard=CardAdapter(list)
+          recyclerView.adapter=recyclerCard
+        }
+      }
+    }
+  }
   override fun onInitialized(): Unit {
     viewModel.navArguments = intent.extras?.getBundle("bundle")
     binding.mainpageVM = viewModel
+    initlist()
     setStatusBarTranslucent()
+//    list.add(CardRowModel("2023-2-23","贰月贰拾叁","面朝大海\n春暖花开",
+//            "从明天起 做一个幸福的人\n" +
+//            "喂马 劈柴 周游世界\n" +
+//            "从明天起 关心粮食和蔬菜\n" +
+//            "我有一所房子 面朝大海 春暖花开\n" +
+//            "从明天起 和每一个亲人通信\n" +
+//            "告诉他们我的幸福\n那幸福的闪电告诉我的\n" +
+//            "我将告诉每一个人\n" +
+//            "给每一条河每一座山取一个温暖的名字\n" +
+//            "陌生人 我也为你祝福\n" +
+//            "愿你有一个灿烂的前程\n" +
+//            "愿你有情人终成眷属\n" +
+//            "愿你在尘世获的幸福\n" +
+//            "我也愿面朝大海 春暖花开",MyApp.getInstance().resources.getDrawable(R.drawable.img_poemcard_648x356)))
+//    list.add(CardRowModel("2023-2-23","贰月贰拾叁","思念前生",
+//            "庄子在水中洗手\n" +
+//            "洗完了手手掌上一片寂静\n" +
+//            "庄子在水中洗身\n" +
+//            "身子是一匹布\n" +
+//            "那布上粘满了\n" +
+//            "水面上漂来漂去的声音\n" +
+//            "庄子想混入\n" +
+//            "凝望月亮的野兽\n" +
+//            "骨头一寸一寸\n" +
+//            "在肚脐上下\n" +
+//            "象树枝一样长着\n" +
+//            "也许庄子就是我\n",MyApp.getInstance().resources.getDrawable(R.drawable.img_poemcard_648x356)))
+    val layoutManager = LinearLayoutManager( this,LinearLayoutManager.HORIZONTAL,false)
+    val recyclerView = findViewById<RecyclerView> (R.id.recyclerView)
+    recyclerView.layoutManager = layoutManager
+    var recyclerCard=CardAdapter(list)
+    //Log.e("pic2",list[0].imageCardView.toString())
+    recyclerView.adapter=recyclerCard
+    Log.i("GG", PoemCut.state.toString())
+  }
+
+  private fun initlist(){
+    object : Thread() {
+      override fun run() {
+        val ShowPoem = poemInfo()
+        val msg = Message()
+        val note2 = ShowPoem.showpoem(note)
+        if (note2 != null) {
+
+          msg.obj= note2
+          handler.sendMessage(msg)
+
+        }
+
+
+      }
+    }.start()
   }
 
   override fun setUpClicks(): Unit {
-    binding.imagePoemcard.setOnClickListener {
+    binding.recyclerView.setOnClickListener {
       val destIntent = CanvasPoemActivity.getIntent(this, null)
       startActivityForResult(destIntent, REQUEST_CODE_CANVAS_POEM_ACTIVITY)
       this.overridePendingTransition(R.anim.zoom_in ,R.anim.zoom_out )
@@ -74,6 +166,8 @@ class MainpageActivity : BaseActivity<ActivityMainpageBinding>(R.layout.activity
       this.overridePendingTransition(R.anim.left_to_right_2 ,R.anim.right_to_left_2 )
     }
   }
+
+
 
   companion object {
     const val TAG: String = "MAINPAGE_ACTIVITY"

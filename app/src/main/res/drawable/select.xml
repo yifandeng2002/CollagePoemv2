@@ -1,0 +1,14 @@
+<selector xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:state_selected="true"
+        android:drawable="@drawable/img_imageislike" />
+    <item
+        android:state_selected="false"
+        android:drawable="@drawable/img_likebtn" />
+<!--    <item-->
+<!--        android:state_selected="true"-->
+<!--        android:Text="@values/bending" />-->
+<!--    <item-->
+<!--        android:state_selected="false"-->
+<!--        android:Text="@values/zhuzhu" />-->
+</selector>

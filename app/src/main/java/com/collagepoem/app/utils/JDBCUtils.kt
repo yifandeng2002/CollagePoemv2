@@ -8,8 +8,8 @@ import java.sql.DriverManager
 object JDBCUtils {
     private const val TAG = "mysql-party-JDBCUtils"
     private const val driver = "com.mysql.jdbc.Driver" // MySql驱动
-    private const val user = "root" // 用户名
-    private const val password = "Poem1234" // 密码// 写成本机地址，不能写成localhost，同时手机和电脑连接的网络必须是同一个
+    private const val user = "ziyi01" // 用户名
+    private const val password = "Ziyi1234" // 密码// 写成本机地址，不能写成localhost，同时手机和电脑连接的网络必须是同一个
 
     // 尝试建立到给定数据库URL的连接
     // 动态加载类

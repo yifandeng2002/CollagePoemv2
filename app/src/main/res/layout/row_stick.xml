@@ -3,9 +3,13 @@
     <data>
         <variable name="stickRowModel" type="com.collagepoem.app.modules.floatwindowmycutsvtwo.data.model.StickRowModel"/>
     </data>
-    <ImageView android:id="@+id/imageStick"
-        android:layout_height="@dimen/_53pxv"
-        android:layout_width="match_parent" android:scaleType="fitXY"
+
+    <ImageView
+        android:id="@+id/imageStick"
         imageRes="@{@drawable/img_stick}"
-        tools:ignore="ContentDescription" tools:src="@drawable/img_stick"/>
+        android:layout_width="match_parent"
+        android:layout_height="76dp"
+        android:scaleType="fitXY"
+        tools:ignore="ContentDescription"
+        tools:src="@drawable/img_stick" />
 </layout>

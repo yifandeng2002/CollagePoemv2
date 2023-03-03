@@ -3,9 +3,55 @@
     <data>
         <variable name="sticksRowModel" type="com.collagepoem.app.modules.mycutspagebelongings.data.model.SticksRowModel"/>
     </data>
-    <ImageView android:id="@+id/imageStick"
-        android:layout_height="@dimen/_48pxv"
-        android:layout_width="match_parent" android:scaleType="fitXY"
-        android:src="@drawable/img_stick_48x347"
-        tools:ignore="ContentDescription" tools:src="@drawable/img_stick_48x347"/>
+
+    <LinearLayout
+        android:id="@+id/linearStick"
+        android:layout_width="match_parent"
+        android:layout_height="77dp"
+        android:orientation="horizontal">
+
+        <ImageView
+            android:id="@+id/imageStick"
+            android:layout_width="@dimen/_85pxh"
+            android:layout_height="@dimen/_41pxh"
+            android:scaleType="fitXY"
+            android:src="@drawable/img_note6"
+            tools:ignore="ContentDescription"
+            tools:src="@drawable/img_note6" />
+
+        <LinearLayout
+            android:id="@+id/linearColumnbookname"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/_188pxh"
+            android:layout_marginTop="@dimen/_12pxv"
+            android:layout_weight="0.44"
+            android:gravity="end"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/txtBookname"
+                style="@style/txtArialmt12"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/_10pxh"
+                android:ellipsize="end"
+                android:gravity="right"
+                android:singleLine="true"
+                android:text="@{sticksRowModel.txtBookname}"
+                tools:text="@string/lbl_bookname" />
+
+            <TextView
+                android:id="@+id/txtRemainingtime"
+                style="@style/txtArialmt12"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_7pxv"
+                android:ellipsize="end"
+                android:gravity="right"
+                android:singleLine="true"
+                android:text="@{sticksRowModel.txtRemainingtime.toString()}"
+                tools:text="@string/lbl_remainingtime" />
+        </LinearLayout>
+    </LinearLayout>
 </layout>

@@ -1,5 +1,8 @@
 package com.collagepoem.app.modules.profilepagemyinfo.ui
 
+import android.content.Context
+import android.content.Intent
+import android.os.Bundle
 import android.view.View
 import androidx.activity.viewModels
 import com.collagepoem.app.R
@@ -87,8 +90,5 @@ class ProfilepageMyinfoActivity :
     }
   }
 
-  companion object {
-    const val TAG: String = "PROFILEPAGE_MYINFO_ACTIVITY"
 
-  }
 }

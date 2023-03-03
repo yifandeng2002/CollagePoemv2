@@ -43,7 +43,7 @@ class LoadingworkpageActivity :
     binding.imageBackbtn.setOnClickListener {
       finish()
     }
-    binding.imageFinish.setOnClickListener {
+    binding.finishBtn.setOnClickListener {
       val destIntent = SuccesspageActivity.getIntent(this, null)
       startActivityForResult(destIntent, REQUEST_CODE_SUCCESSPAGE_ACTIVITY)
       this.overridePendingTransition(R.anim.fade_in ,R.anim.fade_out )
