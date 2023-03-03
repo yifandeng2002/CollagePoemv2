@@ -30,10 +30,6 @@ https://material.io/develop/android
 4. koin - Dependency Injection
 https://insert-koin.io/
 
-### Figma design guideline for better accuracy
-
-Read our guidelines to increase the accuracy of design conversion to code by optimizing Figma designs. 
-https://docs.dhiwise.com/docs/Designguidelines/intro .
 
 ### App Navigation
 
@@ -73,12 +69,3 @@ Check your app\'s UI from the AppNavigation screens of your app.
   ├── repository         - Network repository
   ├── resources          - Common classes for API
   └── RetrofitService.kt
-```
-### Fonts
-```
-arialboldmt
-arialmt
-hiraminprow3
-hiraminprow6
-stzhongsong
-```
