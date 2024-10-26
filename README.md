@@ -1,23 +1,12 @@
-
 # collage_poem
-
-Built with AndroidX Support
-
 Requires Android Studio Arctic Fox | 2020.3.1 or higher.
-
-Current Kotlin Version 1.7.20
-
+Kotlin Version 1.7.20
 
 ### SDK Versions
-
 compileSdkVersion 33
-
 buildToolsVersion "30.0.3"
-
 minSdkVersion 23
-
 targetSdkVersion 33
-
 
 ### Libraries
 
@@ -30,14 +19,7 @@ https://material.io/develop/android
 4. koin - Dependency Injection
 https://insert-koin.io/
 
-
-### App Navigation
-
-Check your app\'s UI from the AppNavigation screens of your app.
-
 ### Package Structure
-
-
 ```
 ├── appcomponents       
 │ ├── di                 - Dependency Injection Components 
